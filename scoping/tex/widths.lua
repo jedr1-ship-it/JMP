@@ -19,7 +19,7 @@ function Table(tbl)
   scan(tbl.head.rows)
   for _,body in ipairs(tbl.bodies) do scan(body.body) end
   local total = 0
-  for i=1,ncol do maxlen[i] = math.max(maxlen[i]^0.8, maxword[i]*0.85); total = total + maxlen[i] end
+  for i=1,ncol do maxlen[i] = math.max(maxlen[i]^0.8, maxword[i]*1.6); total = total + maxlen[i] end
   for i=1,ncol do tbl.colspecs[i] = {tbl.colspecs[i][1], 0.97 * maxlen[i] / total} end
   return tbl
 end

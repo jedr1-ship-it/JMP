@@ -41,7 +41,7 @@ Totales: 38 actos colectivos, 31.671 desmovilizados, 18.051 armas (Indepaz) [V].
 | Héroes del Llano y del Guaviare | Puerto Lleras | — | 11‑abr‑2006 | 1.765 |
 | Élmer Cárdenas | Urabá/Darién (Necoclí, Turbo, Unguía, Riosucio) | 1996‑97 | 12‑abr, 30‑abr y 15‑ago‑2006 [V/NV] | ≈1.538 |
 
-Fuente primaria: cuadro OACP reproducido en colectivodeabogados.org (CUADRODESMOVILIZACIONCOLECTIVAS.pdf) [V existe]; informes MAPP‑OEA; Indepaz 2013.
+Fuente primaria: cuadro OACP de desmovilizaciones colectivas reproducido en colectivodeabogados.org, marzo de 2006 [V existe]; informes MAPP‑OEA; Indepaz 2013.
 
 ## 2. CNMH – Observatorio de Memoria y Conflicto (OMC/SIEVCAC)
 - Creado 2014; fuentes desde 1958; registro unificado de modo, tiempo, lugar, responsables y víctimas [V]. Capas GIS con corte 31‑mar‑2025 [V]. Diccionario geográfico en serviciosgiscnmh [V].
