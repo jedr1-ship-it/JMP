@@ -1,0 +1,45 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+\usetheme{default}
+\usecolortheme{seagull}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{itemize items}{\textendash}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+\usefonttheme{serif}
+\usepackage{booktabs,xcolor,array}
+\definecolor{ink}{HTML}{1F1F1F}
+\definecolor{muted}{HTML}{6B6B6B}
+\definecolor{accent}{HTML}{8B1A1A}
+\setbeamercolor{normal text}{fg=ink}
+\setbeamercolor{frametitle}{fg=ink}
+\setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamersize{text margin left=0.6cm,text margin right=0.6cm}
+\begin{document}
+\begin{frame}[t]
+\frametitle{Shocks de violencia en la primera infancia: ¿dónde está el paper?}
+\vspace{-0.2em}
+{\scriptsize\color{muted} Efecto de largo plazo de un episodio violento acotado según la edad a la que llega (in utero, 0--2, 3--5). Hueco: nadie separa 0--2 de 3--5 ni el canal memoria del canal hogar. Competidor: Akbulut-Yuksel, Tekin y Turan (2025, JHR).}
+
+\vspace{0.2em}
+\renewcommand{\arraystretch}{1.0}
+\scriptsize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{4.0cm}@{}}
+\toprule
+ & \textbf{Colombia} & \textbf{Nepal} & \textbf{Indonesia} \\
+\midrule
+Episodio & AUC 1997--2002; desmovilización escalonada 2003--06 (38 actos fechados). CNMH: masacres por día y municipio & Insurgencia maoísta 1996--2006; fin nítido nov-2006. INSEC por distrito & Disturbios 13--15 mayo 1998 (Jakarta, Solo, Medan); 1.217 muertos. Sin índice geocodificado \\
+Encuesta longitudinal & ELCA 2010/13/16 (+ELCO 2019/22) & CVFS Chitwan: residencia mensual desde 1997; CIDI 2016--18 & IFLS 1993/97/98/2000/07/14: antes, 3--6 meses y 16 años después \\
+Niños 0--5 expuestos & $\approx$500 (nacidos 2000--03, Córdoba--Sucre; atrición 51\,\%) & $\approx$1.000--1.300 (0--2), 700--900 (3--5); solo 10\,\% de vecindarios muy expuestos & $\approx$400--500 en Jakarta, 150 en Solo y Medan \\
+Lo que ya está hecho & Duque (2024): homicidios años 80 $\times$ Saber 11 $\times$ edad & Benjet (2020): <11 vs $\geq$11; Tafesse (2024): DHS $\times$ INSEC & Nadie \\
+Lo que tiene y nadie más & \textcolor{accent}{El evento}: entrada y salida escalonadas por municipio & \textcolor{accent}{La medición}: residencia pre-tratamiento y diagnóstico clínico & \textcolor{accent}{La foto inmediata}: ola en 1997 y en 1998 \\
+Nota como JMP & 4/10 solo con encuesta; \textbf{7/10 híbrido} & 4/10; CIDI no público, ángulo ocupado & 4/10; dosis de 3 días, crisis asiática \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.35em}
+\scriptsize
+\textbf{Conclusión.} Con encuestas puras, ninguno da un top 5: cientos de niños expuestos no separan 0--2 de 3--5. \textbf{Recomendación: Colombia híbrido.} Identificación en Saber 11, censo 2018 y el enlace ICFES con salud (RIPS) y empleo (PILA); mecanismos del canal hogar en ELCA/ELCO. Si la encuesta es innegociable: Nepal con el equipo del CVFS, outcomes económicos.
+\end{frame}
+\end{document}
