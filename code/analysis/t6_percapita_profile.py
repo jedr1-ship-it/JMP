@@ -167,29 +167,37 @@ def run_block(D, mask, sample, scale_cols, specs, fe_cols, note=""):
     log(f"  [{sample}{(' | ' + note) if note else ''}] N={len(idx):,} clusters={int(cl.max())+1} FE={fe_cols} iter={it} chk={chk:.1e} ({time.time()-t1:.0f}s)")
     rows, tests = [], []
     for spec, xs in specs:
-        xcols = xs + ["female"]
+        # regresores sin variación within (p. ej. POSD antes de 2006, PARA 12-17 en cohortes ≥ 1995 tras los EF) se excluyen y se anotan
+        dropped = [c for c in xs if sd_w[ci[c]] < 1e-10]
+        xcols = [c for c in xs if c not in dropped] + ["female"]
         X = Md[:, [ci[c] for c in xcols]]
         beta, V, r2 = ols_cluster(Md[:, ci["score_z"]], X, cl); se = np.sqrt(np.diag(V))
-        for i, c in enumerate(xcols):
+        def row(c, i):
             clock, win = (c.split("_", 1) if c != "female" else ("", "female"))
             win = win.replace("w_", "") if win.startswith("w_") else win
-            rows.append({"sample": sample, "note": note, "fe": "+".join(fe_cols), "spec": spec, "clock": clock, "window": win, "term": c,
-                         "beta": beta[i], "se": se[i], "ci_lo": beta[i] - 1.96 * se[i], "ci_hi": beta[i] + 1.96 * se[i],
-                         "p": 2 * sps.norm.sf(abs(beta[i] / se[i])), "within_sd_x": sd_w[ci[c]], "beta_x_within_sd": beta[i] * sd_w[ci[c]],
-                         "N": len(idx), "n_clusters": int(cl.max()) + 1, "r2_within": r2, "demean_iter": it, "demean_chk": chk})
+            r = {"sample": sample, "note": note, "fe": "+".join(fe_cols), "spec": spec, "clock": clock, "window": win, "term": c,
+                 "N": len(idx), "n_clusters": int(cl.max()) + 1, "r2_within": r2, "demean_iter": it, "demean_chk": chk, "within_sd_x": sd_w[ci[c]]}
+            if i is None:
+                r.update({"beta": np.nan, "se": np.nan, "ci_lo": np.nan, "ci_hi": np.nan, "p": np.nan, "beta_x_within_sd": np.nan, "dropped": "sin variación within"})
+            else:
+                r.update({"beta": beta[i], "se": se[i], "ci_lo": beta[i] - 1.96 * se[i], "ci_hi": beta[i] + 1.96 * se[i],
+                          "p": 2 * sps.norm.sf(abs(beta[i] / se[i])), "beta_x_within_sd": beta[i] * sd_w[ci[c]], "dropped": ""})
+            return r
+        rows += [row(c, i) for i, c in enumerate(xcols)] + [row(c, None) for c in dropped]
+        if dropped: log(f"    {spec}: sin variación within, excluidos: {dropped}")
         # tests: placebo pre-concepción por reloj; igualdad 0-2 = 3-5 por reloj; conjunto postnatal = 0
         for clock in sorted({c.split("_", 1)[0] for c in xs}):
-            pre = [c for c in xs if c.split("_", 1)[0] == clock and c.endswith("preconc")]
+            pre = [c for c in xcols if c.split("_", 1)[0] == clock and c.endswith("preconc")]
             if pre:
                 i = xcols.index(pre[0])
                 tests.append({"sample": sample, "note": note, "fe": "+".join(fe_cols), "spec": spec, "clock": clock, "test": "placebo pre-concepción = 0",
                               "stat": beta[i] / se[i], "p": 2 * sps.norm.sf(abs(beta[i] / se[i])), "N": len(idx)})
-            a, b_ = [c for c in xs if c.split("_", 1)[0] == clock and c.endswith("a0_2")], [c for c in xs if c.split("_", 1)[0] == clock and c.endswith("a3_5")]
+            a, b_ = [c for c in xcols if c.split("_", 1)[0] == clock and c.endswith("a0_2")], [c for c in xcols if c.split("_", 1)[0] == clock and c.endswith("a3_5")]
             if a and b_:
                 i, j = xcols.index(a[0]), xcols.index(b_[0]); d = beta[i] - beta[j]; v = V[i, i] + V[j, j] - 2 * V[i, j]
                 tests.append({"sample": sample, "note": note, "fe": "+".join(fe_cols), "spec": spec, "clock": clock, "test": "β(0-2) = β(3-5)",
                               "stat": d / np.sqrt(v), "p": 2 * sps.norm.sf(abs(d / np.sqrt(v))), "N": len(idx)})
-            post = [xcols.index(c) for c in xs if c.split("_", 1)[0] == clock and not c.endswith("preconc")]
+            post = [xcols.index(c) for c in xcols if c.split("_", 1)[0] == clock and not c.endswith("preconc") and c != "female"]
             if post:
                 bb = beta[post]; VV = V[np.ix_(post, post)]; st = float(bb @ np.linalg.solve(VV, bb))
                 tests.append({"sample": sample, "note": note, "fe": "+".join(fe_cols), "spec": spec, "clock": clock, "test": "conjunto in utero..12-17 = 0",
