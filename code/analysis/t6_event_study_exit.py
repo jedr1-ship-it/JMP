@@ -90,7 +90,7 @@ def ols_cluster(y, X, cl, w=None):
         Xw, yw = X, y
     else:
         sw = np.sqrt(w); Xw = X * sw[:, None]; yw = y * sw
-    XtX_inv = np.linalg.inv(Xw.T @ Xw)
+    XtX_inv = np.linalg.pinv(Xw.T @ Xw)
     beta = XtX_inv @ (Xw.T @ yw)
     e = yw - Xw @ beta
     Sg = np.column_stack([np.bincount(cl, weights=Xw[:, k] * e, minlength=G) for k in range(K)])
@@ -110,6 +110,10 @@ def run_es(D, mask, kcol, lo, hi, ref, outcomes, fe_cols, w=None, cluster="muni_
     idx = np.flatnonzero(mask)
     k = np.clip(D[kcol].values[idx].astype(int), lo, hi)
     Xd, vals = event_dummies(k, lo, hi, ref)
+    keep = Xd.sum(axis=0) > 0  # descarta valores de k sin observaciones en la muestra (evita matriz singular)
+    if not keep.all():
+        log(f"    [{label}] sin observaciones en k = {[v for v, kp in zip(vals, keep) if not kp]}: se omiten")
+        Xd = Xd[:, keep]; vals = [v for v, kp in zip(vals, keep) if kp]
     xnames = [f"k{v:+d}" for v in vals]
     if "female" in D.columns and "female" not in outcomes:
         Xd = np.column_stack([Xd, D["female"].values[idx].astype(np.float64)]); xnames.append("female")
