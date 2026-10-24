@@ -1,0 +1,22 @@
+{
+ "flow": {
+  "cohortes_1985_2005": 8862194,
+  "con_mes": 8862194,
+  "con_muni_res": 8799816,
+  "con_score": 8799537,
+  "con_sexo": 8796382
+ },
+ "N": {
+  "all": 8796382,
+  "T": 7065327,
+  "T_cole": 7008213
+ },
+ "n_muni_all": 1122,
+ "n_muni_T": 451,
+ "n_dpto_diff": 0,
+ "excl_rows": 1149863,
+ "excl_munis": 106,
+ "max_abs_diff_beta_vs_RA": 4.0903392305169373e-10,
+ "max_abs_diff_beta_in_se_vs_RA": 1.3031183325797065e-07,
+ "dose_check_max_abs_diff": 0.0
+}

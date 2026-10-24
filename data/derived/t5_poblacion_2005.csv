@@ -171,10 +171,10 @@ muni,depto_cede,municipio_cede,pobl_tot_2005,retro_pobl_tot_2005,pop2005,pop_src
 13458,Bolívar,Montecristo,16973.0,11212.0,16973.0,pobl_tot_2005
 13468,Bolívar,Mompós,41565.0,39736.0,41565.0,pobl_tot_2005
 13473,Bolívar,Morales,18523.0,16839.0,18523.0,pobl_tot_2005
-13490,Bolívar,Norosí (1),0.0,0.0,5423.0,pobl_tot_2008
+13490,Bolívar,Norosí,0.0,0.0,5423.0,pobl_tot_2008
 13549,Bolívar,Pinillos,22801.0,21713.0,22801.0,pobl_tot_2005
 13580,Bolívar,Regidor,8796.0,5405.0,8796.0,pobl_tot_2005
-13600,Bolívar,Río Viejo (1)(3),21060.0,14735.0,21060.0,pobl_tot_2005
+13600,Bolívar,Río Viejo,21060.0,14735.0,21060.0,pobl_tot_2005
 13620,Bolívar,San Cristóbal,6561.0,7263.0,6561.0,pobl_tot_2005
 13647,Bolívar,San Estanislao,15312.0,16225.0,15312.0,pobl_tot_2005
 13650,Bolívar,San Fernando,12965.0,10696.0,12965.0,pobl_tot_2005
@@ -368,11 +368,11 @@ muni,depto_cede,municipio_cede,pobl_tot_2005,retro_pobl_tot_2005,pop2005,pop_src
 19110,Cauca,Buenos Aires,26961.0,25315.0,26961.0,pobl_tot_2005
 19130,Cauca,Cajibío,34706.0,40055.0,34706.0,pobl_tot_2005
 19137,Cauca,Caldono,30906.0,30104.0,30906.0,pobl_tot_2005
-19142,Cauca,Caloto(1)(3),36921.0,43242.0,36921.0,pobl_tot_2005
+19142,Cauca,Caloto,36921.0,43242.0,36921.0,pobl_tot_2005
 19212,Cauca,Corinto,28310.0,24021.0,28310.0,pobl_tot_2005
 19256,Cauca,El Tambo,45804.0,51288.0,45804.0,pobl_tot_2005
 19290,Cauca,Florencia,6028.0,5617.0,6028.0,pobl_tot_2005
-19300,Cauca,Guachené (1),0.0,0.0,19553.0,pobl_tot_2007
+19300,Cauca,Guachené,0.0,0.0,19553.0,pobl_tot_2007
 19318,Cauca,Guapi,28663.0,27396.0,28663.0,pobl_tot_2005
 19355,Cauca,Inzá,26989.0,24098.0,26989.0,pobl_tot_2005
 19364,Cauca,Jambaló,14625.0,13246.0,14625.0,pobl_tot_2005
@@ -432,7 +432,7 @@ muni,depto_cede,municipio_cede,pobl_tot_2005,retro_pobl_tot_2005,pop2005,pop_src
 23079,Córdoba,Buenavista,19011.0,18275.0,19011.0,pobl_tot_2005
 23090,Córdoba,Canalete,17315.0,14028.0,17315.0,pobl_tot_2005
 23162,Córdoba,Cereté,83928.0,90252.0,83928.0,pobl_tot_2005
-23168,Córdoba,Chimá (1) (3),13639.0,14650.0,13639.0,pobl_tot_2005
+23168,Córdoba,Chimá,13639.0,14650.0,13639.0,pobl_tot_2005
 23182,Córdoba,Chinú,43274.0,42438.0,43274.0,pobl_tot_2005
 23189,Córdoba,Ciénaga de Oro,53145.0,52976.0,53145.0,pobl_tot_2005
 23300,Córdoba,Cotorra,15113.0,19363.0,15113.0,pobl_tot_2005
@@ -440,7 +440,7 @@ muni,depto_cede,municipio_cede,pobl_tot_2005,retro_pobl_tot_2005,pop2005,pop_src
 23417,Córdoba,Lorica,110316.0,120257.0,110316.0,pobl_tot_2005
 23419,Córdoba,Los Córdobas,17837.0,15093.0,17837.0,pobl_tot_2005
 23464,Córdoba,Momil,14092.0,16862.0,14092.0,pobl_tot_2005
-23466,Córdoba,Montelíbano(1)(3),73258.0,72587.0,73258.0,pobl_tot_2005
+23466,Córdoba,Montelíbano,73258.0,72587.0,73258.0,pobl_tot_2005
 23500,Córdoba,Moñitos,23597.0,23813.0,23597.0,pobl_tot_2005
 23555,Córdoba,Planeta Rica,61692.0,60654.0,61692.0,pobl_tot_2005
 23570,Córdoba,Pueblo Nuevo,31536.0,28992.0,31536.0,pobl_tot_2005
@@ -448,14 +448,14 @@ muni,depto_cede,municipio_cede,pobl_tot_2005,retro_pobl_tot_2005,pop2005,pop_src
 23580,Córdoba,Puerto Libertador,35186.0,31603.0,35186.0,pobl_tot_2005
 23586,Córdoba,Purísima,14677.0,14743.0,14677.0,pobl_tot_2005
 23660,Córdoba,Sahagún,87556.0,92816.0,87556.0,pobl_tot_2005
-23670,Córdoba,San Andrés Sotavento (1) (3),63147.0,66760.0,63147.0,pobl_tot_2005
+23670,Córdoba,San Andrés Sotavento,63147.0,66760.0,63147.0,pobl_tot_2005
 23672,Córdoba,San Antero,26123.0,27396.0,26123.0,pobl_tot_2005
 23675,Córdoba,San Bernardo del Viento,31405.0,31639.0,31405.0,pobl_tot_2005
 23678,Córdoba,San Carlos,23622.0,23270.0,23622.0,pobl_tot_2005
-23682,Córdoba,San José de Uré(1),0.0,0.0,10032.0,pobl_tot_2008
+23682,Córdoba,San José de Uré,0.0,0.0,10032.0,pobl_tot_2008
 23686,Córdoba,San Pelayo,39260.0,47736.0,39260.0,pobl_tot_2005
 23807,Córdoba,Tierralta,78680.0,79799.0,78680.0,pobl_tot_2005
-23815,Córdoba,Tuchín (1) (5),0.0,0.0,32295.0,pobl_tot_2008
+23815,Córdoba,Tuchín,0.0,0.0,32295.0,pobl_tot_2008
 23855,Córdoba,Valencia,34373.0,31080.0,34373.0,pobl_tot_2005
 25001,Cundinamarca,Agua de Dios,11822.0,9817.0,11822.0,pobl_tot_2005
 25019,Cundinamarca,Albán,5952.0,5302.0,5952.0,pobl_tot_2005
@@ -597,7 +597,7 @@ muni,depto_cede,municipio_cede,pobl_tot_2005,retro_pobl_tot_2005,pop2005,pop_src
 27495,Chocó,Nuquí,7625.0,10296.0,7625.0,pobl_tot_2005
 27580,Chocó,Río Iro,8084.0,8305.0,8084.0,pobl_tot_2005
 27600,Chocó,Río Quito,7888.0,3055.0,7888.0,pobl_tot_2005
-27615,Chocó,Riosucio(2),28230.0,27966.0,28230.0,pobl_tot_2005
+27615,Chocó,Riosucio,28230.0,27966.0,28230.0,pobl_tot_2005
 27660,Chocó,San José del Palmar,5068.0,4958.0,5068.0,pobl_tot_2005
 27745,Chocó,Sipí,3481.0,2474.0,3481.0,pobl_tot_2005
 27787,Chocó,Tadó,18041.0,14081.0,18041.0,pobl_tot_2005
@@ -1078,7 +1078,7 @@ muni,depto_cede,municipio_cede,pobl_tot_2005,retro_pobl_tot_2005,pop2005,pop_src
 86568,Putumayo,Puerto Asís,55759.0,49577.0,55759.0,pobl_tot_2005
 86569,Putumayo,Puerto Caicedo,14206.0,13231.0,14206.0,pobl_tot_2005
 86571,Putumayo,Puerto Guzmán,22679.0,25786.0,22679.0,pobl_tot_2005
-86573,Putumayo, Puerto Leguízamo,16044.0,21020.0,16044.0,pobl_tot_2005
+86573,Putumayo,Puerto Leguízamo,16044.0,21020.0,16044.0,pobl_tot_2005
 86749,Putumayo,Sibundoy,13270.0,11782.0,13270.0,pobl_tot_2005
 86755,Putumayo,San Francisco,6808.0,4944.0,6808.0,pobl_tot_2005
 86757,Putumayo,San Miguel,21838.0,14473.0,21838.0,pobl_tot_2005

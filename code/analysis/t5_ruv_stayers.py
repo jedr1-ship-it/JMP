@@ -124,7 +124,7 @@ cede = pd.read_stata(POB, columns=["codmpio", "coddepto", "ano", "pobl_tot", "re
 cede["muni"] = cede.codmpio.astype(int).astype(str).str.zfill(5)
 cede["ano"] = cede.ano.astype(int)
 p05 = cede[cede.ano == 2005].set_index("muni")
-pop = pd.DataFrame({"depto_cede": p05.depto, "municipio_cede": p05.municipio,
+pop = pd.DataFrame({"depto_cede": p05.depto, "municipio_cede": p05.municipio.str.replace(r"\(\d\)", "", regex=True).str.strip(),
                     "pobl_tot_2005": p05.pobl_tot.astype(float), "retro_pobl_tot_2005": p05.retro_pobl_tot.astype(float)})
 pop["pop2005"] = pop.pobl_tot_2005.where(pop.pobl_tot_2005 > 0)
 pop["pop_src"] = np.where(pop.pop2005.notna(), "pobl_tot_2005", "")
@@ -329,23 +329,25 @@ fig, axes = plt.subplots(1, 3, figsize=(7.4, 2.55))
 P = M[(M.PARA_9706 > 0) & (M.exp_9710 > 0)].copy()
 n_drop = len(M) - len(P)
 for ax, xcol, xlab in [(axes[0], "PARA_9706", "Víctimas paramilitares 1997-2006 (CNMH)"),
-                       (axes[1], "para_per_1000", "Víctimas paramilitares por 1.000 hab. (2005)")]:
+                       (axes[1], "para_per_1000", "Víctimas paramilitares por 1.000 hab.")]:
     nt = P[~P.in_T]; t = P[P.in_T]
     ax.scatter(nt[xcol], 100 * nt.rate_9710, s=5, c=GREY, alpha=.45, linewidths=0, label=f"resto (n={len(nt)})")
     ax.scatter(t[xcol], 100 * t.rate_9710, s=6, c=BLUE, alpha=.7, linewidths=0, label=f"T, ≥25 víctimas (n={len(t)})")
     ax.set_xscale("log"); ax.set_yscale("log")
-    ax.axhline(10, color=ORANGE, lw=.8, ls="--"); ax.text(ax.get_xlim()[0] * 1.15, 10 * 1.12, "umbral stayer 10 %", color=ORANGE, fontsize=6, va="bottom")
+    ax.axhline(10, color=ORANGE, lw=.8, ls="--", label="umbral stayer 10 %")
     ax.axhline(100, color=GREY, lw=.5, ls=":")
     ax.set_xlabel(xlab); ax.grid(True, which="major", lw=.3, color="#dddddd", alpha=.8)
     rho = P[[xcol, "rate_9710"]].corr(method="spearman").iloc[0, 1]; rhoT = t[[xcol, "rate_9710"]].corr(method="spearman").iloc[0, 1]
-    ax.text(.02, .97, f"Spearman ρ = {rho:.2f} (T: {rhoT:.2f})", transform=ax.transAxes, va="top", fontsize=6.5, color="#333333")
-    for mu in ["05001", "54001", "20001", "47189", "54810", "70204", "27615"]:
+    ax.text(.02, .97, f"Spearman ρ = {rho:.2f} (T: {rhoT:.2f})", transform=ax.transAxes, va="top", fontsize=6.5, color="#333333",
+            bbox=dict(facecolor="white", edgecolor="none", alpha=.85, pad=1.5))
+    for mu, (dx, dy, ha) in {"05001": (3, -7, "left"), "54001": (-3, 3, "right"), "20001": (3, -6, "left"), "47189": (3, 2, "left"),
+                            "54810": (3, 1, "left"), "27615": (3, 2, "left")}.items():
         if mu in P.index:
             ax.annotate(P.loc[mu, "municipio_cede"], (P.loc[mu, xcol], 100 * P.loc[mu, "rate_9710"]), fontsize=5.2, color="#333333",
-                        xytext=(3, 2), textcoords="offset points")
+                        xytext=(dx, dy), textcoords="offset points", ha=ha)
 axes[0].set_ylabel("Expulsados 1997-2010 / población 2005 (%)")
 axes[0].set_title("a. Dosis en víctimas", loc="left"); axes[1].set_title("b. Dosis per cápita", loc="left")
-axes[0].legend(loc="lower right", markerscale=1.6, handletextpad=.2)
+axes[0].legend(loc="lower right", markerscale=1.6, handletextpad=.4, handlelength=1.4)
 axes[1].set_yticklabels([])
 
 ax = axes[2]
@@ -355,21 +357,21 @@ ax.plot(100 * CUR.umbral, 100 * CUR.share_saber, color=GREY, lw=1, label="evalua
 ax.set_xscale("log"); ax.set_xlim(0.5, 500); ax.set_ylim(0, 100)
 ax.axvline(10, color=ORANGE, lw=.8, ls="--")
 ax.axhline(30, color="#555555", lw=.5, ls=":"); ax.axhline(15, color="#555555", lw=.5, ls=":")
-ax.text(0.55, 31, "≥30 %: aprobado", fontsize=5.8, color="#555555", va="bottom")
-ax.text(0.55, 16, "<15 %: letal", fontsize=5.8, color="#555555", va="bottom")
+ax.text(450, 31, "≥30 %: aprobado", fontsize=5.8, color="#555555", va="bottom", ha="right")
+ax.text(450, 16, "<15 %: letal", fontsize=5.8, color="#555555", va="bottom", ha="right")
 for u in [.05, .10, .20, .30]:
     y = 100 * CUR.share_dosis_PARA[(CUR.umbral - u).abs().idxmin()]
     yy = 100 * retention("rate_9710", u)["share_dosis_PARA"]
     ax.plot([100 * u], [yy], marker="o", ms=3.2, color=BLUE, mec="white", mew=.6)
     ax.annotate(f"{yy:.0f} %", (100 * u, yy), xytext=(4, -3), textcoords="offset points", fontsize=5.8, color="#333333")
-ax.set_xlabel("Umbral de expulsión acumulada (% de la población 2005, escala log)")
+ax.set_xlabel("Umbral de expulsión (% pob. 2005)")
 ax.set_ylabel("% retenido en la muestra stayer")
 ax.set_title("c. Retención por umbral", loc="left")
-ax.legend(loc="lower right", handlelength=1.6)
+ax.legend(loc="upper left", handlelength=1.6, borderaxespad=0.2)
 ax.grid(True, which="major", lw=.3, color="#dddddd", alpha=.8)
 fig.suptitle(f"Desplazamiento (RUV 2016) y dosis paramilitar: {len(M)} municipios; {n_drop} sin dosis o sin expulsión no aparecen en a-b",
              fontsize=7, x=0.01, ha="left", y=0.995)
-fig.tight_layout(w_pad=1.2)
+fig.tight_layout(w_pad=1.8)
 fig.savefig(f"{PROP}/fig6_desplazamiento_vs_dosis.pdf")
 plt.close(fig)
 log("fig6 guardada")
