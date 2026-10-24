@@ -45,8 +45,30 @@ Lectura. Separables sí; identificados no. **Ambos relojes fallan el placebo**, 
 
 ## 4. Prueba 1: event study de celdas relativas a la salida y a la entrada
 
-ES_PLACEHOLDER
+Diseño (`t6_event_study_exit.py`): k = cohorte − año del evento municipal, dummies por k con referencia k = −1, extremos agrupados; EF municipio y cohorte × departamento (y, para `score_z`, versión con periodo × edad al examen); cluster municipio. Tres eventos: **salida** (último año con ≥ 3 víctimas PARA; la regla del 5 % y la semestral como robustez), **entrada** (primer año con ≥ 3 víctimas, en los 53 municipios de entrada limpia ≥ 1997; 104 con la definición amplia) y **pico** (año de máximo de víctimas PARA 1997-2006). Resultados: `score_z` individual; log N de la celda municipio × cohorte (7.104 celdas sin grandes ciudades; con ajuste por 2017-2 y sin cohortes 1999-2001 como robustez); composición (madre ≤ primaria, estrato 1-2, colegio no oficial, rezago > 19, mujer). Muestra como en §1. Conteos (`t6_es_counts_k.csv`): como las cohortes llegan a 2003 y el 70 % de las salidas es de 2004-05, **k ≥ +1 existe sólo en 28 municipios (k = +1), 11, 7 y 2**: la comparación "nacidos después de la salida" no es estimable con Saber 11 hasta 2022; exige los archivos 2023-25 (cohortes 2004-08). k = −1: 173 municipios; k ≤ −3: los 444.
+
+Resultados (`t6_es_tests.csv`, bloques de k; β medios en DE o puntos; `fig8_event_study_salida.pdf`):
+
+| Evento, muestra | Resultado | pre lejano | pre cercano | post (k ≥ 0) | p conjunta pre / post |
+|---|---|---|---|---|---|
+| Salida, sin grandes ciudades (N 3,19 M) | score_z | **+0,228** (k ≤ −8) | **+0,114** (−7..−2) | **−0,094** (k ≥ +1: −0,109) | < 0,001 / < 0,001 |
+| | log N celda | −0,124 | −0,058 | +0,093 (k ≥ +1: **+0,110**) | 0,37 / 0,04 |
+| | madre ≤ primaria | +0,052 | **+0,032** | **−0,030** | 0,20 / < 0,001 |
+| | rezago | **+0,083** | +0,034 | **−0,043** | 0,02 / < 0,001 |
+| | mujer | −0,025 | **−0,014** | **+0,015** | 0,15 / 0,002 |
+| Salida, con grandes ciudades (N 5,67 M) | score_z | **+0,171** | **+0,084** | **−0,069** | 0,01 / < 0,001 |
+| Pico, sin grandes ciudades | score_z | **+0,075** (k ≤ −5) | **+0,025** (−4..−2) | **−0,064** | 0,005 / < 0,001 |
+| | log N celda | −0,061 | −0,008 | **+0,033** | 0,08 / 0,03 |
+| | rezago | **+0,030** | **+0,013** | **−0,029** | < 0,001 / < 0,001 |
+| Entrada limpia, 53 municipios (N 337 mil) | score_z | +0,040 (k ≤ −3) | — | −0,009 | 0,14 / 0,60 |
+| | log N celda | +0,224 | — | **−0,181** | 0,10 / 0,007 |
+| | colegio no oficial | +0,032 | — | **−0,042** | 0,29 / < 0,001 |
+| Entrada amplia, 104 municipios (N 454 mil) | score_z | −0,051 | — | **+0,047** | 0,69 / 0,03 |
+
+Negrita: p < 0,05 (test conjunto del bloque). Con EF periodo × edad la pendiente de `score_z` alrededor de la salida es aún mayor (de +0,36 en k ≤ −12 a −0,22 en k ≥ +4). La regla del 5 % y la semestral reproducen el cuadro.
+
+Lectura. (i) Alrededor de la salida y del pico, `score_z` **no muestra ningún salto sino una tendencia monótona** en k: las cohortes nacidas mucho antes del evento puntúan 0,2 DE por encima de la de referencia y las nacidas después, 0,1 DE por debajo. Bajo H1 el daño debía concentrarse en k ∈ [−3, 0] con recuperación en k ≥ +1; bajo H2, en k ≤ −3 con k ≥ −2 igual al control. Ninguna forma aparece: la "pretendencia" (k ≤ −8) es la mayor de todas, lo que viola el criterio de muerte de la carta 01. (ii) La composición se mueve con la misma pendiente: las cohortes nacidas después del evento tienen menos rezago (−4 a −5 puntos), menos madres con ≤ primaria (−3 puntos), más mujeres y más evaluados por celda (+11 % en log). Es decir, en los municipios de salida (o pico) tardía, las cohortes jóvenes que se presentan son más numerosas, más seleccionadas en composición y aun así puntúan peor: lo que se mide es cómo cambia quién llega a 11.º en cada municipio a lo largo de las cohortes, con un calendario correlacionado con el de la violencia, no un efecto de edad. (iii) Alrededor de la **entrada** (53 municipios limpios), `score_z` es plano antes y después (−0,01 DE, p = 0,60) con 53 conglomerados (intervalos ± 0,1 DE), pero el número de evaluados **cae un 18 % tras la entrada** (p = 0,007) con una pendiente anterior del mismo signo y el colegio no oficial retrocede 4 puntos: la entrada reduce la presentación y cambia la composición sin que el puntaje de quienes se presentan lo refleje; con la definición amplia (104 municipios) el puntaje post es +0,05 (p = 0,03). (iv) El diseño "nacidos después de la salida" está vacío con los archivos actuales (ver conteos).
 
 ## 5. Veredicto
 
-ES_VEREDICTO
+**Veredicto en una frase:** el diseño de celdas relativas a la salida (o al pico) municipal **no sobrevive en Saber 11 con residencia a los 17**: no hay salto en el evento sino una tendencia monótona de cohortes que la composición y el margen extensivo reproducen, la pretendencia es mayor que cualquier efecto, y la comparación con nacidos después de la salida no existe hasta incorporar los archivos 2023-25. Junto con §2-3 (perfil per cápita positivo y creciente con la edad para cualquier perpetrador; dos relojes separables pero ambos con placebo distinto de cero), cierra la pieza "artefacto de localización" de la carta 08: cualquier perfil de edad estimado con la residencia en el resultado es composición. Lo que sí queda: la tubería de celdas y eventos (salida, entrada, pico) está construida y verificada (EF comprobados contra dummies, |Δ| < 10⁻¹³), lista para correr con municipio de nacimiento en la GEIH; la separabilidad de los dos relojes (ρ ≈ 0,5) hace viable el test H1'/H2' si la localización es pretratamiento; y el event study de entrada en los municipios limpios mide directamente el margen extensivo (−18 %) que el paper necesita para las cotas.

@@ -1,0 +1,27 @@
+{
+ "flow": {
+  "cohortes_1988_2003": 7725125,
+  "en_T_451": 6165326,
+  "calendario_A": 5724057,
+  "sin_2017_2": 5668622,
+  "con_score_sexo_edad": 5666041
+ },
+ "n_T": 451,
+ "n_big": 7,
+ "big": [
+  "BARRANQUILLA",
+  "BOGOTA, D.C.",
+  "BUCARAMANGA",
+  "CARTAGENA DE INDIAS",
+  "CUCUTA",
+  "MEDELLIN",
+  "SANTIAGO DE CALI"
+ ],
+ "n_clean_entry": 53,
+ "n_clean_entry_strict": 31,
+ "n_clean_entry_broad": 104,
+ "exit_abs12_eq_exit_year_share": 0.1729490022172949,
+ "n_cells": 7216,
+ "fe_check_max_abs_diff": 1.3655743202889425e-14,
+ "demean_max_chk": 7.293662631575796e-11
+}

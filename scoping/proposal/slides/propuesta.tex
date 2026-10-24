@@ -154,6 +154,22 @@ Víctimas y expulsados por 1.000 habitantes; cohortes 1988--2003; sin municipios
 \end{itemize}
 \end{frame}
 
+
+%% 6c. Event study
+\begin{frame}{Y el diseño de celdas relativas a la salida, tampoco: tendencia, no salto}
+\begin{center}
+\includegraphics[height=0.50\textheight,page=1]{fig8_event_study_salida.pdf}
+\end{center}
+\vspace{-0.4em}
+\small
+$k$ = cohorte $-$ año de salida del municipio (ref.\ $k=-1$); cohortes 1988--2003; EF municipio y cohorte$\times$dpto; sin grandes ciudades, $N = 3{,}19$ M, 444 conglomerados.
+\begin{itemize}
+\item Nacidos mucho antes de la salida: $+0{,}23$ DE; nacidos después: $-0{,}11$ DE. Una pendiente monótona, sin ninguna de las dos formas predichas; la ``pretendencia'' es el mayor coeficiente.
+\item La composición y el número de evaluados se mueven con la misma pendiente (rezago $-5$ puntos, madre $\le$ primaria $-3$, $N$ $+11\,\%$ tras la salida): cambia quién llega a 11.º, no el efecto de la edad. Alrededor del pico, lo mismo.
+\item Nacidos tras la salida: sólo 28 municipios en $k=+1$; la comparación exige los archivos 2023--25.
+\end{itemize}
+\end{frame}
+
 %% 7. La lección
 \begin{frame}{La lección: la localización tiene que ser anterior al tratamiento}
 \begin{center}
@@ -293,12 +309,12 @@ Umbral & Municipios T & Evaluados & Dosis retenida \\
 30\,\% & 57\,\% & 90\,\% & 60\,\% \\
 \bottomrule
 \end{tabular}
-\vspace{0.4em}
-\small
+\vspace{0.3em}
+\footnotesize
 \begin{itemize}
 \item El índice cae de 1,02 (1989) a 0,91 (1998--2004) desde 1990, antes del pico: sin nacimientos no se distingue de la fecundidad.
 \item Los stayers retienen el 37\,\% de la dosis en el agregado, pero el 19\,\% en los municipios de menos de 100 mil habitantes, que son los que aportan calendario.
-\item Uso: margen extensivo y composición alrededor de la entrada y el pico; cotas de Lee por tramo de edad.
+\item Alrededor de la \emph{entrada} (53 municipios limpios): puntaje plano ($-0{,}01$ DE, $p = 0{,}60$), pero $N$ cae un 18\,\% ($p = 0{,}007$) y el colegio no oficial 4 puntos. Es el margen extensivo que las cotas de Lee necesitan.
 \end{itemize}
 \end{columns}
 \end{frame}
@@ -344,8 +360,8 @@ Riesgos que se miden, no se asumen: municipio de nacimiento autodeclarado (cocie
 \renewcommand{\arraystretch}{1.05}
 \begin{tabular}{@{}p{1.5cm}p{12.0cm}@{}}
 \toprule
-M0--1 & Descargas (GEIH, EEVV, CNPV, RUV actualizado); dosis per cápita con dos relojes; tubería por municipio de nacimiento; conteos y potencia. \\
-M2--3 & ITT por edad en la GEIH con placebos; test de separabilidad de los relojes; composición al nacer con EEVV; Saber 11 alrededor de la entrada y el pico con margen extensivo y cotas de Lee. \\
+M0--1 & Descargas (GEIH, EEVV, CNPV, RUV, Saber 11 2023--25); tubería de dos relojes (ya construida) sobre municipio de nacimiento; conteos y potencia. \\
+M2--3 & ITT por edad en la GEIH con placebos y dos relojes por municipio de nacimiento; composición al nacer con EEVV; cotas de Lee con el margen extensivo ya estimado. \\
 M4--6 & Borrador 1 (cronología y éxodo, artefacto de localización, ITT por edad) y seminario interno. \acc{Go/no-go en el mes 6} con los cinco criterios. \\
 M7--12 & ENSM 2025 o ICFES si llegan; CNPV 2018 si trae edad simple; robustez (dCDH, CGBS, Rambachan-Roth, bootstrap). \\
 M13--15 & Borrador completo; seminarios externos. \\
@@ -372,5 +388,18 @@ Se promete hoy: tres piezas cerradas con datos públicos en el mes 6. No se prom
 \end{center}
 \small Mes de salida asignable en el 92,6\,\% de la dosis; el 70\,\% de las salidas entre jul-2004 y dic-2005. Se usa como robustez, no como variación principal.
 \end{frame}
-%% T6_PLACEHOLDER
+
+\begin{frame}{Anexo. Event study alrededor de la entrada y del pico}
+\begin{columns}[T]
+\column{0.5\textwidth}
+\centering \scriptsize Entrada limpia (53 municipios)\\
+\includegraphics[width=\textwidth,page=2]{fig8_event_study_salida.pdf}
+\column{0.5\textwidth}
+\centering \scriptsize Pico municipal (444 municipios)\\
+\includegraphics[width=\textwidth,page=3]{fig8_event_study_salida.pdf}
+\end{columns}
+\vspace{0.3em}
+\small Entrada: puntaje plano, $N$ de la celda $-18\,\%$ tras la entrada. Pico: la misma pendiente monótona que la salida, con la composición moviéndose en paralelo.
+\end{frame}
+
 \end{document}
