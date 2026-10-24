@@ -1,0 +1,5 @@
+# Large raw microdata mirrored from public sources (see data/raw/README_descarga.md for the recipe)
+data/raw/saber11/saber11_sb11/
+data/raw/saber11/saber11_sb11_p2/
+data/raw/eevv/eevv_nacimientos/
+*.gz

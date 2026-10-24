@@ -1,0 +1,121 @@
+spec,muestra,metrica,valor
+bruto,1988-2008,corr_bruta_a02_a35,0.6783850764351774
+bruto,1988-2008,n_celdas,9492.0
+bruto,1988-2008,corr_bruta_iu_a02,0.7903337993767392
+bruto,1988-2008,corr_bruta_spearman_iu_a02,0.6740112250028507
+bruto,1988-2008,corr_bruta_a02_a35,0.6783850764351774
+bruto,1988-2008,corr_bruta_spearman_a02_a35,0.6116965500666974
+bruto,1988-2003,corr_bruta_a35_a611,0.5407289838874643
+bruto,1988-2003,corr_bruta_spearman_a35_a611,0.3552310765606952
+A,1988-2008,var_resid_share_iu,0.4935071820629581
+A,1988-2008,n_celdas_iu,9492.0
+A,1988-2008 sin dpto singleton,var_resid_share_iu,0.4941503304133264
+A,1988-2008,var_resid_share_a02,0.44361200955223323
+A,1988-2008,n_celdas_a02,9492.0
+A,1988-2008 sin dpto singleton,var_resid_share_a02,0.4442230505732788
+A,1988-2008,var_resid_share_a35,0.4750455501755594
+A,1988-2008,n_celdas_a35,9492.0
+A,1988-2008 sin dpto singleton,var_resid_share_a35,0.4757272305991205
+A,1988-2003,var_resid_share_a611,0.4000942809604872
+A,1988-2003,n_celdas_a611,7232.0
+A,1988-2003 sin dpto singleton,var_resid_share_a611,0.40068402408875425
+A,1988-2008,corr_resid_iu_a02,0.6137655965172305
+A,1988-2008,n_celdas_iu_a02,9492.0
+A,1988-2008 sin dpto singleton,corr_resid_iu_a02,0.6137655965172303
+A,1988-2008 asinh,corr_resid_iu_a02,0.24631003109827085
+A,1988-2008 asinh,var_resid_share_iu,0.30472298707759404
+A,1988-2008 asinh,var_resid_share_a02,0.16837568941952413
+A,1988-2008,corr_resid_a02_a35,0.4073715681800403
+A,1988-2008,n_celdas_a02_a35,9492.0
+A,1988-2008 sin dpto singleton,corr_resid_a02_a35,0.40737156818004006
+A,1988-2008 asinh,corr_resid_a02_a35,0.22921874924657712
+A,1988-2008 asinh,var_resid_share_a02,0.16837568941952413
+A,1988-2008 asinh,var_resid_share_a35,0.13987826652745414
+A,1988-2003,corr_resid_a35_a611,-0.006859909062349377
+A,1988-2003,n_celdas_a35_a611,7232.0
+A,1988-2003 sin dpto singleton,corr_resid_a35_a611,-0.006859909062349323
+A,1988-2003 asinh,corr_resid_a35_a611,-0.029396119230108226
+A,1988-2003 asinh,var_resid_share_a35,0.17617250910173693
+A,1988-2003 asinh,var_resid_share_a611,0.07015403324825514
+A,balanceada 1988-2003,corr_resid_iu_a02,0.5823655320496117
+A,balanceada 1988-2003,corr_resid_a02_a35,0.20021057548771262
+A,balanceada 1988-2003,corr_resid_a35_a611,-0.006859909062348202
+A,balanceada 1988-2003,var_resid_share_iu,0.44980210929006736
+A,balanceada 1988-2003,var_resid_share_a02,0.3383140205340621
+A,balanceada 1988-2003,var_resid_share_a35,0.3545779090365061
+A,balanceada 1988-2003,var_resid_share_a611,0.4000942809604872
+A,balanceada 1988-2003,VIF_iu,2.545224783125246
+A,balanceada 1988-2003,VIF_a02,2.420597313059962
+A,balanceada 1988-2003,VIF_a35,1.3399717932647432
+A,balanceada 1988-2003,VIF_a611,2.796599914711067
+A,balanceada 1988-2003,cond_number_X_std,3.126864820113633
+A,balanceada 1988-2003,cond_number_corrmat,9.777283603264282
+B,1988-2008,var_resid_share_iu,0.5224465994748229
+B,1988-2008,n_celdas_iu,9492.0
+B,1988-2008 sin dpto singleton,var_resid_share_iu,0.522672107917105
+B,1988-2008,var_resid_share_a02,0.46889805192457135
+B,1988-2008,n_celdas_a02,9492.0
+B,1988-2008 sin dpto singleton,var_resid_share_a02,0.46913929727047937
+B,1988-2008,var_resid_share_a35,0.5012697651577784
+B,1988-2008,n_celdas_a35,9492.0
+B,1988-2008 sin dpto singleton,var_resid_share_a35,0.5015242956454709
+B,1988-2003,var_resid_share_a611,0.41924284203317
+B,1988-2003,n_celdas_a611,7232.0
+B,1988-2003 sin dpto singleton,var_resid_share_a611,0.41947475255785255
+B,1988-2008,corr_resid_iu_a02,0.6100489273043285
+B,1988-2008,n_celdas_iu_a02,9492.0
+B,1988-2008 sin dpto singleton,corr_resid_iu_a02,0.610065134158331
+B,1988-2008 asinh,corr_resid_iu_a02,0.31139082369335624
+B,1988-2008 asinh,var_resid_share_iu,0.3767500194031273
+B,1988-2008 asinh,var_resid_share_a02,0.23670766144359032
+B,1988-2008,corr_resid_a02_a35,0.40316672775242984
+B,1988-2008,n_celdas_a02_a35,9492.0
+B,1988-2008 sin dpto singleton,corr_resid_a02_a35,0.403220035022898
+B,1988-2008 asinh,corr_resid_a02_a35,0.3032282484277422
+B,1988-2008 asinh,var_resid_share_a02,0.23670766144359032
+B,1988-2008 asinh,var_resid_share_a35,0.19634783733868386
+B,1988-2003,corr_resid_a35_a611,-0.006039612768884951
+B,1988-2003,n_celdas_a35_a611,7232.0
+B,1988-2003 sin dpto singleton,corr_resid_a35_a611,-0.005934278219939453
+B,1988-2003 asinh,corr_resid_a35_a611,0.053070677890176096
+B,1988-2003 asinh,var_resid_share_a35,0.25815848844406936
+B,1988-2003 asinh,var_resid_share_a611,0.09490185401295392
+B,balanceada 1988-2003,corr_resid_iu_a02,0.5777613570694462
+B,balanceada 1988-2003,corr_resid_a02_a35,0.1994898049816599
+B,balanceada 1988-2003,corr_resid_a35_a611,-0.00603961276888497
+B,balanceada 1988-2003,var_resid_share_iu,0.4731553948470713
+B,balanceada 1988-2003,var_resid_share_a02,0.35917945436137194
+B,balanceada 1988-2003,var_resid_share_a35,0.3767112143519098
+B,balanceada 1988-2003,var_resid_share_a611,0.41924284203317
+B,balanceada 1988-2003,VIF_iu,2.488772089736114
+B,balanceada 1988-2003,VIF_a02,2.3594995272440875
+B,balanceada 1988-2003,VIF_a35,1.333566872270156
+B,balanceada 1988-2003,VIF_a611,2.6809923725468803
+B,balanceada 1988-2003,cond_number_X_std,3.0503613663751703
+B,balanceada 1988-2003,cond_number_corrmat,9.304704465474208
+A,1988-2008 niveles sin top1pct,var_resid_share_a02,0.43935215713353765
+A,1988-2008 niveles sin top1pct,var_resid_share_a35,0.45740444670811437
+A,1988-2008 niveles sin top1pct,corr_resid_a02_a35,0.2825705174164994
+A,1988-2008 niveles sin top1pct,n_celdas_a02_a35,9387.0
+A,1988-2008 share municipal,var_resid_share_a02,0.35752300079639765
+A,1988-2008 share municipal,var_resid_share_a35,0.3077532578706419
+A,1988-2008 share municipal,corr_resid_a02_a35,-0.0755239019042134
+A,1988-2008 share municipal,n_celdas_a02_a35,9492.0
+bruto,balanceada,VIF_iu,3.20938650321138
+bruto,balanceada,VIF_a02,5.068212145362461
+bruto,balanceada,VIF_a35,2.8396005839955514
+bruto,balanceada,VIF_a611,1.4911663110714997
+bruto,balanceada,cond_number_X_std,4.6071973619952695
+bruto,balanceada,cond_number_corrmat,21.226267532376227
+conteo,1988-2008,n_celdas_a02pos,7286.0
+conteo,1988-2008,n_celdas_a02pos_a35zero,1483.0
+conteo,1988-2008,share_celdas_a02pos_a35zero,0.15623683101559208
+conteo,1988-2008,share_a35zero_entre_a02pos,0.20354103760636838
+conteo,balanceada 1988-2003,n_celdas_a02pos_a35zero_a611zero,483.0
+conteo,balanceada 1988-2003,n_celdas_a02pos_a35zero_a611zero_iuzero,32.0
+conteo,1988-2008,n_celdas_nacido_tras_salida_anual,1595.0
+conteo,1988-2006,n_celdas_nacido_tras_salida_anual_cohorte_le_2006,691.0
+conteo,1988-2008,n_munis_con_celdas_tras_salida_cohorte_le_2006,389.0
+conteo,1988-2008,n_celdas_nacido_tras_salida_mes,1606.0
+conteo,1988-2006,n_celdas_nacido_tras_salida_mes_cohorte_le_2006,706.0
+conteo,1988-2008,share_celdas_tras_salida_con_a02_pos,0.15109717868338557

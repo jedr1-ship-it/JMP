@@ -1,0 +1,9 @@
+window,inutero,d02,d35,d611,spec
+inutero,1.0,0.6138,-0.0643,-0.7006,muni+cohort_x_depto
+d02,0.6138,1.0,0.4074,-0.6882,muni+cohort_x_depto
+d35,-0.0643,0.4074,1.0,-0.0066,muni+cohort_x_depto
+d611,-0.7006,-0.6882,-0.0066,1.0,muni+cohort_x_depto
+inutero,1.0,0.61,-0.0656,-0.6915,muni+cohort
+d02,0.61,1.0,0.4032,-0.6786,muni+cohort
+d35,-0.0656,0.4032,1.0,-0.0058,muni+cohort
+d611,-0.6915,-0.6786,-0.0058,1.0,muni+cohort
