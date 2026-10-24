@@ -1,0 +1,32 @@
+{
+ "flow": {
+  "cohortes_1988_2003": 7725125,
+  "en_T_451": 6165470,
+  "calendario_A": 5724201,
+  "sin_2017_2": 5668766,
+  "con_score_sexo_edad": 5666185
+ },
+ "n_big": 7,
+ "winsor_caps_p99": {
+  "PARA_preconc": 4.066012859344482,
+  "PARA_inutero": 1.3978333473205566,
+  "PARA_a0_2": 4.680039882659912,
+  "PARA_a3_5": 4.75037956237793,
+  "PARA_a6_11": 7.451930046081543,
+  "PARA_a12_17": 3.765627384185791,
+  "GUE_preconc": 1.3183915615081787,
+  "GUE_inutero": 0.435666561126709,
+  "GUE_a0_2": 1.406337857246399,
+  "GUE_a3_5": 1.3593428134918213,
+  "GUE_a6_11": 2.314923048019409,
+  "GUE_a12_17": 1.1457699537277222,
+  "RUV_preconc": 317.3355712890625,
+  "RUV_inutero": 99.83806610107422,
+  "RUV_a0_2": 395.8914489746094,
+  "RUV_a3_5": 420.7791748046875,
+  "RUV_a6_11": 740.472900390625,
+  "RUV_a12_17": 506.95770263671875
+ },
+ "demean_max_chk": 1.8523916828675987e-11,
+ "ruv_monthly_rule": "expulsados RUV por municipio × año repartidos uniformemente entre los 12 meses del año (1/12 por mes)"
+}

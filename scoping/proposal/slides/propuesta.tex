@@ -138,6 +138,22 @@ Así se ve la \textbf{selección por composición}. Haberlo medido es un resulta
 \end{columns}
 \end{frame}
 
+
+%% 6b. Per cápita y dos relojes
+\begin{frame}{Con la escala correcta, tampoco: per cápita, ventanas fijas, dos relojes}
+\begin{center}
+\includegraphics[width=0.84\textwidth]{fig9_percapita_slides.pdf}
+\end{center}
+\vspace{-0.4em}
+\small
+Víctimas y expulsados por 1.000 habitantes; cohortes 1988--2003; sin municipios de $\ge 500$ mil; EF municipio, cohorte$\times$dpto y periodo$\times$edad; $N = 3{,}19$ M, 444 conglomerados.
+\begin{itemize}
+\item La asociación es positiva y crece con la edad para cualquier perpetrador; condicional a la guerrilla, la paramilitar se reduce a la mitad.
+\item Los dos relojes \textbf{sí son separables} ($\rho$ residual 0,46--0,51; VIF 1,3), pero ambos fallan el placebo: víctimas $+0{,}010$ ($p = 0{,}005$), expulsiones $-0{,}014$ ($p = 0{,}01$).
+\item Quien sigue en un municipio con muchas víctimas puntúa mejor y quien sigue en uno con mucha expulsión, peor, desde antes de nacer: es composición, y la escala no la arregla.
+\end{itemize}
+\end{frame}
+
 %% 7. La lección
 \begin{frame}{La lección: la localización tiene que ser anterior al tratamiento}
 \begin{center}
@@ -216,7 +232,7 @@ Y_{imc} = \sum_a \beta_a\, V_{m,c+a} + \sum_a \delta_a\, E_{m,c+a} + \sum_a \var
 \begin{itemize}
 \item \textbf{H1$'$ (hogar / huida)}: $|\delta_a| > 0$ y decreciente en $a$; $\beta_a \approx 0$ condicional a $E$.
 \item \textbf{H2$'$ (exposición directa)}: $\beta_a \neq 0$ sólo para $a \ge 3$ condicional a $E$. Mixta: ambos.
-\item Condición previa: correlación residual entre $V_a$ y $E_a$ por debajo de 0,7. Si no son separables, el paper estima el efecto del paquete y no distingue canales.
+\item Condición previa, ya comprobada en Saber 11: correlación residual entre $V_a$ y $E_a$ de 0,46--0,51 (umbral 0,7), VIF 1,3. Los relojes se separan; lo que falta es la localización al nacer.
 \end{itemize}
 \end{frame}
 
@@ -251,7 +267,7 @@ Share del total municipal & $-0{,}08$ & 31--36\,\% \\
 \end{tabular}
 \vspace{0.4em}
 
-Pero en niveles el 52\,\% de la variación residual de 0--2 es Medellín y el 76\,\% cinco municipios. La escala vinculante es por habitante; los umbrales se aplican sobre ella (pendiente, con las dos dosis).
+En niveles el 52\,\% de la variación residual de 0--2 es Medellín y el 76\,\% cinco municipios. Por habitante y con los dos relojes (sin grandes ciudades): $\rho$ residual $V_a/E_a$ = 0,46--0,51 en todas las ventanas; aprobado.
 \end{columns}
 \end{frame}
 
