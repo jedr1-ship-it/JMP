@@ -47,11 +47,12 @@ ann = df.groupby(["year", "grp"])["victims"].sum().unstack(fill_value=0)
 ann.to_csv(f"{derdir}/cnmh_annual_victims_by_responsible.csv")
 fig, ax = plt.subplots(figsize=(5.6, 3.0))
 ax.axvspan(2003.85, 2006.65, color="#eda100", alpha=0.12, lw=0)
-ax.text(2005.25, ann.max().max() * 0.97, "Desmovilizaciones\nAUC (nov-03 a ago-06)", ha="center", va="top", fontsize=7.5, color="#52514e")
+ax.text(2005.25, ann.max().max() * 0.62, "Desmovilizaciones\nAUC\n(nov-03 a ago-06)", ha="center", va="top", fontsize=7.5, color="#52514e")
 for g in ["PARA", "GUE", "EST", "POSD", "NI"]:
     if g in ann: ax.plot(ann.index, ann[g], color=C[g], lw=2, label=LAB[g])
 ax.set_xlim(1985, 2015); ax.set_ylabel("Víctimas de masacres y asesinatos selectivos"); ax.set_xlabel("")
-ax.legend(frameon=False, ncol=2, loc="upper left")
+ax.legend(frameon=False, ncol=1, loc="upper left")
+ax.set_ylim(0, ann.max().max() * 1.08)
 fig.savefig(f"{figdir}/fig1_victimas_anuales.pdf"); plt.close(fig)
 
 # ---------- monthly municipality panel ----------
@@ -92,13 +93,14 @@ for ax, (reg, lab, (dy, dm), clean) in zip(axes.flat, zones):
     ax.fill_between(t, 0, s.values, color="#dbe7f7", lw=0)
     ax.plot(t, sm, color=C["PARA"], lw=1.8)
     ax.axvline(0, color="#0b0b0b", lw=0.8, ls="--")
-    ax.set_title(lab, loc="left", fontsize=8, color="#0b0b0b" if clean else "#52514e")
-    ax.text(0.98, 0.9, f"pre {pre:.1f} → post {post:.1f}/mes", transform=ax.transAxes, ha="right", va="top", fontsize=7, color="#52514e")
+    ax.set_title(lab, loc="left", fontsize=7.5, color="#0b0b0b" if clean else "#52514e")
+    ax.text(0.98, 0.80, f"12 m antes: {pre:.1f}/mes\n12 m después: {post:.1f}/mes", transform=ax.transAxes, ha="right", va="top", fontsize=6.5, color="#52514e")
     ax.set_xlim(-36, 36)
-for ax in axes[-1]: ax.set_xlabel("Meses desde la desmovilización del bloque")
+for ax in axes[-1]: ax.set_xlabel("")
+fig.supxlabel("Meses desde la desmovilización del bloque (0 = mes del acto)", fontsize=8.5, color="#0b0b0b", y=0.035)
 for ax in axes[:, 0]: ax.set_ylabel("Víctimas/mes")
 fig.text(0.01, 0.005, "* Zonas con 'post' contaminado por grupos posdesmovilización. Series: víctimas de masacres y asesinatos selectivos atribuidas a paramilitares y posdesmovilización (CNMH-OMC, corte mar-2025); media móvil de 3 meses.", fontsize=6.5, color="#52514e")
-fig.tight_layout(rect=(0, 0.02, 1, 1))
+fig.tight_layout(rect=(0, 0.04, 1, 1))
 fig.savefig(f"{figdir}/fig2_event_study_desmovilizacion.pdf"); plt.close(fig)
 pd.DataFrame(rows).to_csv(f"{derdir}/zones_pre_post.csv", index=False)
 
@@ -138,7 +140,7 @@ wc = ["#8a8984", C["PARA"], C["GUE"], C["EST"]]
 for (w, col) in zip(windows.keys(), wc):
     ax.plot(dose.index, dose[w], color=col, lw=2, label=w)
 ax.set_xlabel("Cohorte de nacimiento"); ax.set_ylabel("Víctimas paramilitares/año (nacional)\nmientras el niño tenía esa edad")
-ax.legend(frameon=False, ncol=2, loc="upper right"); ax.set_xlim(1988, 2008)
+ax.legend(frameon=False, ncol=2, loc="upper right"); ax.set_xlim(1988, 2008); ax.set_xticks(range(1988, 2009, 2))
 fig.savefig(f"{figdir}/fig4_dosis_por_cohorte_y_ventana.pdf"); plt.close(fig)
 
 # ---------- stats for slides ----------
