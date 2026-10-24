@@ -1,0 +1,203 @@
+{
+ "share_T_todos_los_evaluados": 0.7967577862303831,
+ "N_cohortes_1985_2005": 8799816,
+ "N_T_1985_2005": 7068043,
+ "N_noT_1985_2005": 1731773,
+ "N_T_1988_2003": 6165326,
+ "N_noT_1988_2003": 1498576,
+ "N_T_por_cohorte_1988_2003_media": 385332.875,
+ "munis_T_ge30_1988_2003_min_max": [
+  425,
+  446
+ ],
+ "munis_T_ge30_todas_cohortes_1988_2003": 415,
+ "munis_T_sin_evaluados": 1,
+ "mediana_N_muni_T_por_cohorte_1988_2003": 205.5,
+ "coincidencia": {
+  "todos los periodos": {
+   "tasa": 0.9444073118834925,
+   "tasa_T": 0.9511422054851979,
+   "tasa_noT": 0.9170074895800853
+  },
+  "cohortes 1985-2005": {
+   "tasa": 0.9462428619835669,
+   "tasa_T": 0.9525195894761641,
+   "tasa_noT": 0.9206391742574578
+  },
+  "2005-1 a 2012-1": {
+   "tasa": 0.9322599731444764,
+   "tasa_T": 0.9390638522551762,
+   "tasa_noT": 0.9032253772254305
+  },
+  "2012-2 a 2022-2": {
+   "tasa": 0.9520624707480124,
+   "tasa_T": 0.9588698102940182,
+   "tasa_noT": 0.9251703360837543
+  },
+  "calendario A (sem 2)": {
+   "tasa": 0.9479346417666766,
+   "tasa_T": 0.9546372061285073,
+   "tasa_noT": 0.9216508391020227
+  },
+  "calendario B (sem 1)": {
+   "tasa": 0.8945399179090627,
+   "tasa_T": 0.906703226009785,
+   "tasa_noT": 0.8000576036866359
+  }
+ },
+ "rezago_T_1988_2003": 0.10122481733560562,
+ "rezago_resto_1988_2003": 0.12235815823078156,
+ "icc": [
+  {
+   "muestra": "todas, cohortes 1985-2005",
+   "ICC_bruta": 0.11418960310218523,
+   "ICC_neta_EF_cohorte": 0.11485228804285151
+  },
+  {
+   "muestra": "T, cohortes 1985-2005",
+   "ICC_bruta": 0.10261490490581072,
+   "ICC_neta_EF_cohorte": 0.10324341490615972
+  },
+  {
+   "muestra": "resto, cohortes 1985-2005",
+   "ICC_bruta": 0.15854012054289057,
+   "ICC_neta_EF_cohorte": 0.15957151427648913
+  },
+  {
+   "muestra": "todas, cohortes 1988-2003",
+   "ICC_bruta": 0.11391197718025156,
+   "ICC_neta_EF_cohorte": 0.11445717112994043
+  },
+  {
+   "muestra": "T, cohortes 1995-2005, residuo EF muni + cohorte x dpto",
+   "ICC_bruta": 0.0008515804777331146,
+   "ICC_neta_EF_cohorte": NaN
+  },
+  {
+   "muestra": "T, cohortes 1995-2005, residuo solo EF muni",
+   "ICC_bruta": 0.0058225317288338,
+   "ICC_neta_EF_cohorte": NaN
+  }
+ ],
+ "mde": [
+  {
+   "contraste": "(a) T vs resto, cluster municipio",
+   "rho_usada": "ICC neta de cohorte",
+   "MDE_acumulado": 0.05784793770137438,
+   "MDE_una_cohorte": 0.0587048059671468
+  },
+  {
+   "contraste": "(a) T vs resto, cluster municipio",
+   "rho_usada": "ICC bruta",
+   "MDE_acumulado": 0.05768109034670797,
+   "MDE_una_cohorte": 0.05854103945963557
+  },
+  {
+   "contraste": "(a) T vs resto, cluster municipio",
+   "rho_usada": "ICC neta de cohorte",
+   "MDE_acumulado": 0.05799593033034995,
+   "MDE_una_cohorte": 0.05873943804047856
+  },
+  {
+   "contraste": "(a) T vs resto, cluster municipio",
+   "rho_usada": "ICC bruta",
+   "MDE_acumulado": 0.05782869936630668,
+   "MDE_una_cohorte": 0.05857488452198564
+  },
+  {
+   "contraste": "(b) T: cohortes 1995-2000 vs 2001-2005",
+   "rho_usada": "Moulton celda muni x cohorte (resid. EF muni + cohorte x dpto)",
+   "MDE_acumulado": 0.003432048943199807,
+   "MDE_una_cohorte": NaN
+  },
+  {
+   "contraste": "(b) T: cohortes 1995-2000 vs 2001-2005",
+   "rho_usada": "Moulton celda muni x cohorte (resid. solo EF muni)",
+   "MDE_acumulado": 0.006353353137675347,
+   "MDE_una_cohorte": NaN
+  },
+  {
+   "contraste": "(b) T: cohortes 1995-2000 vs 2001-2005",
+   "rho_usada": "iid dentro de municipio (cota inferior)",
+   "MDE_acumulado": 0.002629838289324147,
+   "MDE_una_cohorte": NaN
+  },
+  {
+   "contraste": "(b) T: cohortes 1995-2000 vs 2001-2005",
+   "rho_usada": "SE empirico agrupado por municipio",
+   "MDE_acumulado": 0.02533303584953382,
+   "MDE_una_cohorte": NaN
+  },
+  {
+   "contraste": "(b') T: nacidas tras la salida municipal vs nacidas 1-6 anios antes",
+   "rho_usada": "Moulton celda muni x cohorte (resid. EF muni + cohorte x dpto)",
+   "MDE_acumulado": 0.01163389481211571,
+   "MDE_una_cohorte": NaN
+  },
+  {
+   "contraste": "(b'') T: 1[c >= salida-2]: expuestas a lo sumo in utero/0-2 (vs expuestas tambien a 3+)",
+   "rho_usada": "SE empirico agrupado por municipio",
+   "MDE_acumulado": 0.02442993486811301,
+   "MDE_una_cohorte": NaN
+  },
+  {
+   "contraste": "(b'') T: 1[c > salida]: nacidas tras la salida municipal (placebo bajo H2)",
+   "rho_usada": "SE empirico agrupado por municipio",
+   "MDE_acumulado": 0.03448210333682355,
+   "MDE_una_cohorte": NaN
+  },
+  {
+   "contraste": "(b'') T: 1[salida-5 <= c <= salida-3]: expuestas 0-2 y 3-5 pero no 6+ (vs resto)",
+   "rho_usada": "SE empirico agrupado por municipio",
+   "MDE_acumulado": 0.010397158461658142,
+   "MDE_una_cohorte": NaN
+  }
+ ],
+ "placebo_munis_con_post": 173,
+ "ratio_T_resto_ajust_1988_1992": {
+  "1985": 0.769,
+  "1986": 0.827,
+  "1987": 0.897,
+  "1988": 1.01,
+  "1989": 1.024,
+  "1990": 1.007,
+  "1991": 0.986,
+  "1992": 0.98,
+  "1993": 0.962,
+  "1994": 0.956,
+  "1995": 0.938,
+  "1996": 0.938,
+  "1997": 0.927,
+  "1998": 0.914,
+  "1999": 0.913,
+  "2000": 0.918,
+  "2001": 0.915,
+  "2002": 0.909,
+  "2003": 0.915,
+  "2004": 0.918,
+  "2005": 0.898
+ },
+ "trunc_20172": [
+  {
+   "periodo": "20162",
+   "N": 548205,
+   "share_T": 0.7938964438485603,
+   "n_munis": 1114,
+   "n_dptos": 33
+  },
+  {
+   "periodo": "20172",
+   "N": 73293,
+   "share_T": 0.7717926677854638,
+   "n_munis": 682,
+   "n_dptos": 32
+  },
+  {
+   "periodo": "20182",
+   "N": 549934,
+   "share_T": 0.795057225048824,
+   "n_munis": 1114,
+   "n_dptos": 33
+  }
+ ]
+}

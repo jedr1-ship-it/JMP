@@ -1,0 +1,35 @@
+{
+ "flow": {
+  "cohortes_1985_2005": 8862194,
+  "con_mes_nacimiento": 8862194,
+  "con_muni_res": 8799816,
+  "con_score_z": 8799537,
+  "con_sexo": 8796382
+ },
+ "panel": {
+  "ym0": 23820,
+  "ym1": 24191,
+  "n_muni_panel": 1099,
+  "para_total": 87738
+ },
+ "n_T_munis": 452,
+ "n_T431_munis": 431,
+ "top5_dose_munis": [
+  "05001",
+  "20001",
+  "47001",
+  "47189",
+  "54001"
+ ],
+ "n_muni_res_not_in_panel": 67521,
+ "n_muni_res_codes_not_in_panel": 56,
+ "n_dpto_res_imputado": 0,
+ "p100_winsor_caps_p99": {
+  "preconc": 33.0,
+  "inutero": 9.739222526550293,
+  "a0_2": 34.66850662231445,
+  "a3_5": 34.35114669799805,
+  "a6_11": 66.96428680419922,
+  "a12_17": 66.05316925048828
+ }
+}

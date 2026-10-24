@@ -4,3 +4,4 @@ data/raw/saber11/saber11_sb11_p2/
 data/raw/eevv/eevv_nacimientos/
 *.gz
 data/derived/saber11_slim.parquet
+data/derived/t2b_dose_individual_sample.parquet

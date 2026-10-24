@@ -1,0 +1,464 @@
+{
+ "ruv_exp_9710_total": 5694661,
+ "ruv_exp_9710_conflicto": 5622032,
+ "ruv_exp_9706_total": 4332410,
+ "pop2005_total": 42955895.0,
+ "pop2005_n_munis": 1122,
+ "pop2005_src": {
+  "pobl_tot_2005": 1118,
+  "pobl_tot_2008": 3,
+  "pobl_tot_2007": 1
+ },
+ "para_9706_all": 68191,
+ "para_9706_valid_muni": 67974,
+ "para_9706_sin_municipio": 217,
+ "n_T": 451,
+ "dosis_T1_vs_panel_mensual_gap": 0.010358739504961356,
+ "dosis_T1_sum_T": 64862,
+ "dosis_panel_sum_T": 64197,
+ "para_valid_fuera_universo": 0,
+ "exp_9710_fuera_universo": 0,
+ "tasa_desc": {
+  "todos": {
+   "n": 1122,
+   "mediana": 0.08854231282309394,
+   "p25": 0.02364199780137528,
+   "p75": 0.30855286942244775,
+   "media_pond_dosis": 0.4115202264180178,
+   "media_pond_pob": 0.1325699534371243,
+   "share_ge_10": 0.47237076648841353,
+   "share_ge_30": 0.2522281639928699,
+   "share_gt_100": 0.049910873440285206
+  },
+  "T": {
+   "n": 451,
+   "mediana": 0.2294254658385093,
+   "p25": 0.076043306435363,
+   "p75": 0.5846578796745141,
+   "media_pond_dosis": 0.4235846194519503,
+   "media_pond_pob": 0.13920387460357964,
+   "share_ge_10": 0.7073170731707317,
+   "share_ge_30": 0.43458980044345896,
+   "share_gt_100": 0.10643015521064302
+  },
+  "no_T": {
+   "n": 671,
+   "mediana": 0.04559748427672956,
+   "p25": 0.013458127849931856,
+   "p75": 0.14184693447447394,
+   "media_pond_dosis": 0.20646387492228946,
+   "media_pond_pob": 0.10795749415376302,
+   "share_ge_10": 0.3144560357675112,
+   "share_ge_30": 0.12965722801788376,
+   "share_gt_100": 0.011922503725782414
+  }
+ },
+ "corr": {
+  "todos (1122)|PARA_9706|rate_9710": {
+   "pearson": 0.108,
+   "spearman": 0.497,
+   "n": 1122
+  },
+  "todos (1122)|para_per_1000|rate_9710": {
+   "pearson": 0.569,
+   "spearman": 0.626,
+   "n": 1122
+  },
+  "todos (1122)|log_PARA|log_rate_9710": {
+   "pearson": 0.489,
+   "spearman": 0.497,
+   "n": 1122
+  },
+  "todos (1122)|log_para_per_1000|log_rate_9710": {
+   "pearson": 0.633,
+   "spearman": 0.626,
+   "n": 1122
+  },
+  "todos (1122)|GUE_9706|rate_9710": {
+   "pearson": 0.437,
+   "spearman": 0.629,
+   "n": 1122
+  },
+  "todos (1122)|PARA_9706|rate_9706": {
+   "pearson": 0.106,
+   "spearman": 0.505,
+   "n": 1122
+  },
+  "T (451)|PARA_9706|rate_9710": {
+   "pearson": -0.005,
+   "spearman": 0.123,
+   "n": 451
+  },
+  "T (451)|para_per_1000|rate_9710": {
+   "pearson": 0.521,
+   "spearman": 0.557,
+   "n": 451
+  },
+  "T (451)|log_PARA|log_rate_9710": {
+   "pearson": 0.072,
+   "spearman": 0.123,
+   "n": 451
+  },
+  "T (451)|log_para_per_1000|log_rate_9710": {
+   "pearson": 0.607,
+   "spearman": 0.557,
+   "n": 451
+  },
+  "T (451)|GUE_9706|rate_9710": {
+   "pearson": 0.344,
+   "spearman": 0.444,
+   "n": 451
+  },
+  "T (451)|PARA_9706|rate_9706": {
+   "pearson": -0.001,
+   "spearman": 0.124,
+   "n": 451
+  },
+  "PARA>0|PARA_9706|rate_9710": {
+   "pearson": 0.084,
+   "spearman": 0.394,
+   "n": 933
+  },
+  "PARA>0|para_per_1000|rate_9710": {
+   "pearson": 0.546,
+   "spearman": 0.584,
+   "n": 933
+  },
+  "PARA>0|log_PARA|log_rate_9710": {
+   "pearson": 0.381,
+   "spearman": 0.394,
+   "n": 933
+  },
+  "PARA>0|log_para_per_1000|log_rate_9710": {
+   "pearson": 0.596,
+   "spearman": 0.584,
+   "n": 933
+  },
+  "PARA>0|GUE_9706|rate_9710": {
+   "pearson": 0.416,
+   "spearman": 0.583,
+   "n": 933
+  },
+  "PARA>0|PARA_9706|rate_9706": {
+   "pearson": 0.084,
+   "spearman": 0.408,
+   "n": 933
+  }
+ },
+ "umbral_para_30pct_dosis": 0.0643,
+ "umbral_para_50pct_dosis": 0.2053,
+ "umbral_para_15pct_dosis": 0.0285,
+ "stayer": {
+  "05": {
+   "n_munis": 430,
+   "n_T": 87,
+   "share_munis": 0.38324420677361853,
+   "share_T_munis": 0.19290465631929046,
+   "share_pob": 0.6615859127134937,
+   "share_saber": 0.7033319969235833,
+   "para_dentro": 19303,
+   "share_dosis_PARA": 0.2839762262041369,
+   "share_dosis_PARA_total": 0.283072546230441,
+   "share_dosis_PARA_en_T": 0.27988846830848796,
+   "share_dosis_GUE": 0.12322720694645442,
+   "share_dosis_TOT": 0.2850574128645463
+  },
+  "10": {
+   "n_munis": 592,
+   "n_T": 132,
+   "share_munis": 0.5276292335115864,
+   "share_T_munis": 0.2926829268292683,
+   "share_pob": 0.7322250182425486,
+   "share_saber": 0.7727437027020991,
+   "para_dentro": 25149,
+   "share_dosis_PARA": 0.36997969811986936,
+   "share_dosis_PARA_total": 0.36880233461893797,
+   "share_dosis_PARA_en_T": 0.35849027213109647,
+   "share_dosis_GUE": 0.18581765557163532,
+   "share_dosis_TOT": 0.3669935304677709
+  },
+  "20": {
+   "n_munis": 759,
+   "n_T": 212,
+   "share_munis": 0.6764705882352942,
+   "share_T_munis": 0.4700665188470067,
+   "share_pob": 0.8241097525729588,
+   "share_saber": 0.8581996977791385,
+   "para_dentro": 35376,
+   "share_dosis_PARA": 0.5204342836967075,
+   "share_dosis_PARA_total": 0.5187781378774325,
+   "share_dosis_PARA_en_T": 0.5090892097761578,
+   "share_dosis_GUE": 0.3215629522431259,
+   "share_dosis_TOT": 0.512608813467466
+  },
+  "30": {
+   "n_munis": 839,
+   "n_T": 255,
+   "share_munis": 0.7477718360071302,
+   "share_T_munis": 0.565410199556541,
+   "share_pob": 0.8698751358806516,
+   "share_saber": 0.8996458911688323,
+   "para_dentro": 40804,
+   "share_dosis_PARA": 0.6002883455438844,
+   "share_dosis_PARA_total": 0.5983780850845419,
+   "share_dosis_PARA_en_T": 0.5894979516176768,
+   "share_dosis_GUE": 0.40998552821997103,
+   "share_dosis_TOT": 0.5952308369745622
+  }
+ },
+ "share_dosis_T1_en_T_stayer10": 0.3582837408652215,
+ "veredicto": "APROBADO",
+ "T_fuera_stayer10_top": [
+  {
+   "muni": "20001",
+   "municipio_cede": "Valledupar",
+   "depto_cede": "Cesar",
+   "PARA_9706": 1202,
+   "rate_9710": 0.22475196146448495,
+   "pop2005": 354582.0
+  },
+  {
+   "muni": "47189",
+   "municipio_cede": "Ciénaga",
+   "depto_cede": "Magdalena",
+   "PARA_9706": 1200,
+   "rate_9710": 0.3958543735966349,
+   "pop2005": 101987.0
+  },
+  {
+   "muni": "47001",
+   "municipio_cede": "Santa Marta",
+   "depto_cede": "Magdalena",
+   "PARA_9706": 1132,
+   "rate_9710": 0.19737412254094808,
+   "pop2005": 415404.0
+  },
+  {
+   "muni": "54810",
+   "municipio_cede": "Tibú",
+   "depto_cede": "Norte de Santander",
+   "PARA_9706": 1019,
+   "rate_9710": 1.598654128202916,
+   "pop2005": 34773.0
+  },
+  {
+   "muni": "68081",
+   "municipio_cede": "Barrancabermeja",
+   "depto_cede": "Santander",
+   "PARA_9706": 949,
+   "rate_9710": 0.17015399670645923,
+   "pop2005": 190069.0
+  },
+  {
+   "muni": "05045",
+   "municipio_cede": "Apartadó",
+   "depto_cede": "Antioquia",
+   "PARA_9706": 855,
+   "rate_9710": 0.34820721982102637,
+   "pop2005": 131416.0
+  },
+  {
+   "muni": "52835",
+   "municipio_cede": "San Andres de Tumaco",
+   "depto_cede": "Nariño",
+   "PARA_9706": 661,
+   "rate_9710": 0.37928167297052295,
+   "pop2005": 159955.0
+  },
+  {
+   "muni": "47980",
+   "municipio_cede": "Zona Bananera",
+   "depto_cede": "Magdalena",
+   "PARA_9706": 619,
+   "rate_9710": 0.6808294154796155,
+   "pop2005": 57004.0
+  },
+  {
+   "muni": "76109",
+   "municipio_cede": "Buenaventura",
+   "depto_cede": "Valle del Cauca",
+   "PARA_9706": 599,
+   "rate_9710": 0.2947440783810338,
+   "pop2005": 328753.0
+  },
+  {
+   "muni": "18001",
+   "municipio_cede": "Florencia",
+   "depto_cede": "Caquetá",
+   "PARA_9706": 581,
+   "rate_9710": 0.1963110543414878,
+   "pop2005": 144052.0
+  },
+  {
+   "muni": "86568",
+   "municipio_cede": "Puerto Asís",
+   "depto_cede": "Putumayo",
+   "PARA_9706": 553,
+   "rate_9710": 0.6541724205957783,
+   "pop2005": 55759.0
+  },
+  {
+   "muni": "86865",
+   "municipio_cede": "Valle del Guamuez",
+   "depto_cede": "Putumayo",
+   "PARA_9706": 514,
+   "rate_9710": 0.857492381947997,
+   "pop2005": 44959.0
+  },
+  {
+   "muni": "47288",
+   "municipio_cede": "Fundación",
+   "depto_cede": "Magdalena",
+   "PARA_9706": 492,
+   "rate_9710": 0.801708861869923,
+   "pop2005": 56997.0
+  },
+  {
+   "muni": "20011",
+   "municipio_cede": "Aguachica",
+   "depto_cede": "Cesar",
+   "PARA_9706": 482,
+   "rate_9710": 0.18578923080659657,
+   "pop2005": 82346.0
+  },
+  {
+   "muni": "05649",
+   "municipio_cede": "San Carlos",
+   "depto_cede": "Antioquia",
+   "PARA_9706": 481,
+   "rate_9710": 2.1963225072665233,
+   "pop2005": 15826.0
+  }
+ ],
+ "T_dentro_stayer10_top": [
+  {
+   "muni": "05001",
+   "municipio_cede": "Medellín",
+   "depto_cede": "Antioquia",
+   "PARA_9706": 5666,
+   "rate_9710": 0.02737465082316773,
+   "pop2005": 2214494.0
+  },
+  {
+   "muni": "54001",
+   "municipio_cede": "Cúcuta",
+   "depto_cede": "Norte de Santander",
+   "PARA_9706": 2475,
+   "rate_9710": 0.028905639697260056,
+   "pop2005": 587567.0
+  },
+  {
+   "muni": "05088",
+   "municipio_cede": "Bello",
+   "depto_cede": "Antioquia",
+   "PARA_9706": 654,
+   "rate_9710": 0.013459804910864447,
+   "pop2005": 371625.0
+  },
+  {
+   "muni": "44430",
+   "municipio_cede": "Maicao",
+   "depto_cede": "La Guajira",
+   "PARA_9706": 632,
+   "rate_9710": 0.07568192101350915,
+   "pop2005": 123768.0
+  },
+  {
+   "muni": "50001",
+   "municipio_cede": "Villavicencio",
+   "depto_cede": "Meta",
+   "PARA_9706": 536,
+   "rate_9710": 0.01985654487705349,
+   "pop2005": 380328.0
+  },
+  {
+   "muni": "08001",
+   "municipio_cede": "Barranquilla",
+   "depto_cede": "Atlántico",
+   "PARA_9706": 536,
+   "rate_9710": 0.00427126780857882,
+   "pop2005": 1146498.0
+  },
+  {
+   "muni": "17380",
+   "municipio_cede": "La Dorada",
+   "depto_cede": "Caldas",
+   "PARA_9706": 426,
+   "rate_9710": 0.039445541296479106,
+   "pop2005": 72936.0
+  },
+  {
+   "muni": "05360",
+   "municipio_cede": "Itagui",
+   "depto_cede": "Antioquia",
+   "PARA_9706": 404,
+   "rate_9710": 0.009384056891642869,
+   "pop2005": 234973.0
+  },
+  {
+   "muni": "50313",
+   "municipio_cede": "Granada",
+   "depto_cede": "Meta",
+   "PARA_9706": 382,
+   "rate_9710": 0.09150522203619549,
+   "pop2005": 50172.0
+  },
+  {
+   "muni": "11001",
+   "municipio_cede": "Bogotá, D.C.",
+   "depto_cede": "Bogotá, D.C.",
+   "PARA_9706": 360,
+   "rate_9710": 0.0012140144991693122,
+   "pop2005": 6840116.0
+  },
+  {
+   "muni": "68001",
+   "municipio_cede": "Bucaramanga",
+   "depto_cede": "Santander",
+   "PARA_9706": 343,
+   "rate_9710": 0.01130000387251675,
+   "pop2005": 516460.0
+  },
+  {
+   "muni": "13001",
+   "municipio_cede": "Cartagena",
+   "depto_cede": "Bolívar",
+   "PARA_9706": 331,
+   "rate_9710": 0.014495544957465177,
+   "pop2005": 893033.0
+  },
+  {
+   "muni": "23001",
+   "municipio_cede": "Montería",
+   "depto_cede": "Córdoba",
+   "PARA_9706": 325,
+   "rate_9710": 0.04371738935461917,
+   "pop2005": 379094.0
+  },
+  {
+   "muni": "85001",
+   "municipio_cede": "Yopal",
+   "depto_cede": "Casanare",
+   "PARA_9706": 293,
+   "rate_9710": 0.06339334220040839,
+   "pop2005": 106762.0
+  },
+  {
+   "muni": "70001",
+   "municipio_cede": "Sincelejo",
+   "depto_cede": "Sucre",
+   "PARA_9706": 280,
+   "rate_9710": 0.04504731967395924,
+   "pop2005": 237639.0
+  }
+ ],
+ "top30_exp_share_exp": 0.2767321882724889,
+ "top30_exp_share_dosis": 0.28100450172124636,
+ "top30_exp_n_T": 30,
+ "top30_exp_n_stayer10": 1,
+ "n_universo": 1122,
+ "n_scatter": 933,
+ "share_exp_9710_en_T": 0.8271066530562574,
+ "share_pop_en_T": 0.7876899317311395,
+ "ratio_exp_9710_pop": 0.1325699534371243
+}
