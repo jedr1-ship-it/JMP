@@ -167,6 +167,7 @@ def build_rules():
     T["para_24m_pre_entry"] = pre24
     T["clean_entry"] = (T.entry_year >= 1997) & (pre24 == 0)
     T["clean_entry_strict"] = T.clean_entry & (T.pre_para_88_95 < 3)
+    T["clean_entry_broad"] = (T.entry_year >= 1997) & (T.pre_para_88_95 < 3)      # definición de 01 ("~120 limpios")
     # víctimas PARA en los 12 meses posteriores a cada regla (control de calidad de la regla)
     def after12(ym):
         j = (ym - YM0).astype(int)
@@ -183,12 +184,12 @@ def build_rules():
     T["peak_share_9706"] = ann.max(axis=1) / np.maximum(ann.sum(axis=1), 1)
     keep = ["muni", "muni_name", "depto", "pop2005", "big", "para_9706", "entry_year", "exit_year", "exit_abs12_ym", "exit_abs12_year",
             "exit_abs12_minus_exit_year", "exit_ym", "exit_5pct_year", "exit_month_assigned", "pre_para_88_95", "para_24m_pre_entry",
-            "peak_year", "peak_para", "peak_share_9706", "clean_entry", "clean_entry_strict", "para_12m_after_exit_year", "para_12m_after_abs12", "para_12m_after_5pct"]
+            "peak_year", "peak_para", "peak_share_9706", "clean_entry", "clean_entry_strict", "clean_entry_broad", "para_12m_after_exit_year", "para_12m_after_abs12", "para_12m_after_5pct"]
     T = T[keep]
     T.to_csv(f"{OUT_D}/t6_es_rules_muni.csv", index=False)
     log(f"Reglas: T={len(T)}; grandes (≥{BIG_POP:,}): {int(T.big.sum())} {sorted(T[T.big].muni_name)}; "
         f"salida abs12 = salida anual: {(T.exit_abs12_minus_exit_year == 0).mean():.1%}; "
-        f"entrada limpia (24 m sin PARA, entrada ≥ 1997): {int(T.clean_entry.sum())} (estricta, <3 en 1988-95: {int(T.clean_entry_strict.sum())})")
+        f"entrada limpia (24 m sin PARA, entrada ≥ 1997): {int(T.clean_entry.sum())} (estricta, <3 en 1988-95: {int(T.clean_entry_strict.sum())}; amplia de 01, entrada ≥ 1997 y <3 en 1988-95: {int(T.clean_entry_broad.sum())})")
     log(f"  salida abs12 por año: {T.exit_abs12_year.value_counts().sort_index().to_dict()}")
     log(f"  pico por año: {T.peak_year.value_counts().sort_index().to_dict()}; share del pico en la dosis 97-06, mediana {T.peak_share_9706.median():.2f}")
     log(f"  víctimas PARA en los 12 meses tras la salida, mediana (p90): anual {T.para_12m_after_exit_year.median():.0f} ({T.para_12m_after_exit_year.quantile(.9):.0f}); "
@@ -226,7 +227,7 @@ def build_sample(T):
     df["estrato_12"] = np.where(es.isna() | (es == 0), np.nan, (es <= 2).astype(float)).astype(np.float32)
     df["birth_ym"] = (df.birth_year.astype(int) * 12 + df.birth_month.astype(int) - 1).astype(np.int32)
     Ti = T.set_index("muni")
-    for c in ["exit_year", "exit_abs12_ym", "exit_5pct_year", "entry_year", "peak_year", "big", "clean_entry"]:
+    for c in ["exit_year", "exit_abs12_ym", "exit_5pct_year", "entry_year", "peak_year", "big", "clean_entry", "clean_entry_broad"]:
         df[c] = df.muni_res.map(Ti[c])
     df["k_peak"] = (df.birth_year - df.peak_year).astype(int)
     df["k_exit"] = (df.birth_year - df.exit_year).astype(int)
@@ -255,7 +256,7 @@ def build_cells(df, T):
     cells["N_adj"] = cells.N + cells.N_imp_20172
     cells["logN"] = np.log(cells.N); cells["logN_adj"] = np.log(cells.N_adj)
     Ti = T.set_index("muni")
-    for c in ["depto", "exit_year", "exit_5pct_year", "entry_year", "peak_year", "big", "clean_entry", "pop2005"]:
+    for c in ["depto", "exit_year", "exit_5pct_year", "entry_year", "peak_year", "big", "clean_entry", "clean_entry_broad", "pop2005"]:
         cells[c] = cells.muni_res.map(Ti[c])
     cells["k_peak"] = cells.birth_year - cells.peak_year
     cells["dpto"] = cells.muni_res.str[:2]
@@ -343,6 +344,8 @@ def main():
         base = cells[cells.k_exit5.notna()] if ev == "exit5" else (cells[cells.clean_entry.astype(bool)] if ev == "entry" else cells)
         add_counts(base[~base.big.astype(bool)], kcol, lo, hi, ev, "nobig")
         add_counts(base, kcol, lo, hi, ev, "all")
+    cb = cells[cells.clean_entry_broad.astype(bool)]
+    add_counts(cb[~cb.big.astype(bool)], "k_entry", KE_LO, KE_HI, "entry_broad", "nobig"); add_counts(cb, "k_entry", KE_LO, KE_HI, "entry_broad", "all")
 
     IND = ["score_z", "female", "no_oficial", "rezago"]
     # ---- (A) salida, regla anual absoluta ----
@@ -380,7 +383,12 @@ def main():
     coef += run_es(cells, cce & ~cbig, "k_entry", KE_LO, KE_HI, KE_REF, ["logN", "logN_adj"], ["muni_code", "cohdep"], label="entry_nobig")
     coef += run_es(df, ce, "k_entry", KE_LO, KE_HI, KE_REF, ["score_z"], ["muni_code", "cohdep"], label="entry_all")
     coef += run_es(cells, cce, "k_entry", KE_LO, KE_HI, KE_REF, ["logN"], ["muni_code", "cohdep"], label="entry_all")
-    # ---- (E) entrada, todos los T (entrada >= 1997, no limpia) como contraste ----
+    # ---- (E) entrada limpia amplia (definición de 01: entrada ≥ 1997 y < 3 PARA en 1988-95) y todos los T con entrada ≥ 1997 ----
+    cb_i = df.clean_entry_broad.values.astype(bool); cb_c = cells.clean_entry_broad.values.astype(bool)
+    coef += run_es(df, cb_i & ~big, "k_entry", KE_LO, KE_HI, KE_REF, IND, ["muni_code", "cohdep"], label="entry_broad_nobig")
+    coef += run_es(df, cb_i & ~big & df.educ_le_prim.notna().values, "k_entry", KE_LO, KE_HI, KE_REF, ["educ_le_prim"], ["muni_code", "cohdep"], label="entry_broad_nobig")
+    coef += run_es(df, cb_i & ~big, "k_entry", KE_LO, KE_HI, KE_REF, ["score_z"], ["muni_code", "cohdep", "per_age"], label="entry_broad_nobig_perage")
+    coef += run_es(cells, cb_c & ~cbig, "k_entry", KE_LO, KE_HI, KE_REF, ["logN"], ["muni_code", "cohdep"], label="entry_broad_nobig")
     coef += run_es(df, ~big & (df.entry_year.values >= 1997), "k_entry", KE_LO, KE_HI, KE_REF, ["score_z"], ["muni_code", "cohdep"],
                    label="entry_nobig", note="todos los T con entrada ≥ 1997")
 
@@ -430,6 +438,9 @@ def main():
     for o in ["score_z", "no_oficial", "rezago"]:
         wald_block(df, ce & ~big, "k_entry", KE_LO, KE_HI, KE_REF, o, ["muni_code", "cohdep"], "entry_nobig", blocks=blocks_entry)
     wald_block(cells, cce & ~cbig, "k_entry", KE_LO, KE_HI, KE_REF, "logN", ["muni_code", "cohdep"], "entry_nobig", blocks=blocks_entry)
+    for o in ["score_z", "no_oficial", "rezago"]:
+        wald_block(df, cb_i & ~big, "k_entry", KE_LO, KE_HI, KE_REF, o, ["muni_code", "cohdep"], "entry_broad_nobig", blocks=blocks_entry)
+    wald_block(cells, cb_c & ~cbig, "k_entry", KE_LO, KE_HI, KE_REF, "logN", ["muni_code", "cohdep"], "entry_broad_nobig", blocks=blocks_entry)
     blocks_peak = [("pre: k ≤ −5", lambda v: v <= -5), ("k ∈ [−4, −2]", lambda v: -4 <= v <= -2), ("post: k ≥ 0", lambda v: v >= 0)]
     for o in ["score_z", "no_oficial", "rezago"]:
         wald_block(df, ~big, "k_peak", KP_LO, KP_HI, KP_REF, o, ["muni_code", "cohdep"], "peak_nobig", blocks=blocks_peak)
@@ -464,13 +475,13 @@ def main():
 
     make_figure(coef, counts)
     summ = {"flow": flow, "n_T": int(len(T)), "n_big": int(T.big.sum()), "big": sorted(T[T.big].muni_name.tolist()),
-            "n_clean_entry": int(T.clean_entry.sum()), "n_clean_entry_strict": int(T.clean_entry_strict.sum()),
+            "n_clean_entry": int(T.clean_entry.sum()), "n_clean_entry_strict": int(T.clean_entry_strict.sum()), "n_clean_entry_broad": int(T.clean_entry_broad.sum()),
             "exit_abs12_eq_exit_year_share": float((T.exit_abs12_minus_exit_year == 0).mean()),
             "n_cells": int(len(cells)), "fe_check_max_abs_diff": float(fechk.abs_diff_beta.max()),
             "demean_max_chk": float(coef.demean_chk.max())}
     with open(f"{OUT_D}/t6_es_resumen.json", "w") as fh: json.dump(summ, fh, indent=1, ensure_ascii=False)
     # resumen en consola
-    for lab in ["exit_nobig", "exit_all", "exit_nobig_perage", "exit5_nobig", "entry_nobig", "peak_nobig"]:
+    for lab in ["exit_nobig", "exit_all", "exit_nobig_perage", "exit5_nobig", "entry_nobig", "entry_broad_nobig", "peak_nobig"]:
         d = coef[(coef.label == lab) & (coef.note == "") & coef.k.notna()]
         if len(d) == 0: continue
         print(f"\n== {lab} ==")
