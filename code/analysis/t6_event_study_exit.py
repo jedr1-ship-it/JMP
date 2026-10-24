@@ -49,31 +49,38 @@ NON_MUNI = {"00000", "47000"}
 COLOR, GRAY = "#1f4e79", "#8a8984"
 
 # ----------------------------------------------------------------------------------------------------------
-# Econometría: proyecciones alternantes (k vías, con pesos opcionales) y OLS con errores agrupados CR1
+# Econometría: absorción exacta de EF (k vías, con pesos opcionales) y OLS con errores agrupados CR1
 # ----------------------------------------------------------------------------------------------------------
-def demean(M, groups, w=None, tol=1e-9, maxit=600):
-    """Absorbe los EF de `groups` (lista de vectores de códigos 0..n-1) por proyecciones alternantes.
-    M: (N,K). w: pesos (None = 1). Devuelve M demeaned, iteraciones y máx |media de grupo| / sd."""
-    M = np.array(M, dtype=np.float64, order="F", copy=True)
-    K = M.shape[1]
-    w = np.ones(M.shape[0]) if w is None else np.asarray(w, dtype=np.float64)
-    gs = [(g, np.bincount(g, weights=w)) for g in groups]
-    scale = np.maximum(M.std(axis=0), 1e-12)
-    it = 0
-    for it in range(1, maxit + 1):
-        dmax = 0.0
-        for g, c in gs:
-            for k in range(K):
-                mu = np.bincount(g, weights=w * M[:, k], minlength=len(c)) / c
-                M[:, k] -= mu[g]
-                dmax = max(dmax, np.abs(mu).max() / scale[k])
-        if dmax < tol: break
-    chk = 0.0
-    for g, c in gs:
+def demean(M, groups, w=None, rcond=1e-10):
+    """Absorbe los EF de `groups` (lista de vectores de códigos 0..n_g-1) de forma EXACTA: resuelve las ecuaciones normales de
+    las dummies, (D'WD) b = D'WM, con pseudo-inversa (los conjuntos de EF son colineales entre sí: cohorte ≈ periodo − edad) y
+    devuelve M − D b. Con tres vías las proyecciones alternantes no convergen (cohorte, periodo y edad casi colineales); esta
+    versión se verificó contra ellas (2 vías: |Δ| < 1e-11) y contra OLS con dummies. w: pesos (None = 1).
+    Devuelve (M demeaned, 1, máx |media ponderada de grupo del residuo| / sd)."""
+    M = np.asarray(M, dtype=np.float64); N, K = M.shape
+    w = np.ones(N) if w is None else np.asarray(w, dtype=np.float64)
+    ns = [int(g.max()) + 1 for g in groups]; offs = np.concatenate([[0], np.cumsum(ns)]).astype(int); G = int(offs[-1])
+    DtD = np.zeros((G, G))
+    for a, ga in enumerate(groups):
+        for b, gb in enumerate(groups):
+            if b < a: continue
+            if a == b:
+                ct = np.diag(np.bincount(ga, weights=w, minlength=ns[a]))
+            else:
+                ct = np.bincount(ga.astype(np.int64) * ns[b] + gb, weights=w, minlength=ns[a] * ns[b]).reshape(ns[a], ns[b])
+            DtD[offs[a]:offs[a + 1], offs[b]:offs[b + 1]] = ct
+            if a != b: DtD[offs[b]:offs[b + 1], offs[a]:offs[a + 1]] = ct.T
+    DtM = np.vstack([np.column_stack([np.bincount(g, weights=w * M[:, k], minlength=n) for k in range(K)]) for g, n in zip(groups, ns)])
+    B = np.linalg.pinv(DtD, rcond=rcond, hermitian=True) @ DtM
+    R = np.array(M, dtype=np.float64, order="F", copy=True)
+    for a, g in enumerate(groups):
+        R -= B[offs[a] + g, :]
+    scale = np.maximum(M.std(axis=0), 1e-12); chk = 0.0
+    for g, n in zip(groups, ns):
+        cnt = np.bincount(g, weights=w, minlength=n)
         for k in range(K):
-            mu = np.bincount(g, weights=w * M[:, k], minlength=len(c)) / c
-            chk = max(chk, np.abs(mu).max() / scale[k])
-    return M, it, chk
+            chk = max(chk, np.abs(np.bincount(g, weights=w * R[:, k], minlength=n) / cnt).max() / scale[k])
+    return R, 1, chk
 
 def ols_cluster(y, X, cl, w=None):
     """OLS (sin constante; datos demeaned), opcionalmente ponderado, con varianza agrupada CR1."""
