@@ -1,368 +1,169 @@
 \documentclass[aspectratio=169,10pt]{beamer}
 \usetheme{default}\usecolortheme{seagull}
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}{\hspace{0.9cm}{\scriptsize\color{muted}\insertshorttitle}\hfill{\scriptsize\color{muted}\insertframenumber/\inserttotalframenumber}\hspace{0.4cm}\vspace{0.2cm}}
+\setbeamertemplate{footline}{\hfill{\scriptsize\color{muted}\insertframenumber/\inserttotalframenumber}\hspace{0.4cm}\vspace{0.2cm}}
 \setbeamertemplate{itemize items}{\textendash}
 \setbeamertemplate{enumerate items}[default]
-\setbeamertemplate{section page}{\begin{centering}\vspace{3cm}{\Large\bfseries\insertsection}\par\end{centering}}
 \usepackage{fontspec}\setmainfont{TeX Gyre Pagella}\setsansfont{TeX Gyre Heros}\usefonttheme{serif}
-\usepackage{booktabs,xcolor,array,graphicx,amsmath,tikz}
-\usetikzlibrary{arrows.meta,positioning}
+\usepackage{booktabs,xcolor,array,graphicx,amsmath}
 \setlength{\tabcolsep}{4pt}
-\definecolor{ink}{HTML}{1F1F1F}\definecolor{muted}{HTML}{6B6B6B}\definecolor{accent}{HTML}{8B1A1A}\definecolor{blue}{HTML}{2A78D6}
+\definecolor{ink}{HTML}{1F1F1F}\definecolor{muted}{HTML}{6B6B6B}\definecolor{accent}{HTML}{8B1A1A}
 \setbeamercolor{normal text}{fg=ink}\setbeamercolor{frametitle}{fg=ink}\setbeamercolor{title}{fg=ink}
 \setbeamerfont{frametitle}{size=\large,series=\bfseries}\setbeamerfont{title}{size=\LARGE,series=\bfseries}
 \setbeamersize{text margin left=0.9cm,text margin right=0.9cm}
 \newcommand{\muted}[1]{{\color{muted}#1}}
 \newcommand{\acc}[1]{{\color{accent}#1}}
-\newcommand{\src}[1]{\vspace{0.2em}{\scriptsize\color{muted}#1}}
-\title[Violencia, huida y edad de exposición]{Violencia, huida y edad de exposición}
-\subtitle{La ola paramilitar colombiana y sus niños}
+\title{Edad de exposición a la violencia y resultados adultos}
+\subtitle{El fin de la violencia paramilitar en Colombia como experimento natural}
 \author{Propuesta de job market paper}
-\date{\muted{Seminario de propuesta, octubre 2026}}
+\date{\muted{octubre 2026}}
 \begin{document}
 \begin{frame}[plain]\titlepage\end{frame}
 
-%% ---------- 1. Motivación ----------
-\begin{frame}{Motivación}
+%% 1
+\begin{frame}{La pregunta}
+\large ¿Depende el efecto de un shock de primera infancia de la edad a la que se recibe?
+\vspace{0.8em}
+\normalsize
 \begin{itemize}
-\item La primera infancia es un periodo sensible: el estrés del cuidador y la ruptura del entorno a los 0--2 años dejan huella en el desarrollo (Gunnar y Hostinar; Carneiro et al., \emph{EJ}).
-\item Los conflictos civiles son el shock de estrés más extendido del mundo en desarrollo, y la literatura encuentra efectos de largo plazo de la exposición en la infancia (León 2012; Duque 2024; Akbulut-Yuksel, Tekin y Turan 2025).
-\item Dos preguntas siguen abiertas:
-\begin{enumerate}
-\item ¿Importa la \textbf{edad} a la que llega la violencia, y por qué canal: la respuesta del hogar o la exposición directa del niño?
-\item ¿Son creíbles los perfiles de edad existentes cuando la \textbf{respuesta dominante del hogar es irse}? La réplica de León (2012) con censos completos encuentra efectos antes de la concepción (Huaroto, Gonzales y Pacheco, \emph{JHR} 2026).
-\end{enumerate}
-\item Colombia 1997--2006 permite responder a ambas: una ola con actor, entrada escalonada por municipio, fin fechado, un registro de víctimas mensual y un registro de desplazados.
+\item Hay periodos sensibles: el mismo shock recibido a los 0--2 años, a los 3--5 o en edad escolar deja huellas distintas en capital humano (Almond y Currie 2011; Carneiro, Salvanes, Willage y Willén, \emph{EJ}).
+\item La violencia es el shock de estrés más extendido del mundo en desarrollo, y la evidencia de largo plazo existe: León (2012, Perú), Duque (2024, Colombia), Akbulut-Yuksel, Tekin y Turan (2025, Alemania).
+\item Lo que esa evidencia no fija es el \textbf{gradiente por edad}: ningún estudio compara 0--2 con 3--5 y con edad escolar usando un episodio con \emph{inicio y fin fechados} y localizando al niño \emph{antes} del shock. La réplica de León (Huaroto, Gonzales y Pacheco, \emph{JHR} 2026) muestra lo que ocurre cuando no se hace: efectos antes de la concepción.
 \end{itemize}
-\end{frame}
-
-%% ---------- 2. Este paper ----------
-\begin{frame}{Este paper}
-\textbf{Pregunta.} ¿Cómo afecta la edad a la que la violencia paramilitar alcanza a un niño nacido en un municipio afectado a su escolaridad y empleo adultos, y qué parte opera a través de la huida del hogar?
 \vspace{0.6em}
-
-\textbf{Tres contribuciones.}
-\begin{enumerate}
-\item \textbf{Medición.} Panel municipio$\times$mes$\times$perpetrador (CNMH) y de expulsados (RUV): entrada, pico y salida fechados para 451 municipios; \emph{dos relojes} de dosis, violencia y huida.
-\item \textbf{Un resultado metodológico con evidencia.} Localizar al individuo donde se le observa de adulto produce perfiles de edad espurios: placebos pre-concepción distintos de cero en los dos relojes, tendencias monótonas sin salto en el evento y composición que se mueve en paralelo (3--8 M de observaciones).
-\item \textbf{Efectos por edad por intención de tratar y descomposición de canales.} Municipio de nacimiento $\times$ cohorte (GEIH 2012--2024), dos relojes separables ($\rho = 0{,}5$), placebos y cotas por selección.
-\end{enumerate}
-\vspace{0.4em}
-\muted{Las contribuciones 1 y 2 están hechas; la 3 es el núcleo de los próximos seis meses y tiene criterios de muerte explícitos.}
+\textbf{Este paper:} estima el efecto de la exposición a la violencia paramilitar por edad (in utero, 0--2, 3--5, 6--11) sobre la escolaridad y el empleo adultos, para niños nacidos en municipios en los que esa violencia \emph{terminó} en una fecha conocida.
 \end{frame}
 
-%% ---------- 3. Avance de resultados ----------
-\begin{frame}{Avance de resultados}
-\small
-\begin{enumerate}
-\item \textbf{El calendario.} 94\,\% de las víctimas paramilitares 1997--2006 en 451 municipios; presencia mediana de 9 años; el 69--90\,\% de la caída de la violencia precede al acto de desmovilización: la variación útil es la \emph{entrada} y el \emph{pico}, no el acto.
-\item \textbf{La huida.} Expulsión mediana del 23\,\% de la población en los municipios afectados; responde a la violencia total ($\rho = 0{,}63$), no al actor. La entrada paramilitar reduce un 18\,\% los evaluados de la cohorte en los municipios de entrada limpia.
-\item \textbf{El artefacto.} Con la residencia a los 17 (Saber 11, 3--8 M), el perfil dosis-por-edad es positivo y creciente con la edad para cualquier perpetrador, el placebo pre-concepción es distinto de cero en los dos relojes y, alrededor de la salida o del pico, el puntaje es una pendiente monótona de $+0{,}23$ a $-0{,}11$ DE con la composición moviéndose en paralelo.
-\item \textbf{Separabilidad.} La correlación residual entre la dosis de violencia y la de huida es 0,46--0,51 en todas las ventanas de edad: los dos canales se pueden estimar por separado.
-\item \textbf{Lo que sigue.} Intención de tratar por municipio de nacimiento en la GEIH con los mismos dos relojes, placebos y cotas; go/no-go en el mes 6.
-\end{enumerate}
-\end{frame}
-
-%% ---------- 4. Contexto ----------
-\begin{frame}{Contexto: una ola con actor, fechada y localizada}
+%% 2
+\begin{frame}{Por qué Colombia: una violencia con actor y con fin fechado}
 \begin{columns}[T]
 \column{0.62\textwidth}
 \includegraphics[width=\textwidth]{fig1_victimas_anuales.pdf}
 \column{0.36\textwidth}
 \small
 \begin{itemize}
-\item Expansión de las AUC 1997--2002; pico nacional 2001--02; alto el fuego dic-2002; 38 actos de desmovilización nov-2003 a ago-2006.
-\item 68.000 víctimas de masacres y asesinatos selectivos 1997--2006; el 94\,\% en 451 municipios.
-\item Violencia 2007--10 / 2000--02 en esos municipios: 0,12.
-\item Guerrilla y fuerza pública activas en el mismo periodo: el registro distingue perpetrador.
+\item Expansión paramilitar (AUC) 1997--2002; pico 2001--02.
+\item Alto el fuego en diciembre de 2002; desmovilización de los 38 bloques entre noviembre de 2003 y agosto de 2006.
+\item Las víctimas paramilitares caen a cero en 2007: el fin es real, no administrativo.
+\item La guerrilla sigue activa: el registro distingue perpetrador y permite controlar por ella.
 \end{itemize}
-\src{CNMH-OMC, corte mar-2025; panel municipio $\times$ mes $\times$ perpetrador 1985--2015.}
-\end{columns}
-\end{frame}
-
-\begin{frame}{Entrada, pico y salida se fechan por municipio}
-\begin{columns}[T]
-\column{0.56\textwidth}
-\includegraphics[height=0.66\textheight]{fig2_event_study_desmovilizacion.pdf}
-\column{0.42\textwidth}
-\scriptsize
-\renewcommand{\arraystretch}{1.0}
-\begin{tabular}{@{}lcc@{}}
-\toprule
-Zona (bloque) & Pico & Caída antes del acto \\
-\midrule
-Catatumbo & nov-02 & 69\,\% \\
-Centro del Valle & jul-00 & 75\,\% \\
-Montes de María & ene-01 & 89\,\% \\
-Oriente antioqueño & dic-01 & 85\,\% \\
-Piedemonte llanero & may-02 & 77\,\% \\
-Nordeste antioqueño & may-01 & 90\,\% \\
-Sur de Bolívar & ene-01 & 78\,\% \\
-Sierra Nevada & dic-03 & 72\,\% \\
-Serranía del Perijá & may-01 & 72\,\% \\
-\bottomrule
-\end{tabular}
 \vspace{0.3em}
-\scriptsize
-\begin{itemize}
-\item Entrada escalonada 1997--2002 (limpia en 53 municipios, 104 con la definición amplia); pico entre jul-2000 y dic-2003 según la zona.
-\item La caída empieza con el alto el fuego de dic-2002, común a todas las zonas; los actos fechan el final administrativo.
-\item Una cohorte nacida en 1997 vive el pico a los 0--2; la de 2002, in utero; la de 1993, a los 6--10.
-\end{itemize}
+\muted{\scriptsize CNMH, Observatorio de Memoria y Conflicto (corte mar-2025): víctimas de masacres y asesinatos selectivos por perpetrador.}
 \end{columns}
 \end{frame}
 
-%% ---------- 5. Datos ----------
-\begin{frame}{Datos}
-\scriptsize
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{}p{1.8cm}p{4.2cm}p{6.8cm}@{}}
-\toprule
-& \textbf{Fuente} & \textbf{Uso} \\
-\midrule
-\textbf{En mano} & CNMH-OMC (mar-2025) & Reloj de violencia: víctimas municipio$\times$mes por perpetrador, 1985--2015 \\
-& RUV (sep-2016) & Reloj de huida: expulsados municipio$\times$año, 1985--2016 \\
-& Saber 11, 2005-1 a 2022-2 & 9,29 M evaluados con fecha de nacimiento, municipio de residencia y de colegio, puntajes, estrato, educación de la madre: contribución 2 y margen extensivo \\
-& Población 2005 (Panel CEDE); EEVV 2017--24 & Denominadores per cápita; composición reciente \\
-\midrule
-\textbf{Público, pendiente} & GEIH 2012--2024 & Municipio de nacimiento, edad, escolaridad, ocupación, formalidad, ingreso ($\sim$0,75 M personas/año): contribución 3 \\
-& EEVV nacimientos 1998--2010; defunciones 1998--2019 & Composición al nacer; mortalidad selectiva; denominadores para cotas \\
-& Saber 11 2023--25; CNPV 2018 & Cohortes 2004--08 (nacidos tras la salida); municipio de nacimiento en censo, si el microdato trae edad simple \\
-\midrule
-\textbf{Con acceso} & ICFES integrada (UARIV, RIPS, PILA); ENSM 2025 & Desplazamiento individual, salud mental, empleo formal: extensiones condicionadas, no promesas \\
-\bottomrule
-\end{tabular}
-\end{frame}
-
-%% ---------- 6. Marco ----------
-\begin{frame}{Marco: dos relojes de dosis}
-\begin{center}
-\begin{tikzpicture}[node distance=0.55cm,
-  box/.style={draw=ink,rounded corners=2pt,minimum height=1.4cm,text width=2.7cm,align=center,font=\small},
-  arr/.style={-{Latex[length=2mm]},thick,ink}]
-\node[box] (n) {Nace en $m$, cohorte $c$};
-\node[box,right=of n] (v) {La violencia llega a $m$ cuando tiene edad $a$: $V_{m,c+a}$};
-\node[box,right=of v,draw=accent,text=accent] (h) {El hogar responde: huida, $E_{m,c+a}$};
-\node[box,right=of h] (o) {Resultado adulto $Y$, observado en $m' \neq m$};
-\draw[arr] (n)--(v); \draw[arr] (v)--(h); \draw[arr] (h)--(o);
-\draw[arr] (v) to[bend left=28] (o);
-\end{tikzpicture}
-\end{center}
-\small
-\begin{itemize}
-\item El ``tratamiento'' que recibe un niño es un paquete: violencia en el municipio y respuesta del hogar. En esta ola la respuesta dominante es irse (una cuarta parte de la población).
-\item Dos relojes medidos por separado: víctimas por 1.000 habitantes ($V$) y expulsados por 1.000 ($E$), ambos acumulados en ventanas de edad relativas al nacimiento.
-\item Dos implicaciones: (i) la localización tiene que ser anterior al tratamiento, porque quien sigue en $m$ a los 17 no es quien estaba a los 2; (ii) con los dos relojes, ``hogar frente a exposición directa'' se convierte en una descomposición estimable.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Predicciones como formas del perfil}
+%% 3
+\begin{frame}{El fin se fecha municipio a municipio}
 \begin{columns}[T]
-\column{0.56\textwidth}
-\includegraphics[width=\textwidth]{fig_h1h2_dos_relojes.pdf}
-\column{0.42\textwidth}
+\column{0.58\textwidth}
+\includegraphics[height=0.72\textheight]{fig2_event_study_desmovilizacion.pdf}
+\column{0.40\textwidth}
 \small
-\textbf{H1$'$, canal hogar / huida.} El reloj de expulsiones manda: $|\delta_a|>0$, máximo en in utero y 0--2 y decreciente con la edad; $\beta_a \approx 0$ condicional a $E$.
-\vspace{0.4em}
-
-\textbf{H2$'$, exposición directa.} El reloj de víctimas manda y sólo desde que el niño puede codificar la experiencia: $\beta_a \neq 0$ para $a \ge 3$, condicional a $E$.
-\vspace{0.4em}
-
-\textbf{Mixta.} Ambos. \textbf{Condición de validez común:} las ventanas pre-concepción $[-45,-10]$ y $[-81,-46]$ meses valen cero en los dos relojes.
-\vspace{0.4em}
-
-\textbf{Condición de separabilidad:} correlación residual entre $V_a$ y $E_a$ por debajo de 0,7.
+\begin{itemize}
+\item 451 municipios concentran el 94\,\% de las víctimas paramilitares 1997--2006; presencia mediana de 9 años.
+\item Cada bloque se desmoviliza en una fecha distinta: la violencia de su zona cae en los meses anteriores y queda en cero después.
+\item Para cada municipio $m$ se fecha el inicio $S_m$ y el fin $T_m$ de la presencia paramilitar (mes).
+\item Lo que varía entre niños: \textbf{la edad que tenían cuando la violencia terminó en su municipio}. Un niño nacido en 2003 en Montes de María nunca la vivió; su hermano de 1998 la vivió de los 0 a los 7.
+\end{itemize}
 \end{columns}
 \end{frame}
 
-%% ---------- 7. Estrategia empírica ----------
-\begin{frame}{Estrategia empírica}
+%% 4
+\begin{frame}{El reto: la exposición no es exógena si el hogar se mueve}
 \small
-Persona $i$ nacida en el municipio $m$ y la cohorte $c \in [1988, 2003]$, observada en el año $t$:
+Colombia tiene una de las mayores migraciones internas por conflicto del mundo: en los municipios afectados, la mediana de población expulsada entre 1997 y 2010 es del 23\,\% (RUV). Por tanto:
+\begin{enumerate}
+\item El tiempo de exposición de un niño depende de si su hogar se queda y de a qué edad se va.
+\item Irse es otro tratamiento: el hogar desplazado afronta condiciones adversas distintas de la violencia.
+\item Quien se observa en el municipio años después no es quien estaba: cualquier diseño que localice al individuo en el momento del resultado mezcla el efecto con la selección.
+\end{enumerate}
+\vspace{0.5em}
+\textbf{Cómo se resuelve aquí.}
+\begin{itemize}
+\item \textbf{Localización anterior al shock:} la exposición se asigna por \emph{municipio de nacimiento}, no por residencia. El estimando es intención de tratar: el efecto de nacer en un municipio donde la violencia terminará cuando el niño tenga $a$ años, con la respuesta del hogar incluida.
+\item \textbf{Microdatos individuales} con municipio de nacimiento, edad en años y resultados adultos: GEIH 2012--2024 ($\sim$0,75 M personas por año; cohortes 1988--2003 observadas a los 20--36 años).
+\item \textbf{La huida se mide, no se asume:} con la fecha y el motivo de la última migración (módulo de migración de la GEIH) y el registro de desplazados por municipio y año, se estima después qué parte del efecto pasa por el desplazamiento.
+\end{itemize}
+\end{frame}
+
+%% 5
+\begin{frame}{Especificación}
+\small
+Para la persona $i$, nacida en el municipio $m$ y el año $c$, observada en la encuesta del año $t$:
 \begin{equation*}
-Y_{imc} = \sum_a \beta_a\, V_{m,c+a} + \sum_a \delta_a\, E_{m,c+a} + \sum_a \varphi_a\, G_{m,c+a} + X_i'\gamma + \mu_m + \lambda_{c \times d(m)} + \theta_t + \varepsilon_{imc}
+Y_{imct} = \sum_{a \in \{\text{iu},\,0\text{--}2,\,3\text{--}5,\,6\text{--}11\}} \beta_a\, D^{a}_{mc} + \gamma\, \text{Post}_{mc} + \varphi\, G_{mc} + \mu_m + \lambda_{c \times d(m)} + \theta_{t} + \varepsilon_{imct}
 \end{equation*}
 \begin{itemize}
-\item Ventanas de longitud fija: pre-concepción (placebo), in utero, 0--2, 3--5, 6--11, 12--17. $G$: guerrilla y fuerza pública. $\mu_m$: municipio de nacimiento; $\lambda_{c\times d(m)}$: cohorte$\times$departamento; $\theta_t$: año de encuesta y edad al encuestar. Errores agrupados por $m$ (451 conglomerados).
-\item \textbf{Qué identifica:} el calendario municipal de entrada y pico \emph{dentro} de cada departamento y cohorte: dos niños del mismo departamento y año de nacimiento cuyo municipio recibió la ola a edades distintas.
-\item \textbf{Intención de tratar:} la dosis se asigna por municipio de nacimiento, no por dónde está la persona. La huida deja de ser un problema de muestra y pasa a ser un canal medido.
-\item \textbf{Diseño complementario:} event study de cohortes relativas a la entrada y al pico municipal, con puntaje, número de nacidos y composición como resultados.
-\item \textbf{Validez:} placebos pre-concepción en los dos relojes; nacimientos EEVV por $m\times c$ sobre la dosis; guerrilla como placebo de perpetrador; Rambachan-Roth; de Chaisemartin-D'Haultf\oe uille y Callaway-Goodman-Bacon-Sant'Anna para dosis continua; wild-cluster bootstrap.
+\item $D^{a}_{mc}$: años de presencia paramilitar en $m$ (entre $S_m$ y $T_m$) que la cohorte $c$ vivió a la edad $a$; 0 para los municipios sin presencia y para las edades posteriores a $T_m$. $\text{Post}_{mc} = 1$ si la cohorte nació después de $T_m$ en un municipio tratado.
+\item $G_{mc}$: años de presencia guerrillera a las mismas edades. $\mu_m$: municipio de nacimiento. $\lambda_{c \times d(m)}$: cohorte $\times$ departamento. $\theta_t$: año de encuesta y edad al encuestar. Errores agrupados por municipio de nacimiento (451 tratados, 670 de comparación).
+\item \textbf{Qué identifica $\beta_a$:} el efecto de un año de violencia paramilitar vivido a la edad $a$, comparando cohortes del mismo municipio de nacimiento que tenían edades distintas cuando la violencia terminó, neto de las tendencias de cohorte del departamento. La variación viene del calendario de $T_m$ (y de $S_m$) dentro del departamento.
+\item \textbf{Resultados:} años de escolaridad, secundaria completa, educación superior, empleo, formalidad, ingreso laboral.
 \end{itemize}
 \end{frame}
 
-%% ---------- 8. Resultados ----------
-\begin{frame}{Resultado 1. La huida es la respuesta de primer orden del hogar}
+%% 6
+\begin{frame}{Qué forma del perfil distingue entre mecanismos}
 \begin{center}
-\includegraphics[width=0.66\textwidth,trim=0 0 178 0,clip]{fig6_desplazamiento_vs_dosis.pdf}
+\includegraphics[width=0.9\textwidth]{fig_h1h2_min.pdf}
 \end{center}
-\vspace{-0.3em}
 \small
 \begin{itemize}
-\item Expulsión 1997--2010 mediana en los 451 municipios: 23\,\% de la población de 2005; el 71\,\% supera el 10\,\%.
-\item Correlación 0,63 con la violencia total per cápita, la misma para guerrilla y paramilitares: la huida responde al paquete, no al actor.
-\item Los municipios pequeños, que aportan la variación de calendario, son los que más se vacían.
-\end{itemize}
-\src{RUV, corte sep-2016; población 2005 del Panel CEDE; CNMH.}
-\end{frame}
-
-\begin{frame}{Resultado 1 (cont.). La entrada reduce quién llega al examen}
-\begin{columns}[T]
-\column{0.50\textwidth}
-\includegraphics[width=\textwidth,page=2]{fig8_event_study_salida.pdf}
-\scriptsize Cohortes relativas al año de entrada; 53 municipios de entrada limpia; EF municipio y cohorte$\times$dpto; IC 95\,\%.
-\column{0.48\textwidth}
-\small
-\begin{itemize}
-\item Los evaluados por cohorte caen un \textbf{18\,\%} tras la entrada ($p = 0{,}007$) y el colegio no oficial retrocede 4 puntos.
-\item El puntaje de quienes se presentan no se mueve ($-0{,}01$ DE, $p = 0{,}60$): el efecto está en el margen extensivo y en la composición, no en el puntaje condicional.
-\item Es el margen que una cota de Lee por tramo de edad tiene que cuantificar: un resultado condicional a presentarse no mide el efecto sobre un niño fijo.
-\end{itemize}
-\end{columns}
-\end{frame}
-
-\begin{frame}{Resultado 2. Localizar en el resultado produce perfiles espurios}
-\begin{center}
-\includegraphics[width=0.84\textwidth]{fig9_percapita_slides.pdf}
-\end{center}
-\vspace{-0.4em}
-\small
-Saber 11, residencia a los 17; víctimas y expulsados por 1.000 hab.; cohortes 1988--2003; sin municipios $\ge 500$ mil; EF municipio, cohorte$\times$dpto, periodo$\times$edad; $N = 3{,}19$ M; 444 conglomerados.
-\begin{itemize}
-\item La asociación con la violencia es positiva y \emph{crece} con la edad para cualquier perpetrador; la guerrilla reproduce el perfil paramilitar.
-\item Los dos relojes fallan el placebo con signos opuestos: víctimas $+0{,}010$ ($p = 0{,}005$), expulsiones $-0{,}014$ ($p = 0{,}01$), ya antes de la concepción.
+\item \textbf{H1, canal del hogar:} el daño opera a través del cuidador (estrés, huida, pérdida de ingresos): empieza in utero, es máximo a los 0--2 y los nacidos \emph{después} del fin heredan parte ($\gamma < 0$).
+\item \textbf{H2, exposición directa:} el niño tiene que poder codificar la experiencia: nada antes de los 3, daño creciente con la edad, y nada para los nacidos después del fin ($\gamma = 0$).
+\item Segundo paso: $\beta_a$ por separado para hogares que se desplazaron y que no (fecha y motivo de la migración en la GEIH; expulsión por municipio y año en el RUV).
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Resultado 2 (cont.). Alrededor de la salida: tendencia, no salto}
-\begin{center}
-\includegraphics[height=0.50\textheight,page=1]{fig8_event_study_salida.pdf}
-\end{center}
-\vspace{-0.4em}
+%% 7
+\begin{frame}{Validez: qué puede fallar y cómo se comprueba}
 \small
-\begin{itemize}
-\item $k$ = cohorte $-$ año de salida (ref.\ $k=-1$). Nacidos mucho antes: $+0{,}23$ DE; después: $-0{,}11$ DE. Pendiente monótona, sin salto; la ``pretendencia'' es el mayor coeficiente.
-\item Rezago, educación de la madre y número de evaluados se mueven con la misma pendiente: cambia quién llega a 11.º, cohorte a cohorte. Lo mismo alrededor del pico (anexo).
-\item Con 8 M de observaciones y precisión de 0,002 DE, el perfil estimado con la residencia en el resultado es composición: el síntoma de la réplica de León (2012), aquí con la causa medida.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Resultado 3. Los dos relojes son separables}
-\begin{columns}[T]
-\column{0.50\textwidth}
-\small
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{}lcc@{}}
-\toprule
-Ventana de edad & $\rho$ residual $V_a/E_a$ & VIF \\
-\midrule
-Pre-concepción & 0,49 & 1,32 \\
-In utero & 0,46 & 1,27 \\
-0--2 & 0,50 & 1,34 \\
-3--5 & 0,49 & 1,31 \\
-6--11 & 0,51 & 1,34 \\
-12--17 & 0,48 & 1,30 \\
-\bottomrule
-\end{tabular}
-\vspace{0.3em}
-
-\scriptsize 7.104 celdas municipio$\times$cohorte (1988--2003, sin municipios $\ge 500$ mil), tras EF municipio y cohorte$\times$departamento. Correlación residual con la guerrilla: 0,22--0,38.
-\column{0.48\textwidth}
-\small
-\begin{itemize}
-\item El calendario de la violencia y el de la huida no coinciden municipio a municipio: la mitad de la variación de uno es independiente del otro.
-\item Umbral prefijado: 0,7 (gris 0,7--0,8; letal $>0{,}8$). Aprobado en todas las ventanas.
-\item Implicación: la descomposición H1$'$/H2$'$ es estimable. Lo que la invalida en Saber 11 no es la colinealidad sino la localización; con municipio de nacimiento, el mismo diseño es intención de tratar.
-\end{itemize}
-\end{columns}
-\end{frame}
-
-%% ---------- 9. Lo que sigue ----------
-\begin{frame}{Lo que sigue: intención de tratar por municipio de nacimiento}
-\small
-\begin{columns}[T]
-\column{0.52\textwidth}
-\textbf{Datos.} GEIH 2012--2024: municipio de nacimiento, edad en años, escolaridad, ocupación, formalidad, ingreso; cohortes 1988--2003 observadas a los 20--36 años. EEVV 1998--2010 como denominador y composición al nacer.
-\vspace{0.4em}
-
-\textbf{Estimación.} La ecuación de la estrategia empírica con $m$ = municipio de nacimiento y los dos relojes; mismas ventanas, placebos y controles por perpetrador. Primer ejercicio: el mismo perfil con municipio actual y con municipio de nacimiento, para las mismas cohortes. Una figura, dos perfiles: el artefacto medido dentro de la misma encuesta.
-\vspace{0.4em}
-
-\textbf{Outcomes.} Años de escolaridad, secundaria completa, educación superior, empleo, formalidad, ingreso laboral.
-\column{0.46\textwidth}
-\textbf{Potencia.} La restricción son los 451 conglomerados, no $N$; se calcula con los conteos por municipio de nacimiento $\times$ cohorte en la primera semana. Criterio: MDE $\le 0{,}05$ DE en escolaridad para un contraste binario por tramo.
-\vspace{0.4em}
-
-\textbf{Amenazas medidas, no asumidas.} Municipio de nacimiento autodeclarado (cociente ocurrencia/residencia en EEVV); emigración exterior y mortalidad violenta (defunciones, cotas); composición endógena de nacimientos (nacimientos por $m\times c$ sobre la dosis); encuesta repetida frente a registro (potencia).
-\end{columns}
-\end{frame}
-
-\begin{frame}{Criterios de muerte y calendario}
-\small
-\begin{columns}[T]
-\column{0.50\textwidth}
-\textbf{Criterios, con número}
-\begin{enumerate}
-\item Placebo pre-concepción en la GEIH con $|\beta| > 1/3$ del mayor $|\beta_a|$ postnatal, o significativo con el mismo patrón: la pregunta de edad no es contestable con datos públicos; el paper son las contribuciones 1 y 2.
-\item $\rho$ residual $V_a/E_a > 0{,}8$ con municipio de nacimiento: sólo el efecto del paquete.
-\item MDE $> 0{,}08$ DE para 0--2 frente a 3--5: sólo preescolar frente a escolar.
-\item Nacimientos EEVV que responden a la dosis y cotas de Lee que incluyen cero en todas las ventanas: sin perfil.
-\item Mes 6 sin protocolo del ICFES: la salud mental queda fuera.
-\end{enumerate}
-\column{0.48\textwidth}
-\textbf{Calendario a 18 meses}
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{@{}p{1.2cm}p{5.2cm}@{}}
-\toprule
-M0--1 & GEIH, EEVV, Saber 11 2023--25; tubería por municipio de nacimiento; potencia. \\
-M2--3 & ITT con dos relojes y placebos; composición al nacer; cotas de Lee. \\
-M4--6 & Borrador 1; seminario interno; \acc{go/no-go}. \\
-M7--12 & Robustez (dCDH, CGBS, Rambachan-Roth, bootstrap); CNPV 2018 o ICFES si llegan. \\
-M13--18 & Borrador completo, seminarios externos, mercado. \\
-\bottomrule
-\end{tabular}
-\end{columns}
-\end{frame}
-
-%% ---------- 10. Literatura ----------
-\begin{frame}{Dónde se sitúa}
-\scriptsize
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{2.6cm}p{2.4cm}p{2.1cm}p{2.9cm}p{3.0cm}@{}}
+\begin{tabular}{@{}p{5.0cm}p{8.6cm}@{}}
 \toprule
-\textbf{Paper} & \textbf{Shock} & \textbf{Edad} & \textbf{Datos} & \textbf{Qué añade este paper} \\
+\textbf{Amenaza} & \textbf{Prueba} \\
 \midrule
-Duque (2024, \emph{JCR}) & Homicidios de los 80, Colombia & In utero a adolescencia & Colegios públicos + Saber 11 + Sisbén; EF de madre & Inicio y fin fechados por municipio; la huida como canal medido; municipio de nacimiento \\
-León (2012, \emph{JHR}); Huaroto et al.\ (2026, \emph{JHR}) & Sendero Luminoso 1980--93 & Preescolar vs escolar & Censos 1993 y 2007 & La causa del fallo del placebo, medida: localización en el resultado con una población que huye \\
-Akbulut-Yuksel, Tekin y Turan (2025, \emph{JHR}) & Bombardeos II Guerra Mundial & $\le 5$ vs 6--10 & GSOEP, salud mental a 50--70 & Exposición local y mensual; dos relojes \\
-Ramírez y Haas (2021); Carneiro et al.\ (\emph{EJ}) & Guerra agregada; despidos & Cohorte; edad del shock & SHARE; registros noruegos & Canal no monetario (estrés, ruptura) con el shock localizado \\
+Las cohortes de los municipios tratados ya iban por otra senda & Placebo: dosis asignada a las ventanas anteriores a la concepción ($[-45,-10]$ meses) debe dar cero; cohortes 1980--87 con pendiente en la dosis futura; Rambachan y Roth (2023) \\
+La violencia cambia quién nace & Nacimientos por municipio y cohorte (EEVV) sobre la dosis; composición de las madres al nacer \\
+Mortalidad y emigración exterior selectivas & Defunciones por municipio y cohorte (EEVV); cotas de Lee por ventana de edad \\
+Municipio de nacimiento mal medido & Cociente ocurrencia / residencia de la madre en EEVV como medida de atenuación \\
+Guerrilla y fuerza pública en los mismos municipios & $G_{mc}$ y dosis de fuerza pública a las mismas edades; perfil de la guerrilla como placebo de perpetrador \\
+Tratamiento continuo y escalonado & de Chaisemartin y D'Haultf\oe uille (2024); Callaway, Goodman-Bacon y Sant'Anna (2024); event study en $T_m$ \\
 \bottomrule
 \end{tabular}
-\vspace{0.5em}
-\small Además: Sun y Abraham (2021), de Chaisemartin y D'Haultf\oe uille (2024), Callaway, Goodman-Bacon y Sant'Anna (2024), Rambachan y Roth (2023), Lee (2009).
 \end{frame}
 
-%% ---------- 11. Conclusión ----------
-\begin{frame}{Conclusión}
+%% 8
+\begin{frame}{Contribución}
+\begin{enumerate}
+\item \textbf{El gradiente por edad de un shock de violencia, con un episodio que termina.} Primera estimación que separa in utero, 0--2, 3--5 y 6--11 con el fin de la exposición fechado por municipio y la localización anterior al shock. El fin fechado es lo que permite el contraste limpio: cohortes del mismo municipio nacidas antes y después de que la violencia acabara.
+\item \textbf{Un test de mecanismo:} canal del hogar frente a exposición directa, a partir de la forma del perfil y de los nacidos después del fin, y después por desplazamiento del hogar.
+\item \textbf{Resultados adultos:} escolaridad y mercado de trabajo a los 20--36 años, no sólo puntajes en el colegio.
+\end{enumerate}
+\vspace{0.6em}
+\small
+Respecto a Duque (2024): otra década, un actor con fin fechado, municipio de nacimiento en lugar de residencia y resultados adultos. Respecto a León (2012) y su réplica: el placebo pre-concepción es parte del diseño, no una comprobación posterior.
+\end{frame}
+
+%% 9
+\begin{frame}{Datos y calendario}
+\small
+\begin{columns}[T]
+\column{0.5\textwidth}
+\textbf{Datos}
 \begin{itemize}
-\item Una ola de violencia con actor, entrada escalonada y fin fechado, medida mes a mes, y un registro de la respuesta de los hogares: dos relojes con los que la pregunta de edad de exposición se puede escribir como una descomposición de canales.
-\item Resultado ya establecido: cuando el hogar responde yéndose, localizar al niño donde se le observa de adulto produce perfiles de edad espurios. Lo mostramos con 3--8 millones de observaciones, placebos en los dos relojes y event studies en entrada, pico y salida.
-\item Los dos relojes son separables, de modo que el test hogar frente a exposición directa es estimable con localización al nacer.
-\item Lo que se entrega en seis meses: efectos por edad por intención de tratar en la GEIH con placebos y cotas, o la evidencia de que la pregunta no es contestable con datos públicos.
+\item CNMH-OMC: víctimas por municipio, mes y perpetrador 1985--2015 (en mano; $S_m$ y $T_m$ construidos para los 451 municipios).
+\item RUV: expulsados por municipio y año (en mano).
+\item GEIH 2012--2024: municipio de nacimiento, migración, educación, empleo, ingreso (público; descarga pendiente).
+\item EEVV nacimientos 1998--2010 y defunciones 1998--2019 (público; descarga pendiente).
 \end{itemize}
-\vspace{0.8em}
-\centering\muted{Comentarios bienvenidos.}
+\column{0.5\textwidth}
+\textbf{Calendario}
+\begin{itemize}
+\item Meses 1--2: GEIH y EEVV; dosis por municipio de nacimiento $\times$ cohorte; conteos y potencia (criterio: MDE $\le 0{,}05$ DE en escolaridad por ventana).
+\item Meses 3--5: estimación principal, placebos, perfil por desplazamiento.
+\item Mes 6: borrador y decisión. Si el placebo pre-concepción falla con municipio de nacimiento, el diseño no sirve y se dice.
+\item Meses 7--18: robustez, extensiones, paper completo.
+\end{itemize}
+\end{columns}
 \end{frame}
-
-%% ---------- Anexos ----------
-
-\begin{frame}{Anexo. Event study alrededor del pico municipal}
-\begin{center}
-\includegraphics[height=0.62\textheight,page=3]{fig8_event_study_salida.pdf}
-\end{center}
-\small La misma pendiente monótona que alrededor de la salida; rezago y número de evaluados se mueven en paralelo.
-\end{frame}
-
-
 \end{document}
