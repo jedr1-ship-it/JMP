@@ -1,6 +1,5 @@
 \documentclass[aspectratio=169,11pt]{beamer}
-% Compile with pdflatex. Style follows the advisor deck: Computer Modern,
-% white background, amber labels, blue citations, page number only.
+% Compile with pdflatex. Style: Computer Modern, white background, amber labels, blue citations.
 \usetheme{default}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -16,12 +15,10 @@
 \definecolor{amber}{HTML}{B07D0E}
 \definecolor{teal}{HTML}{1F6F5F}
 \definecolor{cite}{HTML}{2A5DB0}
-\definecolor{mint}{HTML}{DDEBE6}
 \setbeamercolor{normal text}{fg=ink}
 \setbeamercolor{frametitle}{fg=ink}
 \setbeamercolor{title}{fg=ink}
 \setbeamercolor{itemize item}{fg=teal}
-\setbeamercolor{button}{bg=mint,fg=teal}
 \setbeamersize{text margin left=1.1cm,text margin right=1.1cm}
 \newcommand{\lab}[1]{\textcolor{amber}{\textbf{#1}}}
 \newcommand{\muted}[1]{{\color{muted}#1}}
@@ -29,8 +26,8 @@
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{4pt}
 
-\title{\textbf{How School Leaders Matter}}
-\subtitle{Teachers, classrooms, and families under mandatory principal turnover}
+\title{\textbf{What Do School Leaders Do?}}
+\subtitle{Evidence from mandatory principal turnover in Spanish primary schools}
 \author{}
 \date{\muted{Paper idea for discussion. October 2026}}
 
@@ -40,17 +37,18 @@
 \titlepage
 \end{frame}
 
-%% 1. This paper
-\begin{frame}{This paper}
-\vspace{0.05cm}
-\small
-School principals are an input in the education production function: value-added estimates put a one standard deviation better principal at 0.05 to 0.10 SD of student achievement. Much less is known about the production process itself: how leadership translates into teacher behavior, classroom organization, and family engagement, and through them into learning.
-\vspace{0.35cm}
-
-We study this process using mandatory principal turnover in Madrid's public primary schools. Two institutional rules, compulsory retirement at 65 and a twelve-year limit on tenure, generate leadership transitions whose timing is unrelated to school performance. Linked administrative and survey data on every principal, teacher, classroom, pupil, and parent let us estimate the effect of a leadership change on each intermediate outcome, not only on test scores.
-\vspace{0.35cm}
-
-Teacher practice, wellbeing, and collaboration, classroom climate, and parental engagement are treated as outcomes in their own right, and as the channels through which leadership reaches achievement.
+%% 1. The question
+\begin{frame}[plain]
+\vspace{1.3cm}
+\begin{center}
+{\LARGE\textbf{What does a school leader change,}\\[0.2em]\textbf{and how far does it reach?}}
+\end{center}
+\vspace{0.9cm}
+\begin{center}
+\begin{minipage}{0.78\textwidth}
+Principals are an input in the production of education, and their value added is well documented. How leadership turns into teacher behavior, classroom organization, family engagement, and learning is not.
+\end{minipage}
+\end{center}
 \end{frame}
 
 %% 2. What we know
@@ -58,42 +56,53 @@ Teacher practice, wellbeing, and collaboration, classroom climate, and parental 
 \vspace{0.1cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Leaders matter} & A one SD better principal raises achievement by 0.05 to 0.10 SD \cit{Branch, Hanushek, and Rivkin, 2012; B\"ohlmark, Gr\"onqvist, and Vlachos, 2016}. The effect is comparable to a teacher's, over a whole school \cit{Grissom, Egalite, and Lindsay, 2021}. \\[0.3em]
-\lab{Changes matter} & When the principal changes, achievement falls by about 0.03 SD the next year and teacher turnover rises \cit{Bartanen, Grissom, and Rogers, 2019}. \\[0.3em]
-\lab{Leadership and the school} & Where teachers value their principal's instructional and relational leadership, schools show better climate, more collaboration, better classroom management, higher wellbeing and job satisfaction \cit{OECD, TALIS 2018}. Correlational. \\
+\lab{Leaders matter} & Principal value added: 0.05 to 0.10 SD of achievement per SD of principal quality \cit{Branch, Hanushek, and Rivkin, 2012; B\"ohlmark, Gr\"onqvist, and Vlachos, 2016}; smaller once within-school variation is cleaned \cit{Bartanen, Husain, and Liebowitz, 2024}. \\[0.3em]
+\lab{Changes matter} & Principal turnover lowers achievement by about 0.03 SD and raises teacher turnover \cit{Bartanen, Grissom, and Rogers, 2019}. \\[0.3em]
+\lab{The channel so far} & Personnel: effective principals retain strong teachers and shed weak ones \cit{Grissom and Bartanen, 2019}; principals reshape the staff through hiring and retention \cit{Bartanen and Grissom, 2023}. \\[0.3em]
+\lab{Not yet seen} & Under an exogenous change of leader: the same teachers' practice and wellbeing, the classrooms, and the families. \\
 \end{tabular}
 \end{frame}
 
-%% 2b. What has been opened
-\begin{frame}{What has been opened, and what has not}
+%% 3. Recent work
+\begin{frame}{Recent work on school and public-sector leaders}
+\vspace{0.05cm}
+\footnotesize
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}L{8.3cm}L{3.6cm}L{1.0cm}@{}}
+\toprule
+\textbf{Title} & \textbf{Journal} & \textbf{Year} \\
+\midrule
+Rethinking principal effects on student outcomes & J. Public Economics & 2024 \\
+Managers' productivity and recruitment in the public sector: the case of school principals & AEJ: Economic Policy & 2024 \\
+Personnel management and school productivity: evidence from India & Economic Journal & 2024 \\
+The lasting impacts of middle school principals & NBER WP & 2024 \\
+Effects and mechanisms of CEOs quality in public education & Economic Journal & 2023 \\
+School principal race, teacher racial diversity, and student achievement & J. Human Resources & 2023 \\
+Managers and productivity in the public sector & Econometrica & 2022 \\
+The headmaster ritual: the importance of management for school outcomes & Scand. J. Economics & 2016 \\
+\bottomrule
+\end{tabular}
+\vspace{0.15cm}
+
+\muted{\footnotesize All ask whether leaders matter, from achievement, turnover, or output. None observes the school between the leader and the pupil.}
+\end{frame}
+
+%% 4. Intermediate outcomes
+\begin{frame}{What a leader can change, and what we observe}
 \vspace{0.1cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Personnel} & Effective principals keep their best teachers and lose their weakest \cit{Grissom and Bartanen, 2019, AERJ}. Principals reshape the staff through hiring and retention \cit{Bartanen and Grissom, 2023, JHR}. Who teaches in the school is the channel the literature has identified. \\[0.3em]
-\lab{Procedures} & For superintendents, better leaders change school priorities, working procedures and violence \cit{Lavy, Boiko, and Rachkovski, 2023, EJ}. \\[0.3em]
-\lab{Not yet seen} & Under a change of leader the school did not choose: what the same teachers do and how they feel, how classrooms are run, and how families respond. The inside of the school. \\
+\lab{Teachers} & Classroom practice, collaboration, training, self-efficacy, wellbeing. \\[0.4em]
+\lab{Classrooms} & Allocation of teachers and support hours across groups, discipline, safety. \\[0.4em]
+\lab{Families} & Involvement, satisfaction with teachers and the school, perceived quality. \\[0.4em]
+\lab{Pupils} & Engagement, perceptions of the school, achievement by subject. \\
 \end{tabular}
-\vspace{0.4cm}
+\vspace{0.6cm}
 
-\muted{\footnotesize The literature shows that leaders matter and that they choose who teaches. This paper is about what they do with the teachers they have.}
+Each is measured for every school and year. Teacher and family outcomes are dependent variables in their own right, and jointly the channels to achievement.
 \end{frame}
 
-%% 3. The richness
-\begin{frame}{Intermediate outcomes: what we observe at the school level}
-\vspace{0.05cm}
-\small
-\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Teachers} & Reported classroom practice, collaboration, participation in training, self-efficacy, and wellbeing. \\[0.3em]
-\lab{Classrooms} & Allocation of teachers and support hours across groups, disciplinary climate, and pupils' reports of safety and bullying. \\[0.3em]
-\lab{Families} & Involvement in the school, satisfaction with teachers and the centre, and perceptions of school quality. \\[0.3em]
-\lab{Pupils} & Engagement, perceptions of the school, and standardized achievement by subject. \\
-\end{tabular}
-\vspace{0.4cm}
-
-Each domain is measured for every school and year. Teacher and family outcomes enter the analysis as dependent variables, and jointly as mediators of the effect on achievement.
-\end{frame}
-
-%% 4. Causal map
+%% 5. Causal map
 \begin{frame}{Causal map}
 \vspace{0.2cm}
 \begin{center}
@@ -121,23 +130,23 @@ Each domain is measured for every school and year. Teacher and family outcomes e
 \end{tikzpicture}
 \end{center}
 \vspace{0.05cm}
-\muted{\small All nodes are observed for the universe of schools. Exogenous variation enters at the leadership node.}
+\muted{\small All nodes observed for the universe of schools. Exogenous variation enters at the leadership node.}
 \end{frame}
 
-%% 5. Why Madrid
+%% 6. Setting
 \begin{frame}{Setting}
-\vspace{0.05cm}
-\footnotesize
+\vspace{0.1cm}
+\small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Institutions} & Spanish principals are teachers selected from the staff for four-year terms. Staffing, pay, and curriculum are set by the regional administration. A change of principal therefore changes leadership and organization while holding the teaching staff fixed, which separates the leadership effect from the personnel channel identified in the US literature. \\[0.3em]
-\lab{Exogenous timing} & Terms end by compulsory retirement at 65 and by a limit of twelve years in office, both determined years in advance. Transitions induced by these rules are orthogonal to contemporaneous school shocks. \\[0.3em]
-\lab{Successor characteristics} & Incoming principals come from the same staff and are observed as classroom teachers in the year before appointment, which provides pre-determined measures of their type. \\[0.3em]
-\lab{Data} & Universe of public primary schools in Madrid, 2015 to 2018: principal and teacher questionnaires, timetables, and census surveys and standardized tests of all pupils and parents by classroom. \\
+\lab{Institutions} & Principals are teachers selected from the staff for four-year terms. Staffing, pay, and curriculum are set by the administration: a new principal changes leadership on a fixed staff. \\[0.4em]
+\lab{Exogenous timing} & Terms end by compulsory retirement at 65 and a twelve-year limit, both fixed years in advance. \\[0.4em]
+\lab{Successor} & Comes from the same staff; observed as a classroom teacher the year before appointment. \\[0.4em]
+\lab{Data} & Universe of Madrid public primary schools, 2015 to 2018: principal and teacher questionnaires, timetables, all pupils and parents by classroom, standardized tests by subject. \\
 \end{tabular}
 \end{frame}
 
-%% 6. Identification
-\begin{frame}[label=ident]{Identification: a principal's clock}
+%% 7. Identification
+\begin{frame}{Identification: a principal's clock}
 \vspace{0.05cm}
 \begin{center}
 \begin{tikzpicture}[x=0.9cm,y=1cm]
@@ -149,17 +158,17 @@ Each domain is measured for every school and year. Teacher and family outcomes e
 }
 \end{tikzpicture}
 \end{center}
-\vspace{-0.25cm}
+\vspace{-0.2cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Treated} & Schools whose clock runs out in 2016, 2017, or 2018: a new leader arrives for reasons unrelated to the school's trajectory. \\[0.2em]
-\lab{Comparison} & Schools whose clock runs out later. Staggered event study on the calendar; 2SLS for the realized change. \\[0.2em]
-\lab{Benchmark} & Exits that are not rule-based (resignations, non-renewals), kept separate: they carry the selection the literature worries about \cit{Miller, 2013; Bartanen, Grissom, and Rogers, 2019}. \\[0.2em]
-\lab{Heterogeneity} & By the successor's pre-appointment practices and wellbeing, the selection committee's score of their project, and the staff's assessment of the outgoing principal. \\
+\lab{Treated} & Schools whose clock runs out in 2016, 2017, or 2018. \\[0.25em]
+\lab{Comparison} & Schools whose clock runs out later. Staggered event study; 2SLS for the realized change. \\[0.25em]
+\lab{Benchmark} & Non-rule exits (resignations, non-renewals), kept separate: the selection the literature worries about \cit{Miller, 2013}. \\[0.25em]
+\lab{Heterogeneity} & Successor's pre-appointment practices and wellbeing; committee score of their project; staff assessment of the outgoing principal. \\
 \end{tabular}
 \end{frame}
 
-%% 7. What we test
+%% 8. Outcomes and timing
 \begin{frame}{Outcomes and expected timing}
 \vspace{-0.05cm}
 \footnotesize\begin{tabular}{@{}L{2.0cm}L{5.9cm}L{3.3cm}L{1.5cm}@{}}
@@ -176,56 +185,60 @@ Each domain is measured for every school and year. Teacher and family outcomes e
 \end{tabular}
 \vspace{0.0cm}
 
-\muted{\footnotesize Pre-registered indices by domain. Achievement is the final outcome; intermediate domains are expected to respond first.}
+\muted{\footnotesize Pre-registered indices by domain. Achievement is the final outcome; intermediate domains should respond first.}
 \end{frame}
 
-%% 8. Three parameters
+%% 9. Estimands
 \begin{frame}{Estimands}
-\vspace{0.05cm}
+\vspace{0.1cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Average effect} & The effect of a mandatory leadership transition on each domain: teachers, classrooms, families, achievement. \\[0.4em]
-\lab{Variance of leader effects} & If leaders differ, the dispersion of outcome changes is larger around rule-based transitions than in non-transition years \cit{Jones and Olken, 2005}. Identified without classifying leaders. \\[0.4em]
-\lab{Heterogeneity} & Treatment effects by pre-determined characteristics of the incoming and outgoing principal: prior classroom practice, project score, staff assessment. \\
+\lab{Average effect} & Of a mandatory leadership transition on each domain. \\[0.5em]
+\lab{Variance} & Whether leaders differ: dispersion of outcome changes around rule-based transitions versus other years \cit{Jones and Olken, 2005}. No classification of leaders needed. \\[0.5em]
+\lab{Heterogeneity} & By pre-determined characteristics of incoming and outgoing principals. \\
 \end{tabular}
-\vspace{0.4cm}
+\vspace{0.6cm}
 
-\muted{\footnotesize The three together identify whether leadership matters, how much leaders differ, and which observable characteristics predict effective leadership.}
+\muted{\footnotesize Whether leadership matters, how much leaders differ, and which observable traits predict effective ones.}
 \end{frame}
 
-%% 9. Data
+%% 10. Data
 \begin{frame}{Data}
-\vspace{0.05cm}
+\vspace{0.1cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{In hand} & Universe of Madrid public primary schools, 2015 to 2018. Principal questionnaire. Teachers: practices, wellbeing, training. Schedules: who teaches which class. All pupils by classroom: scores by subject, perceptions. All parents by classroom: involvement, satisfaction. \\[0.2em]
-\lab{To collect} & Principal appointments, renewals, and exits with cause (BOCM). The committee's grade of each project. Teacher assignment lists: chosen versus imposed posts. School plans from archived websites. Public school-level results from 2022: the long run. \\
+\lab{In hand} & Universe of Madrid public primary schools, 2015 to 2018. Principal questionnaire. Teachers: practices, wellbeing, training. Schedules. All pupils by classroom: scores by subject, perceptions. All parents by classroom: involvement, satisfaction. \\[0.4em]
+\lab{To collect} & Principal appointments, renewals, exits with cause (BOCM). Committee score of each project. Teacher assignment lists: chosen versus imposed posts. School plans from archived websites. Public school-level results from 2022. \\
 \end{tabular}
 \end{frame}
 
-%% 10. Open questions
+%% 11. Open questions
 \begin{frame}{Open questions}
 \vspace{0.3cm}
 \begin{itemize}\setlength{\itemsep}{0.9em}
 \item \textbf{Mechanisms to prioritize.} Which intermediate outcomes should respond within the first year of a new principal, and which later?
 \item \textbf{What the data must have.} A stable teacher identifier across years; the principal's age and years in office; the survey items that rate the principal.
-\item \textbf{Sample of rule-based transitions} in 2015 to 2018, and access to appointment records and later years from the Consejer\'ia.
+\item \textbf{Sample of rule-based transitions} in 2015 to 2018, and access to appointment records and later years.
 \end{itemize}
 \end{frame}
 
 %% References
 \begin{frame}[allowframebreaks]{References}
 \footnotesize
+Bartanen, B., and J.~A. Grissom. 2023. ``School Principal Race, Teacher Racial Diversity, and Student Achievement.'' \textit{Journal of Human Resources} 58(2): 666--712.\\[0.35em]
 Bartanen, B., J.~A. Grissom, and L.~Rogers. 2019. ``The Impacts of Principal Turnover.'' \textit{Educational Evaluation and Policy Analysis} 41(3): 350--374.\\[0.35em]
+Bartanen, B., A.~N. Husain, and D.~D. Liebowitz. 2024. ``Rethinking Principal Effects on Student Outcomes.'' \textit{Journal of Public Economics} 234.\\[0.35em]
+Bloom, N., R.~Lemos, R.~Sadun, and J.~Van Reenen. 2015. ``Does Management Matter in Schools?'' \textit{Economic Journal} 125(584): 647--674.\\[0.35em]
 B\"ohlmark, A., E.~Gr\"onqvist, and J.~Vlachos. 2016. ``The Headmaster Ritual: The Importance of Management for School Outcomes.'' \textit{Scandinavian Journal of Economics} 118(4): 912--940.\\[0.35em]
 Branch, G.~F., E.~A. Hanushek, and S.~G. Rivkin. 2012. ``Estimating the Effect of Leaders on Public Sector Productivity: The Case of School Principals.'' NBER Working Paper 17803.\\[0.35em]
+Fenizia, A. 2022. ``Managers and Productivity in the Public Sector.'' \textit{Econometrica} 90(3): 1063--1084.\\[0.35em]
 Grissom, J.~A., and B.~Bartanen. 2019. ``Strategic Retention: Principal Effectiveness and Teacher Turnover in Multiple-Measure Teacher Evaluation Systems.'' \textit{American Educational Research Journal} 56(2): 514--555.\\[0.35em]
-Bartanen, B., and J.~A. Grissom. 2023. ``School Principal Race, Teacher Racial Diversity, and Student Achievement.'' \textit{Journal of Human Resources} 58(2): 666--712.\\[0.35em]
-Lavy, V., A.~Boiko, and G.~Rachkovski. 2023. ``Effects and Mechanisms of CEOs Quality in Public Education.'' \textit{Economic Journal}.\\[0.35em]
-Grissom, J.~A., A.~J. Egalite, and C.~A. Lindsay. 2021. \textit{How Principals Affect Students and Schools: A Systematic Synthesis of Two Decades of Research}. Wallace Foundation.\\[0.35em]
+Hanushek, E.~A., A.~Morgan, S.~G. Rivkin, J.~C. Schiman, A.~Shakeel, and L.~Sartain. 2024. ``The Lasting Impacts of Middle School Principals.'' NBER Working Paper 32642.\\[0.35em]
 Jones, B.~F., and B.~A. Olken. 2005. ``Do Leaders Matter? National Leadership and Growth Since World War II.'' \textit{Quarterly Journal of Economics} 120(3): 835--864.\\[0.35em]
+Lavy, V., A.~Boiko, and G.~Rachkovski. 2023. ``Effects and Mechanisms of CEOs Quality in Public Education.'' \textit{Economic Journal}.\\[0.35em]
+Lemos, R., K.~Muralidharan, and D.~Scur. 2024. ``Personnel Management and School Productivity: Evidence from India.'' \textit{Economic Journal} 134.\\[0.35em]
 Miller, A. 2013. ``Principal Turnover and Student Achievement.'' \textit{Economics of Education Review} 36: 60--72.\\[0.35em]
-OECD. 2020. \textit{TALIS 2018 Results (Volume II): Teachers and School Leaders as Valued Professionals}. OECD Publishing.
+Mu\~noz, P., and M.~Prem. 2024. ``Managers' Productivity and Recruitment in the Public Sector: The Case of School Principals.'' \textit{American Economic Journal: Economic Policy} 16(4): 223--253.
 \end{frame}
 
 \end{document}
