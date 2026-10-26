@@ -1,5 +1,5 @@
 \documentclass[aspectratio=169,11pt]{beamer}
-% Compile with pdflatex (or xelatex). Style follows the advisor deck: Computer Modern,
+% Compile with pdflatex. Style follows the advisor deck: Computer Modern,
 % white background, amber labels, blue citations, page number only.
 \usetheme{default}
 \usepackage[T1]{fontenc}
@@ -30,7 +30,7 @@
 \renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{4pt}
 
 \title{\textbf{What a School Leader Can Do}}
-\subtitle{Evidence from rule-based principal exits in Madrid}
+\subtitle{Opening the school between leadership and learning}
 \author{}
 \date{\muted{Paper idea for discussion. October 2026}}
 
@@ -40,36 +40,105 @@
 \titlepage
 \end{frame}
 
-%% 1. The question
+%% 1. The idea
 \begin{frame}[plain]
-\vspace{1.2cm}
+\vspace{1.0cm}
 \begin{center}
-{\LARGE\textbf{What can a school leader do}\\[0.2em]\textbf{when they cannot hire, fire, or pay?}}
+{\LARGE\textbf{A school runs on its leadership.}}\\[0.5em]
+{\Large What does a school leader actually change,\\and how far does it reach?}
 \end{center}
-\vspace{0.9cm}
+\vspace{0.8cm}
 \begin{center}
-\begin{minipage}{0.78\textwidth}
-Schools whose teachers value their principal show better climate, more collaboration, better classroom management, and higher teacher wellbeing \cit{OECD, TALIS 2018}. None of it is causal: good schools may simply make their principals look good.
+\begin{minipage}{0.80\textwidth}
+How teachers teach, work together, and feel about their work. How classrooms are run. How families take part. And, through all of this, how pupils learn. We know leadership matters. We do not know what it does.
 \end{minipage}
 \end{center}
 \end{frame}
 
-%% 2. Why Spain
-\begin{frame}{Why Spain: the leader changes, the staff does not}
+%% 2. What we know
+\begin{frame}{What we know}
 \vspace{0.1cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{The principal} & A teacher elected by colleagues for a four-year term, who returns to the classroom afterwards. The successor comes from the same staff. \\[0.3em]
-\lab{Personnel power} & None. Teachers are civil servants assigned by the regional administration. The principal cannot hire, dismiss, set pay, or change the curriculum. \\[0.3em]
-\lab{What is left} & The organization of the school: who teaches which class, how time and support hours are used, the plan and its priorities, discipline, the relation with families, in-school training. \\[0.3em]
-\lab{Terms end by rule} & Compulsory retirement at 65, and at most two renewals: twelve years in office. Both dates are fixed years in advance, regardless of how the school is doing. \\
+\lab{Leaders matter} & A one SD better principal raises achievement by 0.05 to 0.10 SD \cit{Branch, Hanushek, and Rivkin, 2012; B\"ohlmark, Gr\"onqvist, and Vlachos, 2016}. The effect is comparable to a teacher's, over a whole school \cit{Grissom, Egalite, and Lindsay, 2021}. \\[0.3em]
+\lab{Changes matter} & When the principal changes, achievement falls by about 0.03 SD the next year and teacher turnover rises \cit{Bartanen, Grissom, and Rogers, 2019}. \\[0.3em]
+\lab{Leadership and the school} & Where teachers value their principal's instructional and relational leadership, schools show better climate, more collaboration, better classroom management, higher wellbeing and job satisfaction \cit{OECD, TALIS 2018}. Correlational. \\
 \end{tabular}
-\vspace{0.15cm}
-
-\muted{\footnotesize Evidence that principals matter comes from the United States, where the identified channel is the management of the teaching force \cit{Branch, Hanushek, and Rivkin, 2012; Grissom, Egalite, and Lindsay, 2021}. Here that channel is closed.}
 \end{frame}
 
-%% 3. Identification
+%% 2b. What has been opened
+\begin{frame}{What has been opened, and what has not}
+\vspace{0.1cm}
+\small
+\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
+\lab{Personnel} & Effective principals keep their best teachers and lose their weakest \cit{Grissom and Bartanen, 2019, AERJ}. Principals reshape the staff through hiring and retention \cit{Bartanen and Grissom, 2023, JHR}. Who teaches in the school is the channel the literature has identified. \\[0.3em]
+\lab{Procedures} & For superintendents, better leaders change school priorities, working procedures and violence \cit{Lavy, Boiko, and Rachkovski, 2023, EJ}. \\[0.3em]
+\lab{Not yet seen} & Under a change of leader the school did not choose: what the same teachers do and how they feel, how classrooms are run, and how families respond. The inside of the school. \\
+\end{tabular}
+\vspace{0.4cm}
+
+\muted{\footnotesize The literature shows that leaders matter and that they choose who teaches. This paper is about what they do with the teachers they have.}
+\end{frame}
+
+%% 3. The richness
+\begin{frame}{What a school leader shapes}
+\vspace{0.05cm}
+\small
+\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
+\lab{Teachers} & How they teach, how they collaborate, what training they take, how confident and how well they feel. Each an outcome in itself: the working life of a profession. \\[0.3em]
+\lab{Classrooms} & Who teaches which group, how time and support are used, how discipline is handled, whether pupils feel safe. \\[0.3em]
+\lab{Families} & Whether they are involved, whether they trust the school, how they judge the teachers and the centre. \\[0.3em]
+\lab{Pupils} & Engagement, perceptions of their school, and learning by subject. \\
+\end{tabular}
+\vspace{0.4cm}
+
+A leader reaches pupils through the first three. Teachers and families are not intermediate steps: they are what a school is made of, and they are outcomes we care about.
+\end{frame}
+
+%% 4. Causal map
+\begin{frame}{Causal map}
+\vspace{0.2cm}
+\begin{center}
+\begin{tikzpicture}[scale=0.8,every node/.style={font=\small,transform shape},
+  circ/.style={circle,draw=none,text=white,align=center,font=\small\bfseries,minimum size=2.1cm,inner sep=1pt},
+  lbl/.style={align=left,font=\footnotesize,text width=3.4cm},
+  arr/.style={-{Latex[length=2.2mm]},line width=0.8pt,draw=muted}
+]
+\node[circ,fill=amber,minimum size=2.8cm] (lead) at (0,0) {School\\leadership};
+\node[below=0.15cm of lead,font=\scriptsize,text=muted,align=center,text width=3.6cm] {organization of the school,\\pedagogical direction,\\relations with families};
+\node[circ,fill=teal] (teach) at (5.6,2.2) {Teachers};
+\node[circ,fill=teal!75!black] (clim) at (5.6,0) {Classrooms};
+\node[circ,fill=amber!80!black] (fam) at (5.6,-2.2) {Families};
+\node[lbl,right=0.25cm of teach] (t1) {practice, collaboration,\\training, self-efficacy,\\wellbeing};
+\node[lbl,right=0.25cm of clim] (t2) {assignment, time,\\discipline, safety};
+\node[lbl,right=0.25cm of fam] (t3) {involvement, trust,\\judgement of the school};
+\node[circ,fill=ink,minimum size=2.2cm] (learn) at (13.2,0) {Pupils};
+\node[below=0.15cm of learn,font=\scriptsize,text=muted,align=center,text width=3cm] {engagement,\\learning by subject};
+\draw[arr] (lead) -- (teach.west);
+\draw[arr] (lead) -- (clim.west);
+\draw[arr] (lead) -- (fam.west);
+\draw[arr] (t1.east) -- (learn.north west);
+\draw[arr] (t2.east) -- (learn.west);
+\draw[arr] (t3.east) -- (learn.south west);
+\end{tikzpicture}
+\end{center}
+\vspace{0.05cm}
+\muted{\small Every node is observed, for every school in Madrid. The first arrows are the ones we identify.}
+\end{frame}
+
+%% 5. Why Madrid
+\begin{frame}{Why Madrid lets us see it}
+\vspace{0.05cm}
+\small
+\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
+\lab{Leadership through people} & Spanish principals are teachers elected by their colleagues for four-year terms. Staffing, pay and curriculum are set by the administration, so a principal leads through the organization of the school, the direction of teaching, and the relation with families. What changes when the leader changes is leadership itself, on the same staff. \\[0.3em]
+\lab{Timing set by rule} & Terms end by compulsory retirement at 65 and by a limit of twelve years in office, fixed years in advance. Leadership changes arrive on a calendar, not in response to how the school is doing. \\[0.3em]
+\lab{The successor is known} & New principals come from the same staff: we observe them as classroom teachers the year before they take office. \\[0.3em]
+\lab{The whole school is observed} & Every public primary school in Madrid, 2015 to 2018: the principal, each teacher, each classroom, every pupil and every parent, with standardized scores by subject. \\
+\end{tabular}
+\end{frame}
+
+%% 6. Identification
 \begin{frame}[label=ident]{Identification: a principal's clock}
 \vspace{0.05cm}
 \begin{center}
@@ -85,88 +154,50 @@ Schools whose teachers value their principal show better climate, more collabora
 \vspace{-0.25cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Treated} & Schools whose clock runs out in 2016, 2017, or 2018: a new principal arrives for reasons unrelated to the school's trajectory. \\[0.2em]
+\lab{Treated} & Schools whose clock runs out in 2016, 2017, or 2018: a new leader arrives for reasons unrelated to the school's trajectory. \\[0.2em]
 \lab{Comparison} & Schools whose clock runs out later. Staggered event study on the calendar; 2SLS for the realized change. \\[0.2em]
-\lab{Benchmark} & Exits that are not rule-based (resignations, non-renewals) kept separate: they measure the selection the literature worries about \cit{Miller, 2013; Bartanen, Grissom, and Rogers, 2019}. \\[0.2em]
-\lab{The successor} & Observed as a classroom teacher the year before taking office: practices, wellbeing, views on the school. \\
+\lab{Benchmark} & Exits that are not rule-based (resignations, non-renewals), kept separate: they carry the selection the literature worries about \cit{Miller, 2013; Bartanen, Grissom, and Rogers, 2019}. \\[0.2em]
+\lab{Who arrives} & The successor's practices, wellbeing and views, measured before office; the committee's grade of their project; the staff's rating of the outgoing principal. \\
 \end{tabular}
 \vspace{0.05cm}
 \hfill\hyperlink{counts}{\beamerbutton{Counts}}
 \end{frame}
 
-%% 4. Causal map
-\begin{frame}{Causal map}
-\vspace{0.2cm}
-\begin{center}
-\begin{tikzpicture}[scale=0.8,every node/.style={font=\small,transform shape},
-  circ/.style={circle,draw=none,text=white,align=center,font=\small\bfseries,minimum size=2.1cm,inner sep=1pt},
-  box/.style={draw=muted!60,rounded corners=2pt,align=left,inner sep=6pt,font=\footnotesize},
-  lbl/.style={align=left,font=\footnotesize,text width=3.2cm},
-  arr/.style={-{Latex[length=2.2mm]},line width=0.8pt,draw=muted}
-]
-\node[circ,fill=amber,minimum size=2.6cm] (lead) at (0,0) {New school\\leader};
-\node[below=0.15cm of lead,font=\scriptsize,text=muted,align=center] {by rule, not\\by performance};
-\node[box,right=0.9cm of lead,text width=3.3cm] (lev) {\textbf{Levers}\\[2pt]
-Teacher-to-class assignment\\
-Timetable and support hours\\
-Plan and priorities\\
-Discipline rules\\
-Family engagement\\
-In-school training};
-\node[circ,fill=teal] (teach) at (8.4,2.0) {Teachers};
-\node[circ,fill=teal!75!black] (clim) at (8.4,0) {Climate};
-\node[circ,fill=amber!80!black] (fam) at (8.4,-2.0) {Families};
-\node[lbl,right=0.25cm of teach] (t1) {practices, self-efficacy,\\wellbeing, collaboration};
-\node[lbl,right=0.25cm of clim] (t2) {discipline, bullying,\\engagement, pupils' views};
-\node[lbl,right=0.25cm of fam] (t3) {involvement, satisfaction,\\perception of the school};
-\node[circ,fill=ink,minimum size=2.0cm] (learn) at (14.3,0) {Pupil\\learning};
-\draw[arr] (lead) -- (lev);
-\draw[arr] (lev.east) -- (teach.west);
-\draw[arr] (lev.east) -- (clim.west);
-\draw[arr] (lev.east) -- (fam.west);
-\draw[arr] (t1.east) -- (learn.north west);
-\draw[arr] (t2.east) -- (learn.west);
-\draw[arr] (t3.east) -- (learn.south west);
-\end{tikzpicture}
-\end{center}
-\vspace{0.1cm}
-\muted{\small The arrow on the left is the one we identify. The levers are the only ones a Spanish principal has.}
-\end{frame}
-
-%% 5. What we test
-\begin{frame}{What we would test, in the order effects should appear}
+%% 7. What we test
+\begin{frame}{What we would test, in the order a leader reaches it}
 \vspace{0.05cm}
-\small\begin{tabular}{@{}L{0.7cm}L{6.9cm}L{3.4cm}L{1.6cm}@{}}
+\footnotesize\begin{tabular}{@{}L{2.0cm}L{5.9cm}L{3.3cm}L{1.5cm}@{}}
 \toprule
- & \textbf{Hypothesis} & \textbf{Measured with} & \textbf{When} \\
+\textbf{Outcome} & \textbf{What a new leader may change} & \textbf{Measured with} & \textbf{When} \\
 \midrule
-\lab{H1} & The new leader reassigns teachers and support hours across classrooms & Schedules, class composition & Year 1 \\
-\lab{H2} & Discipline and classroom climate change & Pupil and teacher reports & Years 1--2 \\
-\lab{H3} & Family involvement and satisfaction change & Parent survey & Years 1--2 \\
-\lab{H4} & Teacher self-efficacy and wellbeing change & Teacher survey & Years 1--2 \\
-\lab{H5} & The same teachers change their classroom practice & Teacher survey, within teacher & Years 2--3 \\
-\lab{H6} & Achievement moves, by subject & Standardized tests, pupil value added & Last \\
+\lab{Classrooms} & Assignment of teachers and support hours across groups & Schedules, class composition & Year 1 \\
+\lab{Classrooms} & Discipline and climate & Pupil and teacher reports & Years 1--2 \\
+\lab{Families} & Involvement, trust, judgement of the school & Parent survey & Years 1--2 \\
+\lab{Teachers} & Self-efficacy, wellbeing, collaboration, training & Teacher survey & Years 1--2 \\
+\lab{Teachers} & Classroom practice of the same teachers & Teacher survey, within teacher & Years 2--3 \\
+\lab{Pupils} & Engagement and learning, by subject & Pupil survey, standardized tests & Last \\
 \bottomrule
 \end{tabular}
-\vspace{0.15cm}
+\vspace{0.05cm}
 
-\muted{\footnotesize Preregistered indices by domain; achievement is the last link, not the first. If rows 1 to 4 do not move, a result in row 6 would be hard to believe.}
+\muted{\footnotesize Preregistered indices by domain. Pupils come last: a leader reaches them through the rest.}
 \end{frame}
 
-%% 6. Three parameters
-\begin{frame}{Three parameters, not one}
-\vspace{0.3cm}
+%% 8. Three parameters
+\begin{frame}{What we can learn}
+\vspace{0.05cm}
+\small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Mean} & The cost of forced rotation: what a change of leader that nobody asked for does to the school. Madrid imposes it with the twelve-year cap. \\[0.4em]
-\lab{Variance} & Whether leaders matter at all: outcomes should disperse more after a rule-based exit than in an ordinary year if the identity of the leader matters \cit{Jones and Olken, 2005}. \\[0.4em]
-\lab{Heterogeneity} & What makes a good one, with measures fixed before office: the successor's own practices as a teacher, the selection committee's grade of their project, the staff's rating of the outgoing principal. \\
+\lab{How much} & What a change of leadership does to each node of the map: teachers, classrooms, families, pupils. The cost, or the gain, of a transition that nobody asked for. \\[0.4em]
+\lab{Whether leaders differ} & If the identity of the leader matters, outcomes disperse more after a rule-based exit than in an ordinary year \cit{Jones and Olken, 2005}. This needs no judgement of who is good. \\[0.4em]
+\lab{What good leadership is} & Which incoming leaders move the school, using only what was known before they took office: how they taught, what they proposed, how their predecessor was rated. \\
 \end{tabular}
-\vspace{0.5cm}
+\vspace{0.4cm}
 
-\muted{\small The variance test needs no classification of who is good. The heterogeneity does, and uses only what was observed before the leader took office.}
+\muted{\footnotesize Together: not only that leadership matters, but what it consists of.}
 \end{frame}
 
-%% 7. Data
+%% 9. Data
 \begin{frame}{Data}
 \vspace{0.05cm}
 \small
@@ -177,26 +208,29 @@ In-school training};
 \end{tabular}
 \end{frame}
 
-%% 8. Open questions
+%% 10. Open questions
 \begin{frame}{Three things to decide}
 \vspace{0.3cm}
 \begin{itemize}\setlength{\itemsep}{0.9em}
-\item \textbf{Which mechanisms go first.} Which levers and domains on the map do we believe a new principal actually moves in year one?
+\item \textbf{Which parts of the school a new leader reaches first.} Of the nodes on the map, which do we believe move in year one, and which take longer?
 \item \textbf{What the data must have.} A stable teacher identifier across years; the principal's age and years in office; the survey items that rate the principal.
 \item \textbf{How many rule-based exits there are} in 2015 to 2018, and whether the Consejer\'ia can add appointment records and later years.
 \end{itemize}
 \end{frame}
 
 %% References
-\begin{frame}{References}
+\begin{frame}[allowframebreaks]{References}
 \footnotesize
 Bartanen, B., J.~A. Grissom, and L.~Rogers. 2019. ``The Impacts of Principal Turnover.'' \textit{Educational Evaluation and Policy Analysis} 41(3): 350--374.\\[0.35em]
 B\"ohlmark, A., E.~Gr\"onqvist, and J.~Vlachos. 2016. ``The Headmaster Ritual: The Importance of Management for School Outcomes.'' \textit{Scandinavian Journal of Economics} 118(4): 912--940.\\[0.35em]
 Branch, G.~F., E.~A. Hanushek, and S.~G. Rivkin. 2012. ``Estimating the Effect of Leaders on Public Sector Productivity: The Case of School Principals.'' NBER Working Paper 17803.\\[0.35em]
-Fenizia, A. 2022. ``Managers and Productivity in the Public Sector.'' \textit{Econometrica} 90(3): 1063--1084.\\[0.35em]
+Grissom, J.~A., and B.~Bartanen. 2019. ``Strategic Retention: Principal Effectiveness and Teacher Turnover in Multiple-Measure Teacher Evaluation Systems.'' \textit{American Educational Research Journal} 56(2): 514--555.\\[0.35em]
+Bartanen, B., and J.~A. Grissom. 2023. ``School Principal Race, Teacher Racial Diversity, and Student Achievement.'' \textit{Journal of Human Resources} 58(2): 666--712.\\[0.35em]
+Lavy, V., A.~Boiko, and G.~Rachkovski. 2023. ``Effects and Mechanisms of CEOs Quality in Public Education.'' \textit{Economic Journal}.\\[0.35em]
 Grissom, J.~A., A.~J. Egalite, and C.~A. Lindsay. 2021. \textit{How Principals Affect Students and Schools: A Systematic Synthesis of Two Decades of Research}. Wallace Foundation.\\[0.35em]
 Jones, B.~F., and B.~A. Olken. 2005. ``Do Leaders Matter? National Leadership and Growth Since World War II.'' \textit{Quarterly Journal of Economics} 120(3): 835--864.\\[0.35em]
-Miller, A. 2013. ``Principal Turnover and Student Achievement.'' \textit{Economics of Education Review} 36: 60--72.
+Miller, A. 2013. ``Principal Turnover and Student Achievement.'' \textit{Economics of Education Review} 36: 60--72.\\[0.35em]
+OECD. 2020. \textit{TALIS 2018 Results (Volume II): Teachers and School Leaders as Valued Professionals}. OECD Publishing.
 \end{frame}
 
 %% Backup
