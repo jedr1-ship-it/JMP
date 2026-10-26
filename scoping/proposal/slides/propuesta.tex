@@ -10,160 +10,151 @@
 \definecolor{ink}{HTML}{1F1F1F}\definecolor{muted}{HTML}{6B6B6B}\definecolor{accent}{HTML}{8B1A1A}
 \setbeamercolor{normal text}{fg=ink}\setbeamercolor{frametitle}{fg=ink}\setbeamercolor{title}{fg=ink}
 \setbeamerfont{frametitle}{size=\large,series=\bfseries}\setbeamerfont{title}{size=\LARGE,series=\bfseries}
-\setbeamersize{text margin left=0.9cm,text margin right=0.9cm}
+\setbeamersize{text margin left=1.0cm,text margin right=1.0cm}
 \newcommand{\muted}[1]{{\color{muted}#1}}
 \newcommand{\acc}[1]{{\color{accent}#1}}
-\title{Edad de exposición a la violencia y resultados adultos}
-\subtitle{El fin de la violencia paramilitar en Colombia como experimento natural}
-\author{Propuesta de job market paper}
-\date{\muted{octubre 2026}}
+\newcommand{\keyfact}[1]{\vspace{0.2em}{\large\textbf{#1}}\vspace{0.5em}}
+\title{Does the Age at Exposure to Violence Matter?}
+\subtitle{Evidence from the end of paramilitary violence in Colombia}
+\author{Job market paper proposal}
+\date{\muted{October 2026}}
 \begin{document}
 \begin{frame}[plain]\titlepage\end{frame}
 
 %% 1
-\begin{frame}{La pregunta}
-\large ¿Depende el efecto de un shock de primera infancia de la edad a la que se recibe?
-\vspace{0.8em}
-\normalsize
+\begin{frame}{What is the question?}
+\keyfact{Early-life shocks have different effects depending on the age at which they hit. Does this hold for violence, and through which channel?}
 \begin{itemize}
-\item Hay periodos sensibles: el mismo shock recibido a los 0--2 años, a los 3--5 o en edad escolar deja huellas distintas en capital humano (Almond y Currie 2011; Carneiro, Salvanes, Willage y Willén, \emph{EJ}).
-\item La violencia es el shock de estrés más extendido del mundo en desarrollo, y la evidencia de largo plazo existe: León (2012, Perú), Duque (2024, Colombia), Akbulut-Yuksel, Tekin y Turan (2025, Alemania).
-\item Lo que esa evidencia no fija es el \textbf{gradiente por edad}: ningún estudio compara 0--2 con 3--5 y con edad escolar usando un episodio con \emph{inicio y fin fechados} y localizando al niño \emph{antes} del shock. La réplica de León (Huaroto, Gonzales y Pacheco, \emph{JHR} 2026) muestra lo que ocurre cuando no se hace: efectos antes de la concepción.
+\item Sensitive periods in skill formation: Cunha and Heckman (2007, \emph{AER}); Almond and Currie (2011, \emph{JEP}); Carneiro, Salvanes, Willage and Willén (forthcoming, \emph{EJ}).
+\item Childhood exposure to violence lowers adult human capital: León (2012, \emph{JHR}); Duque (2024, \emph{JCR}); Akbulut-Yuksel, Tekin and Turan (2025, \emph{JHR}).
+\item What is not known: the \textbf{age gradient}. Is exposure at 0--2 worse than at 3--5 or at school age? Does the damage run through the caregiver or through the child's own experience?
+\item Why it is hard: it requires a shock that \emph{starts and ends} on known dates, and children located \emph{before} the shock. Without both, the profile is contaminated: the replication of León by Huaroto, Gonzales and Pacheco (2026, \emph{JHR}) finds ``effects'' of violence that occurred before conception.
 \end{itemize}
-\vspace{0.6em}
-\textbf{Este paper:} estima el efecto de la exposición a la violencia paramilitar por edad (in utero, 0--2, 3--5, 6--11) sobre la escolaridad y el empleo adultos, para niños nacidos en municipios en los que esa violencia \emph{terminó} en una fecha conocida.
 \end{frame}
 
 %% 2
-\begin{frame}{Por qué Colombia: una violencia con actor y con fin fechado}
+\begin{frame}{Why Colombia? Paramilitary violence has an actor and an end}
 \begin{columns}[T]
 \column{0.62\textwidth}
-\includegraphics[width=\textwidth]{fig1_victimas_anuales.pdf}
+\includegraphics[width=\textwidth]{fig1_en.pdf}
 \column{0.36\textwidth}
 \small
 \begin{itemize}
-\item Expansión paramilitar (AUC) 1997--2002; pico 2001--02.
-\item Alto el fuego en diciembre de 2002; desmovilización de los 38 bloques entre noviembre de 2003 y agosto de 2006.
-\item Las víctimas paramilitares caen a cero en 2007: el fin es real, no administrativo.
-\item La guerrilla sigue activa: el registro distingue perpetrador y permite controlar por ella.
+\item Paramilitary expansion 1997--2002; peak 2001--02.
+\item Ceasefire December 2002; the 38 blocs demobilize between November 2003 and August 2006.
+\item Paramilitary victims are zero from 2007: the end is real.
+\item Guerrilla violence continues, and the victim registry identifies the perpetrator.
 \end{itemize}
 \vspace{0.3em}
-\muted{\scriptsize CNMH, Observatorio de Memoria y Conflicto (corte mar-2025): víctimas de masacres y asesinatos selectivos por perpetrador.}
+\muted{\scriptsize CNMH, Observatorio de Memoria y Conflicto: victims of massacres and selective killings by perpetrator.}
 \end{columns}
 \end{frame}
 
 %% 3
-\begin{frame}{El fin se fecha municipio a municipio}
+\begin{frame}{Why Colombia? The end is dated municipality by municipality}
 \begin{columns}[T]
 \column{0.58\textwidth}
-\includegraphics[height=0.72\textheight]{fig2_event_study_desmovilizacion.pdf}
+\includegraphics[height=0.68\textheight]{fig2_en.pdf}
 \column{0.40\textwidth}
 \small
 \begin{itemize}
-\item 451 municipios concentran el 94\,\% de las víctimas paramilitares 1997--2006; presencia mediana de 9 años.
-\item Cada bloque se desmoviliza en una fecha distinta: la violencia de su zona cae en los meses anteriores y queda en cero después.
-\item Para cada municipio $m$ se fecha el inicio $S_m$ y el fin $T_m$ de la presencia paramilitar (mes).
-\item Lo que varía entre niños: \textbf{la edad que tenían cuando la violencia terminó en su municipio}. Un niño nacido en 2003 en Montes de María nunca la vivió; su hermano de 1998 la vivió de los 0 a los 7.
+\item 451 municipalities account for 94\% of paramilitary victims 1997--2006; median presence of 9 years.
+\item Each bloc leaves on a different date; violence in its zone falls in the months before and stays at zero after.
+\item For each municipality $m$ we date the start $S_m$ and the end $T_m$ of paramilitary presence.
+\item \textbf{Source of variation:} children born in the same municipality were of different ages when the violence ended. Born in 2003 in Montes de María: never exposed; born in 1998: exposed from age 0 to 7.
 \end{itemize}
 \end{columns}
 \end{frame}
 
 %% 4
-\begin{frame}{El reto: la exposición no es exógena si el hogar se mueve}
-\small
-Colombia tiene una de las mayores migraciones internas por conflicto del mundo: en los municipios afectados, la mediana de población expulsada entre 1997 y 2010 es del 23\,\% (RUV). Por tanto:
-\begin{enumerate}
-\item El tiempo de exposición de un niño depende de si su hogar se queda y de a qué edad se va.
-\item Irse es otro tratamiento: el hogar desplazado afronta condiciones adversas distintas de la violencia.
-\item Quien se observa en el municipio años después no es quien estaba: cualquier diseño que localice al individuo en el momento del resultado mezcla el efecto con la selección.
-\end{enumerate}
-\vspace{0.5em}
-\textbf{Cómo se resuelve aquí.}
+\begin{frame}{What is the challenge? Households move}
+\keyfact{Colombia has one of the largest conflict-driven internal migrations in the world: in affected municipalities the median share of population displaced in 1997--2010 is 23\%.}
 \begin{itemize}
-\item \textbf{Localización anterior al shock:} la exposición se asigna por \emph{municipio de nacimiento}, no por residencia. El estimando es intención de tratar: el efecto de nacer en un municipio donde la violencia terminará cuando el niño tenga $a$ años, con la respuesta del hogar incluida.
-\item \textbf{Microdatos individuales} con municipio de nacimiento, edad en años y resultados adultos: GEIH 2012--2024 ($\sim$0,75 M personas por año; cohortes 1988--2003 observadas a los 20--36 años).
-\item \textbf{La huida se mide, no se asume:} con la fecha y el motivo de la última migración (módulo de migración de la GEIH) y el registro de desplazados por municipio y año, se estima después qué parte del efecto pasa por el desplazamiento.
+\item Exposure depends on whether the household stays and when it leaves; leaving is itself a different treatment.
+\item Whoever is observed in the municipality years later is not who was there: locating people at the outcome mixes the effect with selection.
+\end{itemize}
+\vspace{0.6em}
+\textbf{Our answer.}
+\begin{itemize}
+\item Locate children \textbf{before} the shock: exposure is assigned by \emph{municipality of birth}, in individual microdata. The estimand is intention to treat: the effect of being born where violence will end at age $a$, household response included.
+\item Displacement is measured, not assumed: date and reason of the last move (GEIH) and displaced population by municipality and year (RUV).
 \end{itemize}
 \end{frame}
 
 %% 5
-\begin{frame}{Especificación}
-\small
-Para la persona $i$, nacida en el municipio $m$ y el año $c$, observada en la encuesta del año $t$:
+\begin{frame}{How do we identify the effect?}
+Person $i$ born in municipality $m$ in year $c$, observed in survey year $t$:
 \begin{equation*}
-Y_{imct} = \sum_{a \in \{\text{iu},\,0\text{--}2,\,3\text{--}5,\,6\text{--}11\}} \beta_a\, D^{a}_{mc} + \gamma\, \text{Post}_{mc} + \varphi\, G_{mc} + \mu_m + \lambda_{c \times d(m)} + \theta_{t} + \varepsilon_{imct}
+Y_{imct} = \sum_{a} \beta_a\, D^{a}_{mc} + \gamma\, \text{Post}_{mc} + \varphi\, G_{mc} + \mu_m + \lambda_{c \times d(m)} + \theta_{t} + \varepsilon_{imct}
 \end{equation*}
+\small
 \begin{itemize}
-\item $D^{a}_{mc}$: años de presencia paramilitar en $m$ (entre $S_m$ y $T_m$) que la cohorte $c$ vivió a la edad $a$; 0 para los municipios sin presencia y para las edades posteriores a $T_m$. $\text{Post}_{mc} = 1$ si la cohorte nació después de $T_m$ en un municipio tratado.
-\item $G_{mc}$: años de presencia guerrillera a las mismas edades. $\mu_m$: municipio de nacimiento. $\lambda_{c \times d(m)}$: cohorte $\times$ departamento. $\theta_t$: año de encuesta y edad al encuestar. Errores agrupados por municipio de nacimiento (451 tratados, 670 de comparación).
-\item \textbf{Qué identifica $\beta_a$:} el efecto de un año de violencia paramilitar vivido a la edad $a$, comparando cohortes del mismo municipio de nacimiento que tenían edades distintas cuando la violencia terminó, neto de las tendencias de cohorte del departamento. La variación viene del calendario de $T_m$ (y de $S_m$) dentro del departamento.
-\item \textbf{Resultados:} años de escolaridad, secundaria completa, educación superior, empleo, formalidad, ingreso laboral.
+\item $a \in \{$in utero, 0--2, 3--5, 6--11$\}$. $D^{a}_{mc}$: years of paramilitary presence in $m$ (between $S_m$ and $T_m$) that cohort $c$ lived through at age $a$; zero in untreated municipalities and at ages after $T_m$. $\text{Post}_{mc}$: born after $T_m$ in a treated municipality.
+\item $G_{mc}$: years of guerrilla presence at the same ages. $\mu_m$: municipality of birth. $\lambda_{c\times d(m)}$: cohort $\times$ department. $\theta_t$: survey year and age at survey. Standard errors clustered by municipality of birth (451 treated, 670 comparison).
+\item \textbf{$\beta_a$ is the effect of one year of paramilitary violence lived at age $a$}, comparing cohorts born in the same municipality who were of different ages when the violence ended, net of department-level cohort trends. The variation comes from the timing of $T_m$ (and $S_m$) within departments.
+\item Outcomes: years of schooling, secondary completion, tertiary enrollment, employment, formality, labor earnings.
 \end{itemize}
 \end{frame}
 
 %% 6
-\begin{frame}{Qué forma del perfil distingue entre mecanismos}
-\begin{center}
-\includegraphics[width=0.9\textwidth]{fig_h1h2_min.pdf}
-\end{center}
+\begin{frame}{Which data?}
 \small
-\begin{itemize}
-\item \textbf{H1, canal del hogar:} el daño opera a través del cuidador (estrés, huida, pérdida de ingresos): empieza in utero, es máximo a los 0--2 y los nacidos \emph{después} del fin heredan parte ($\gamma < 0$).
-\item \textbf{H2, exposición directa:} el niño tiene que poder codificar la experiencia: nada antes de los 3, daño creciente con la edad, y nada para los nacidos después del fin ($\gamma = 0$).
-\item Segundo paso: $\beta_a$ por separado para hogares que se desplazaron y que no (fecha y motivo de la migración en la GEIH; expulsión por municipio y año en el RUV).
-\end{itemize}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{3.6cm}p{6.2cm}p{3.6cm}@{}}
+\toprule
+\textbf{Source} & \textbf{Content} & \textbf{Role} \\
+\midrule
+GEIH 2012--2024 (DANE household survey) & Municipality of birth, age, schooling, employment, formality, earnings, last migration ($\sim$0.75 M persons per year; cohorts 1988--2003 observed at ages 20--36) & Outcomes and location before the shock \\
+CNMH-OMC victim registry & Victims by municipality, month and perpetrator, 1985--2015 & $S_m$, $T_m$, $D^{a}_{mc}$, $G_{mc}$ \\
+RUV (victims' registry) & Displaced population by municipality and year & Displacement channel \\
+Vital statistics (EEVV) & Births 1998--2010 and deaths 1998--2019 by municipality & Selection into birth and survival \\
+\bottomrule
+\end{tabular}
+\vspace{0.6em}
+In hand: CNMH and RUV, with $S_m$ and $T_m$ built for the 451 municipalities. Public, to be downloaded: GEIH and EEVV. Extension if access is granted: ICFES linked records (displacement, health, formal employment at the individual level).
 \end{frame}
 
 %% 7
-\begin{frame}{Validez: qué puede fallar y cómo se comprueba}
+\begin{frame}{What do we expect, and what would it tell us?}
+\begin{center}
+\includegraphics[width=0.88\textwidth]{fig_h1h2_en.pdf}
+\end{center}
 \small
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{5.0cm}p{8.6cm}@{}}
+\begin{itemize}
+\item \textbf{H1, household channel:} the damage runs through the caregiver (stress, displacement, income loss): it starts in utero, peaks at 0--2, and those born \emph{after} the end inherit part of it ($\gamma<0$).
+\item \textbf{H2, direct exposure:} the child must be old enough to encode the experience: nothing before age 3, rising damage with age, nothing for those born after the end ($\gamma = 0$).
+\item Second step: $\beta_a$ separately for households that were displaced and those that stayed.
+\end{itemize}
+\end{frame}
+
+%% 8
+\begin{frame}{What could go wrong?}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{5.2cm}p{8.4cm}@{}}
 \toprule
-\textbf{Amenaza} & \textbf{Prueba} \\
+\textbf{Threat} & \textbf{Test} \\
 \midrule
-Las cohortes de los municipios tratados ya iban por otra senda & Placebo: dosis asignada a las ventanas anteriores a la concepción ($[-45,-10]$ meses) debe dar cero; cohortes 1980--87 con pendiente en la dosis futura; Rambachan y Roth (2023) \\
-La violencia cambia quién nace & Nacimientos por municipio y cohorte (EEVV) sobre la dosis; composición de las madres al nacer \\
-Mortalidad y emigración exterior selectivas & Defunciones por municipio y cohorte (EEVV); cotas de Lee por ventana de edad \\
-Municipio de nacimiento mal medido & Cociente ocurrencia / residencia de la madre en EEVV como medida de atenuación \\
-Guerrilla y fuerza pública en los mismos municipios & $G_{mc}$ y dosis de fuerza pública a las mismas edades; perfil de la guerrilla como placebo de perpetrador \\
-Tratamiento continuo y escalonado & de Chaisemartin y D'Haultf\oe uille (2024); Callaway, Goodman-Bacon y Sant'Anna (2024); event study en $T_m$ \\
+Cohorts in treated municipalities were already on a different path & Placebo: violence assigned to the months before conception must have zero effect; Rambachan and Roth (2023, \emph{REStud}) \\
+Violence changes who is born and who survives & Births and deaths by municipality and cohort (EEVV); Lee (2009, \emph{REStud}) bounds by age window \\
+Guerrilla and state violence in the same places & $G_{mc}$ and state-agent violence at the same ages; the guerrilla profile as a perpetrator placebo \\
+Continuous, staggered treatment & de Chaisemartin and D'Haultf\oe uille (2024, \emph{REStud}); Callaway, Goodman-Bacon and Sant'Anna (2024); event study around $T_m$ \\
 \bottomrule
 \end{tabular}
 \end{frame}
 
-%% 8
-\begin{frame}{Contribución}
+%% 9
+\begin{frame}{What is the contribution?}
 \begin{enumerate}
-\item \textbf{El gradiente por edad de un shock de violencia, con un episodio que termina.} Primera estimación que separa in utero, 0--2, 3--5 y 6--11 con el fin de la exposición fechado por municipio y la localización anterior al shock. El fin fechado es lo que permite el contraste limpio: cohortes del mismo municipio nacidas antes y después de que la violencia acabara.
-\item \textbf{Un test de mecanismo:} canal del hogar frente a exposición directa, a partir de la forma del perfil y de los nacidos después del fin, y después por desplazamiento del hogar.
-\item \textbf{Resultados adultos:} escolaridad y mercado de trabajo a los 20--36 años, no sólo puntajes en el colegio.
+\item \textbf{The age gradient of a violence shock, from an episode that ends.} First estimates separating in utero, 0--2, 3--5 and 6--11, with the end of exposure dated by municipality and location fixed before the shock. The dated end is what makes the comparison clean: cohorts born in the same municipality before and after the violence stopped.
+\item \textbf{A mechanism test:} household channel versus direct exposure, from the shape of the profile and from those born after the end; then by household displacement.
+\item \textbf{Adult outcomes:} schooling and labor market at ages 20--36, not only school test scores.
 \end{enumerate}
 \vspace{0.6em}
 \small
-Respecto a Duque (2024): otra década, un actor con fin fechado, municipio de nacimiento en lugar de residencia y resultados adultos. Respecto a León (2012) y su réplica: el placebo pre-concepción es parte del diseño, no una comprobación posterior.
-\end{frame}
+Relative to Duque (2024, \emph{JCR}): a different decade, an actor with a dated end, municipality of birth instead of residence, adult outcomes. Relative to León (2012, \emph{JHR}) and its replication: the pre-conception placebo is part of the design, not an afterthought.
+\vspace{0.6em}
 
-%% 9
-\begin{frame}{Datos y calendario}
-\small
-\begin{columns}[T]
-\column{0.5\textwidth}
-\textbf{Datos}
-\begin{itemize}
-\item CNMH-OMC: víctimas por municipio, mes y perpetrador 1985--2015 (en mano; $S_m$ y $T_m$ construidos para los 451 municipios).
-\item RUV: expulsados por municipio y año (en mano).
-\item GEIH 2012--2024: municipio de nacimiento, migración, educación, empleo, ingreso (público; descarga pendiente).
-\item EEVV nacimientos 1998--2010 y defunciones 1998--2019 (público; descarga pendiente).
-\end{itemize}
-\column{0.5\textwidth}
-\textbf{Calendario}
-\begin{itemize}
-\item Meses 1--2: GEIH y EEVV; dosis por municipio de nacimiento $\times$ cohorte; conteos y potencia (criterio: MDE $\le 0{,}05$ DE en escolaridad por ventana).
-\item Meses 3--5: estimación principal, placebos, perfil por desplazamiento.
-\item Mes 6: borrador y decisión. Si el placebo pre-concepción falla con municipio de nacimiento, el diseño no sirve y se dice.
-\item Meses 7--18: robustez, extensiones, paper completo.
-\end{itemize}
-\end{columns}
+\textbf{Timeline.} Months 1--2: data and power. Months 3--5: main estimates, placebos, displacement split. Month 6: first draft and go/no-go. Months 7--18: robustness and full paper.
 \end{frame}
 \end{document}
