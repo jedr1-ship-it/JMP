@@ -3,7 +3,7 @@
 \usetheme{default}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{booktabs,array,xcolor,tikz}
+\usepackage{booktabs,array,xcolor,tikz,amsmath}
 \usetikzlibrary{arrows.meta,positioning,calc}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}{\hfill{\scriptsize\color{muted}\insertframenumber\,/\,\inserttotalframenumber}\hspace{0.45cm}\vspace{0.25cm}}
@@ -52,7 +52,7 @@ Principals are an input in the production of education, and their value added is
 \end{frame}
 
 %% 2. What we know
-\begin{frame}{What we know}
+\begin{frame}[label=know]{What we know}
 \vspace{0.1cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
@@ -61,30 +61,8 @@ Principals are an input in the production of education, and their value added is
 \lab{The channel so far} & Personnel: effective principals retain strong teachers and shed weak ones \cit{Grissom and Bartanen, 2019}; principals reshape the staff through hiring and retention \cit{Bartanen and Grissom, 2023}. \\[0.3em]
 \lab{Not yet seen} & Under an exogenous change of leader: the same teachers' practice and wellbeing, the classrooms, and the families. \\
 \end{tabular}
-\end{frame}
-
-%% 3. Recent work
-\begin{frame}{Recent work on school and public-sector leaders}
-\vspace{0.05cm}
-\footnotesize
-\renewcommand{\arraystretch}{1.05}
-\begin{tabular}{@{}L{8.3cm}L{3.6cm}L{1.0cm}@{}}
-\toprule
-\textbf{Title} & \textbf{Journal} & \textbf{Year} \\
-\midrule
-Rethinking principal effects on student outcomes & J. Public Economics & 2024 \\
-Managers' productivity and recruitment in the public sector: the case of school principals & AEJ: Economic Policy & 2024 \\
-Personnel management and school productivity: evidence from India & Economic Journal & 2024 \\
-The lasting impacts of middle school principals & NBER WP & 2024 \\
-Effects and mechanisms of CEOs quality in public education & Economic Journal & 2023 \\
-School principal race, teacher racial diversity, and student achievement & J. Human Resources & 2023 \\
-Managers and productivity in the public sector & Econometrica & 2022 \\
-The headmaster ritual: the importance of management for school outcomes & Scand. J. Economics & 2016 \\
-\bottomrule
-\end{tabular}
-\vspace{0.15cm}
-
-\muted{\footnotesize All ask whether leaders matter, from achievement, turnover, or output. None observes the school between the leader and the pupil.}
+\vspace{0.1cm}
+\hfill\hyperlink{recent}{\beamerbutton{Recent work}}
 \end{frame}
 
 %% 4. Intermediate outcomes
@@ -168,6 +146,26 @@ Each is measured for every school and year. Teacher and family outcomes are depe
 \end{tabular}
 \end{frame}
 
+%% 7b. Specification
+\begin{frame}{Specification}
+\vspace{-0.15cm}
+\footnotesize
+Let $\tau_s$ be the year school $s$'s clock runs out (principal turns 65, or completes year 12), $Z_{st}=\mathbf{1}[t\ge\tau_s]$, and $D_{st}=\mathbf{1}[\text{new principal in } s \text{ at } t]$.
+\vspace{0.05cm}
+
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}L{2.4cm}L{10.6cm}@{}}
+\lab{Reduced form} & $Y_{ist}=\alpha_s+\lambda_t+\sum_{k\neq -1}\beta_k\,\mathbf{1}[t-\tau_s=k]+X_{ist}'\gamma+\varepsilon_{ist}$, with $i$ a teacher, class, pupil or parent; not-yet-treated schools as controls; $\beta_{k<0}$ test pre-trends. \\[0.35em]
+\lab{2SLS} & $Y_{ist}=\alpha_s+\lambda_t+\beta D_{st}+X_{ist}'\gamma+\varepsilon_{ist}$, $D_{st}$ instrumented by $Z_{st}$. Compliance is one for retirement, below one for the twelve-year cap (re-selection possible). \\[0.35em]
+\lab{Within teacher} & $Y_{jst}=\alpha_j+\lambda_t+\beta D_{st}+\varepsilon_{jst}$: the same teacher under two principals. Within pupil for the 3rd-to-6th grade cohort. \\[0.35em]
+\lab{Variance} & $\mathrm{Var}(\Delta Y_{st}\mid Z_{st}=1)-\mathrm{Var}(\Delta Y_{st}\mid Z_{st}=0)$: excess dispersion of changes around rule-based transitions identifies $\sigma^2_{\text{leader}}$ without ranking leaders. \\[0.35em]
+\lab{Heterogeneity} & $+\,\delta\,D_{st}\times W_s$, with $W_s$ the successor's pre-appointment practices and wellbeing, the project score, or the staff's rating of the outgoing principal; balance of $W_s$ on pre-trends. \\
+\end{tabular}
+\vspace{0.05cm}
+
+\muted{\scriptsize Standard errors clustered by school; staggered-robust estimators (Sun and Abraham, 2021; Callaway and Sant'Anna, 2021). Endogenous exits estimated separately as the selection benchmark.}
+\end{frame}
+
 %% 8. Outcomes and timing
 \begin{frame}{Outcomes and expected timing}
 \vspace{-0.05cm}
@@ -240,5 +238,34 @@ Lemos, R., K.~Muralidharan, and D.~Scur. 2024. ``Personnel Management and School
 Miller, A. 2013. ``Principal Turnover and Student Achievement.'' \textit{Economics of Education Review} 36: 60--72.\\[0.35em]
 Mu\~noz, P., and M.~Prem. 2024. ``Managers' Productivity and Recruitment in the Public Sector: The Case of School Principals.'' \textit{American Economic Journal: Economic Policy} 16(4): 223--253.
 \end{frame}
+
+%% Appendix
+\begin{frame}[label=recent]{Appendix: recent work on school and public-sector leaders}
+\vspace{-0.1cm}
+\scriptsize
+\renewcommand{\arraystretch}{1.0}
+\begin{tabular}{@{}L{8.3cm}L{3.6cm}L{1.0cm}@{}}
+\toprule
+\textbf{Title} & \textbf{Journal} & \textbf{Year} \\
+\midrule
+Principal effects on teacher working conditions (Rahaman and Koedel) & CALDER WP & 2026 \\
+Rethinking principal effects on student outcomes & J. Public Economics & 2024 \\
+Managers' productivity and recruitment in the public sector: the case of school principals & AEJ: Economic Policy & 2024 \\
+Personnel management and school productivity: evidence from India & Economic Journal & 2024 \\
+The lasting impacts of middle school principals & NBER WP & 2024 \\
+Managers in public schools (Tsao) & Princeton JMP & 2024 \\
+Effects and mechanisms of CEOs quality in public education & Economic Journal & 2023 \\
+School principal race, teacher racial diversity, and student achievement & J. Human Resources & 2023 \\
+Managers and productivity in the public sector & Econometrica & 2022 \\
+\bottomrule
+\end{tabular}
+\vspace{0.15cm}
+
+\muted{\scriptsize Tsao: event studies of principal moves and retirements, Kentucky and Texas; effects on scores, absenteeism, teacher retention. Rahaman and Koedel: variance of principal effects on 20 teacher-reported working conditions, Illinois.}
+
+\hfill\hyperlink{know}{\beamerreturnbutton{Back}}
+\end{frame}
+
+
 
 \end{document}
