@@ -1,0 +1,219 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+% Compile with pdflatex (or xelatex). Style follows the advisor deck: Computer Modern,
+% white background, amber labels, blue citations, page number only.
+\usetheme{default}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs,array,xcolor,tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{\hfill{\scriptsize\color{muted}\insertframenumber\,/\,\inserttotalframenumber}\hspace{0.45cm}\vspace{0.25cm}}
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{frametitle}{\vspace{0.55cm}\textbf{\large\insertframetitle}\par}
+\usefonttheme{serif}
+\definecolor{ink}{HTML}{1F1F1F}
+\definecolor{muted}{HTML}{6B6B6B}
+\definecolor{amber}{HTML}{B07D0E}
+\definecolor{teal}{HTML}{1F6F5F}
+\definecolor{cite}{HTML}{2A5DB0}
+\definecolor{mint}{HTML}{DDEBE6}
+\setbeamercolor{normal text}{fg=ink}
+\setbeamercolor{frametitle}{fg=ink}
+\setbeamercolor{title}{fg=ink}
+\setbeamercolor{itemize item}{fg=teal}
+\setbeamercolor{button}{bg=mint,fg=teal}
+\setbeamersize{text margin left=1.1cm,text margin right=1.1cm}
+\newcommand{\lab}[1]{\textcolor{amber}{\textbf{#1}}}
+\newcommand{\muted}[1]{{\color{muted}#1}}
+\newcommand{\cit}[1]{{\color{cite}\small(#1)}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.35}
+
+\title{\textbf{What a School Leader Can Do}}
+\subtitle{Evidence from rule-based principal exits in Madrid}
+\author{}
+\date{\muted{Paper idea for discussion. October 2026}}
+
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+%% 1. The question
+\begin{frame}[plain]
+\vspace{1.2cm}
+\begin{center}
+{\LARGE\textbf{What can a school leader do}\\[0.2em]\textbf{when they cannot hire, fire, or pay?}}
+\end{center}
+\vspace{0.9cm}
+\begin{center}
+\begin{minipage}{0.78\textwidth}
+Schools whose teachers value their principal show better climate, more collaboration, better classroom management, and higher teacher wellbeing \cit{OECD, TALIS 2018}. None of it is causal: good schools may simply make their principals look good.
+\end{minipage}
+\end{center}
+\end{frame}
+
+%% 2. Why Spain
+\begin{frame}{Why Spain: the leader changes, the staff does not}
+\vspace{0.3cm}
+\begin{tabular}{@{}L{3.4cm}L{10.2cm}@{}}
+\lab{The principal} & A teacher elected by colleagues for a four-year term, who returns to the classroom afterwards. The successor comes from the same staff. \\[0.3em]
+\lab{Personnel power} & None. Teachers are civil servants assigned by the regional administration. The principal cannot hire, dismiss, set pay, or change the curriculum. \\[0.3em]
+\lab{What is left} & The organization of the school: who teaches which class, how time and support hours are used, the plan and its priorities, discipline, the relation with families, in-school training. \\[0.3em]
+\lab{Terms end by rule} & Compulsory retirement at 65, and at most two renewals: twelve years in office. Both dates are fixed years in advance, regardless of how the school is doing. \\
+\end{tabular}
+\vspace{0.5cm}
+
+\muted{\small Evidence that principals matter comes from the United States, where the identified channel is the management of the teaching force \cit{Branch, Hanushek, and Rivkin, 2012; Grissom, Egalite, and Lindsay, 2021}. Here that channel is closed.}
+\end{frame}
+
+%% 3. Identification
+\begin{frame}[label=ident]{Identification: a principal's clock}
+\vspace{0.2cm}
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw[muted,line width=0.8pt] (0,0) -- (12.4,0);
+\foreach \x/\lbl/\sub/\col in {0/Appointed/{year 0}/amber, 4.1/Renewal/{year 4}/teal, 8.2/Renewal/{year 8}/teal, 12.3/Forced exit/{year 12, or age 65}/amber}{
+  \fill[\col] (\x,0) circle (0.17);
+  \node[above=0.3cm,font=\small\bfseries] at (\x,0) {\lbl};
+  \node[below=0.3cm,font=\footnotesize,text=muted] at (\x,0) {\sub};
+}
+\end{tikzpicture}
+\end{center}
+\vspace{0.3cm}
+\begin{tabular}{@{}L{3.4cm}L{10.2cm}@{}}
+\lab{Treated} & Schools whose clock runs out in 2016, 2017, or 2018: a new principal arrives for reasons unrelated to the school's trajectory. \\[0.2em]
+\lab{Comparison} & Schools whose clock runs out later. Staggered event study on the calendar; 2SLS for the realized change. \\[0.2em]
+\lab{Benchmark} & Exits that are not rule-based (resignations, non-renewals) kept separate: they measure the selection the literature worries about \cit{Miller, 2013; Bartanen, Grissom, and Rogers, 2019}. \\[0.2em]
+\lab{The successor} & Observed as a classroom teacher the year before taking office: practices, wellbeing, views on the school. \\
+\end{tabular}
+\vspace{0.2cm}
+\hfill\hyperlink{counts}{\beamerbutton{Counts}}
+\end{frame}
+
+%% 4. Causal map
+\begin{frame}{Causal map}
+\vspace{0.2cm}
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  circ/.style={circle,draw=none,text=white,align=center,font=\small\bfseries,minimum size=2.1cm,inner sep=1pt},
+  box/.style={draw=muted!60,rounded corners=2pt,align=left,inner sep=6pt,font=\footnotesize},
+  lbl/.style={align=left,font=\footnotesize,text width=3.6cm},
+  arr/.style={-{Latex[length=2.2mm]},line width=0.8pt,draw=muted}
+]
+\node[circ,fill=amber,minimum size=2.6cm] (lead) at (0,0) {New school\\leader\\[1pt]{\scriptsize\mdseries by rule, not\\by performance}};
+\node[box,right=0.9cm of lead,text width=3.3cm] (lev) {\textbf{Levers}\\[2pt]
+Teacher-to-class assignment\\
+Timetable and support hours\\
+Plan and priorities\\
+Discipline rules\\
+Family engagement\\
+In-school training};
+\node[circ,fill=teal] (teach) at (9.4,2.0) {Teachers};
+\node[circ,fill=teal!75!black] (clim) at (9.4,0) {Climate};
+\node[circ,fill=amber!80!black] (fam) at (9.4,-2.0) {Families};
+\node[lbl,right=0.25cm of teach] (t1) {practices, self-efficacy,\\wellbeing, collaboration};
+\node[lbl,right=0.25cm of clim] (t2) {discipline, bullying,\\engagement, pupils' views};
+\node[lbl,right=0.25cm of fam] (t3) {involvement, satisfaction,\\perception of the school};
+\node[circ,fill=ink,minimum size=2.0cm] (learn) at (16.2,0) {Pupil\\learning};
+\draw[arr] (lead) -- (lev);
+\draw[arr] (lev.east) -- (teach.west);
+\draw[arr] (lev.east) -- (clim.west);
+\draw[arr] (lev.east) -- (fam.west);
+\draw[arr] (t1.east) -- (learn.north west);
+\draw[arr] (t2.east) -- (learn.west);
+\draw[arr] (t3.east) -- (learn.south west);
+\end{tikzpicture}}
+\end{center}
+\vspace{0.1cm}
+\muted{\small The arrow on the left is the one we identify. The levers are the only ones a Spanish principal has.}
+\end{frame}
+
+%% 5. What we test
+\begin{frame}{What we would test, in the order effects should appear}
+\vspace{0.2cm}
+\begin{tabular}{@{}L{0.8cm}L{7.6cm}L{3.6cm}L{1.9cm}@{}}
+\toprule
+ & \textbf{Hypothesis} & \textbf{Measured with} & \textbf{When} \\
+\midrule
+\lab{H1} & The new leader reassigns teachers and support hours across classrooms & Schedules, class composition & Year 1 \\
+\lab{H2} & Discipline and classroom climate change & Pupil and teacher reports & Years 1--2 \\
+\lab{H3} & Family involvement and satisfaction change & Parent survey & Years 1--2 \\
+\lab{H4} & Teacher self-efficacy and wellbeing change & Teacher survey & Years 1--2 \\
+\lab{H5} & The same teachers change their classroom practice & Teacher survey, within teacher & Years 2--3 \\
+\lab{H6} & Achievement moves, by subject & Standardized tests, pupil value added & Last \\
+\bottomrule
+\end{tabular}
+\vspace{0.4cm}
+
+\muted{\small Preregistered indices by domain; achievement is the last link, not the first. If rows 1 to 4 do not move, a result in row 6 would be hard to believe.}
+\end{frame}
+
+%% 6. Three parameters
+\begin{frame}{Three parameters, not one}
+\vspace{0.3cm}
+\begin{tabular}{@{}L{3.4cm}L{10.2cm}@{}}
+\lab{Mean} & The cost of forced rotation: what a change of leader that nobody asked for does to the school. Madrid imposes it with the twelve-year cap. \\[0.4em]
+\lab{Variance} & Whether leaders matter at all: outcomes should disperse more after a rule-based exit than in an ordinary year if the identity of the leader matters \cit{Jones and Olken, 2005}. \\[0.4em]
+\lab{Heterogeneity} & What makes a good one, with measures fixed before office: the successor's own practices as a teacher, the selection committee's grade of their project, the staff's rating of the outgoing principal. \\
+\end{tabular}
+\vspace{0.5cm}
+
+\muted{\small The variance test needs no classification of who is good. The heterogeneity does, and uses only what was observed before the leader took office.}
+\end{frame}
+
+%% 7. Data
+\begin{frame}{Data}
+\vspace{0.2cm}
+\begin{tabular}{@{}L{3.4cm}L{10.2cm}@{}}
+\lab{In hand} & Universe of Madrid public primary schools, 2015 to 2018. Principal questionnaire. Teachers: practices, wellbeing, training. Schedules: who teaches which class. All pupils by classroom: scores by subject, perceptions. All parents by classroom: involvement, satisfaction. \\[0.4em]
+\lab{To collect} & Principal appointments, renewals, and exits with cause (BOCM). The committee's grade of each project. Teacher assignment lists: chosen versus imposed posts. School plans from archived websites. Public school-level results from 2022: the long run. \\[0.4em]
+\lab{Rotation} & 136 principals selected and 36 unplanned vacancies in 2016--17 across 1,156 public centres; 336 changes in 2017. Roughly 400 to 500 changes in primary over the three transitions, of which the rule-based subset is to be counted. \\
+\end{tabular}
+\end{frame}
+
+%% 8. Open questions
+\begin{frame}{Three things to decide}
+\vspace{0.3cm}
+\begin{itemize}\setlength{\itemsep}{0.9em}
+\item \textbf{Which mechanisms go first.} Which levers and domains on the map do we believe a new principal actually moves in year one?
+\item \textbf{What the data must have.} A stable teacher identifier across years; the principal's age and years in office; the survey items that rate the principal.
+\item \textbf{How many rule-based exits there are} in 2015 to 2018, and whether the Consejer\'ia can add appointment records and later years.
+\end{itemize}
+\end{frame}
+
+%% References
+\begin{frame}{References}
+\footnotesize
+Bartanen, B., J.~A. Grissom, and L.~Rogers. 2019. ``The Impacts of Principal Turnover.'' \textit{Educational Evaluation and Policy Analysis} 41(3): 350--374.\\[0.35em]
+B\"ohlmark, A., E.~Gr\"onqvist, and J.~Vlachos. 2016. ``The Headmaster Ritual: The Importance of Management for School Outcomes.'' \textit{Scandinavian Journal of Economics} 118(4): 912--940.\\[0.35em]
+Branch, G.~F., E.~A. Hanushek, and S.~G. Rivkin. 2012. ``Estimating the Effect of Leaders on Public Sector Productivity: The Case of School Principals.'' NBER Working Paper 17803.\\[0.35em]
+Fenizia, A. 2022. ``Managers and Productivity in the Public Sector.'' \textit{Econometrica} 90(3): 1063--1084.\\[0.35em]
+Grissom, J.~A., A.~J. Egalite, and C.~A. Lindsay. 2021. \textit{How Principals Affect Students and Schools: A Systematic Synthesis of Two Decades of Research}. Wallace Foundation.\\[0.35em]
+Jones, B.~F., and B.~A. Olken. 2005. ``Do Leaders Matter? National Leadership and Growth Since World War II.'' \textit{Quarterly Journal of Economics} 120(3): 835--864.\\[0.35em]
+Miller, A. 2013. ``Principal Turnover and Student Achievement.'' \textit{Economics of Education Review} 36: 60--72.
+\end{frame}
+
+%% Backup
+\begin{frame}[label=counts]{Backup: how much rotation is there?}
+\vspace{0.2cm}
+\begin{tabular}{@{}L{4.2cm}L{9.4cm}@{}}
+\toprule
+\textbf{Year} & \textbf{All public centres (1,156)} \\
+\midrule
+2016--17 & 136 principals appointed through selection; 36 unplanned vacancies (retirement, transfer, resignation, no candidate) \\
+2017 & 336 changes of principal; 47 direct appointments by the administration (14\%) \\
+\bottomrule
+\end{tabular}
+\vspace{0.4cm}
+
+\muted{\small Sources: Comunidad de Madrid press release, 2016; Diagonal, 2017 (secondary). Primary schools are about 800 of the 1,156 centres. The rule-based subset (age 65, twelve-year cap) is to be counted in the panel from the principal's age and years in office.}
+\vspace{0.3cm}
+
+\hfill\hyperlink{ident}{\beamerreturnbutton{Back}}
+\end{frame}
+
+\end{document}
