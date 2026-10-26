@@ -146,24 +146,69 @@ Each is measured for every school and year. Teacher and family outcomes are depe
 \end{tabular}
 \end{frame}
 
-%% 7b. Specification
-\begin{frame}{Specification}
-\vspace{-0.15cm}
-\footnotesize
-Let $\tau_s$ be the year school $s$'s clock runs out (principal turns 65, or completes year 12), $Z_{st}=\mathbf{1}[t\ge\tau_s]$, and $D_{st}=\mathbf{1}[\text{new principal in } s \text{ at } t]$.
-\vspace{0.05cm}
-
-\renewcommand{\arraystretch}{1.1}
-\begin{tabular}{@{}L{2.4cm}L{10.6cm}@{}}
-\lab{Reduced form} & $Y_{ist}=\alpha_s+\lambda_t+\sum_{k\neq -1}\beta_k\,\mathbf{1}[t-\tau_s=k]+X_{ist}'\gamma+\varepsilon_{ist}$, with $i$ a teacher, class, pupil or parent; not-yet-treated schools as controls; $\beta_{k<0}$ test pre-trends. \\[0.35em]
-\lab{2SLS} & $Y_{ist}=\alpha_s+\lambda_t+\beta D_{st}+X_{ist}'\gamma+\varepsilon_{ist}$, $D_{st}$ instrumented by $Z_{st}$. Compliance is one for retirement, below one for the twelve-year cap (re-selection possible). \\[0.35em]
-\lab{Within teacher} & $Y_{jst}=\alpha_j+\lambda_t+\beta D_{st}+\varepsilon_{jst}$: the same teacher under two principals. Within pupil for the 3rd-to-6th grade cohort. \\[0.35em]
-\lab{Variance} & $\mathrm{Var}(\Delta Y_{st}\mid Z_{st}=1)-\mathrm{Var}(\Delta Y_{st}\mid Z_{st}=0)$: excess dispersion of changes around rule-based transitions identifies $\sigma^2_{\text{leader}}$ without ranking leaders. \\[0.35em]
-\lab{Heterogeneity} & $+\,\delta\,D_{st}\times W_s$, with $W_s$ the successor's pre-appointment practices and wellbeing, the project score, or the staff's rating of the outgoing principal; balance of $W_s$ on pre-trends. \\
+%% 7b. The clock in one equation
+\begin{frame}{The clock, in one equation}
+\vspace{0.1cm}
+\small
+Let $\tau_s$ be the year school $s$'s clock runs out: its principal turns 65, or completes year twelve.
+\begin{equation*}
+Y_{ist}=\alpha_s+\lambda_t+\sum_{k\neq -1}\beta_k\,\mathbf{1}[\,t-\tau_s=k\,]+\varepsilon_{ist}
+\end{equation*}
+\vspace{0.1cm}
+\begin{tabular}{@{}L{2.6cm}L{10.4cm}@{}}
+\lab{$i$} & A teacher, a classroom, a pupil, or a parent in school $s$ in year $t$. \\[0.3em]
+\lab{$\beta_k,\ k\ge 0$} & The effect $k$ years after a rule-based change of principal, relative to the year before. \\[0.3em]
+\lab{$\beta_k,\ k<0$} & Must be zero. The test that the change is not a response to the school. \\[0.3em]
+\lab{Controls} & Schools whose clock has not yet run out. Clustered by school; staggered-robust weights. \\
 \end{tabular}
-\vspace{0.05cm}
+\end{frame}
 
-\muted{\scriptsize Standard errors clustered by school; staggered-robust estimators (Sun and Abraham, 2021; Callaway and Sant'Anna, 2021). Endogenous exits estimated separately as the selection benchmark.}
+%% 7c. Effect of a change
+\begin{frame}{Idea 1: the effect of a change of leader}
+\vspace{0.1cm}
+\small
+$Z_{st}=\mathbf{1}[t\ge\tau_s]$ is the rule; $D_{st}=\mathbf{1}[\text{new principal in } s \text{ at } t]$ is what happened.
+\begin{align*}
+D_{st}&=\pi Z_{st}+\alpha_s+\lambda_t+u_{st} \\
+Y_{ist}&=\beta\,\widehat{D}_{st}+\alpha_s+\lambda_t+\varepsilon_{ist}
+\end{align*}
+\vspace{0.1cm}
+\begin{tabular}{@{}L{2.6cm}L{10.4cm}@{}}
+\lab{$\beta$} & The effect of a new principal in schools where the rule forced the change. \\[0.3em]
+\lab{$\pi$} & One at 65. Below one at twelve years: the principal may stand again and win. \\[0.3em]
+\lab{Same people} & Replace $\alpha_s$ by $\alpha_j$ for the same teacher under two principals; add the grade-3 score for the same pupil in grade 6. \\
+\end{tabular}
+\end{frame}
+
+%% 7d. Variance
+\begin{frame}{Idea 2: do leaders differ at all?}
+\vspace{0.1cm}
+\small
+If $Y_{st}=\mu_s+\theta_{p(s,t)}+e_{st}$, a rule-based transition replaces $\theta_{\text{old}}$ by $\theta_{\text{new}}$:
+\begin{equation*}
+\mathrm{Var}\big(\Delta Y_{st}\mid Z_{st}=1\big)-\mathrm{Var}\big(\Delta Y_{st}\mid Z_{st}=0\big)=2\,\sigma^2_{\theta}
+\end{equation*}
+\vspace{0.1cm}
+\begin{tabular}{@{}L{2.6cm}L{10.4cm}@{}}
+\lab{$\sigma^2_\theta$} & The variance of leader effects on each outcome: how much leaders differ, without ranking any of them \cit{Jones and Olken, 2005}. \\[0.3em]
+\lab{Assumption} & $e_{st}$ is unrelated to the clock. The same pre-trend test as before. \\[0.3em]
+\lab{Reading} & A zero mean effect with a large $\sigma^2_\theta$ means leaders matter and cancel out on average. \\
+\end{tabular}
+\end{frame}
+
+%% 7e. Heterogeneity
+\begin{frame}{Idea 3: what makes a good leader}
+\vspace{0.1cm}
+\small
+\begin{equation*}
+Y_{ist}=\alpha_s+\lambda_t+\beta\,D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{ist}
+\end{equation*}
+\vspace{0.1cm}
+\begin{tabular}{@{}L{2.6cm}L{10.4cm}@{}}
+\lab{$W_s$} & Fixed before the new principal takes office: their own practices and wellbeing as a teacher in $\tau_s-1$; the committee's score of their project; the staff's rating of the outgoing principal in $\tau_s-1$. \\[0.3em]
+\lab{$\delta$} & How the effect of the change varies with who leaves and who arrives. \\[0.3em]
+\lab{Check} & $W_s$ does not predict $\beta_{k<0}$: the type of the successor is unrelated to where the school was going. \\
+\end{tabular}
 \end{frame}
 
 %% 8. Outcomes and timing
@@ -184,20 +229,6 @@ Let $\tau_s$ be the year school $s$'s clock runs out (principal turns 65, or com
 \vspace{0.0cm}
 
 \muted{\footnotesize Pre-registered indices by domain. Achievement is the final outcome; intermediate domains should respond first.}
-\end{frame}
-
-%% 9. Estimands
-\begin{frame}{Estimands}
-\vspace{0.1cm}
-\small
-\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Average effect} & Of a mandatory leadership transition on each domain. \\[0.5em]
-\lab{Variance} & Whether leaders differ: dispersion of outcome changes around rule-based transitions versus other years \cit{Jones and Olken, 2005}. No classification of leaders needed. \\[0.5em]
-\lab{Heterogeneity} & By pre-determined characteristics of incoming and outgoing principals. \\
-\end{tabular}
-\vspace{0.6cm}
-
-\muted{\footnotesize Whether leadership matters, how much leaders differ, and which observable traits predict effective ones.}
 \end{frame}
 
 %% 10. Data
