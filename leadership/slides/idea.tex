@@ -62,22 +62,23 @@
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
 \lab{Selection} & Spain does not attract or select its best managers: no pay or career incentives, posts left vacant and filled by the administration, single candidates, committees that pass over the top-merit candidate. \\[0.5em]
 \lab{Causal effect} & What a change of manager does to a school, identified from mandatory exits, in a system where the selection channel is shut and the incoming manager is not selected on quality. \\[0.5em]
-\lab{Link} & The selection story describes who arrives and how; the causal story measures what the arrival does. The first is the interpretation of the second. \\
+\lab{Link} & The selection story describes who arrives and how; the causal story measures what the arrival does. The first is the interpretation of the second. \\[0.5em]
+\lab{Division} & Two papers. Policy: deserted competitions, incentives, cross-region series (Montalb\'an). Identification: what a manager does when arriving by rule (this paper). \\
 \end{tabular}
 \end{frame}
 
 %% 3. Motivating facts
-\begin{frame}{Motivating facts, Madrid 2015--2018 (correlational)}
-\vspace{0.15cm}
+\begin{frame}{Motivating facts: selection in Madrid, 2015--2018 \cit{Montalb\'an, 2026, correlational}}
+\vspace{0.1cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Selection} & In 39\% of contested competitions (51 of 132) the winner is not the top-merit candidate. Many competitions draw a single candidate or none. \\[0.4em]
-\lab{Failed succession} & Schools where no candidate is selected: achievement falls about 0.20 SD after the failure and stays down; climate does not move; the incoming principal reports lower satisfaction ($-0.26$ SD) and more regret ($+0.20$ SD). \\[0.4em]
-\lab{Who fails} & Not poorer or lower-achieving schools. Before the failure, their principals are already less satisfied and more regretful. \\
+\lab{Competition} & About 1,000 competitions: three in four with a single candidate, one in four contested, 4\% deserted (62 schools). In 39\% of contested cases the winner is not the top-merit candidate. \\[0.35em]
+\lab{After a failure} & Achievement $-0.20$ SD, persistent; pupil, family, and teacher climate unchanged; the appointed principal reports lower satisfaction ($-0.26$) and more regret ($+0.20$). \\[0.35em]
+\lab{Before a failure} & Not poorer or lower-achieving schools. Their principal already reports satisfaction $-0.66$ SD and autonomy problems $+0.86$ SD relative to other public schools. \\
 \end{tabular}
-\vspace{0.4cm}
+\vspace{0.35cm}
 
-\muted{\footnotesize The last row is the selection problem of the turnover literature \cit{Miller, 2013}, observed directly. Mandatory exits remove it.}
+\muted{\footnotesize Failed successions are preceded by a deteriorating principalship: selection on unobservables, observed. Mandatory exits remove it. The $-0.20$ is a school-level SD and appears in the competition year, before the appointee arrives; we treat it as an upper bound on selection, not as an effect.}
 \end{frame}
 
 %% 4. Literature
@@ -153,7 +154,7 @@
 \vspace{-0.15cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Instrument} & A mandatory exit in 2016, 2017, or 2018, determined by age or tenure. \\[0.3em]
+\lab{Instrument} & A mandatory exit determined by age or tenure; $t=0$ is the first school year under the new principal (appointed 1 July). \\[0.3em]
 \lab{Exclusion} & The exit date affects outcomes only through the change of principal. \\[0.3em]
 \lab{Tests} & No pre-trends in any outcome. Retiring principals' schools balanced on pre-period characteristics: exits occur across the distribution, not in the worst schools. \\[0.3em]
 \lab{Benchmark} & Voluntary and failed successions, estimated separately: the selection on unobservables shown on the facts slide. \\
@@ -254,13 +255,27 @@ Y_{ist}=\ldots+\beta D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{ist}
 \end{tabular}
 \end{frame}
 
-%% 14. Open questions
-\begin{frame}{Open questions}
+%% 14. Risks
+\begin{frame}{Risks, in order}
+\vspace{0.1cm}
+\small
+\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
+\lab{Power} & 100 to 200 mandatory exits among primary schools over three transitions; expected effects of 0.03--0.05 SD on scores, larger on survey indices; family means are precise. \\[0.3em]
+\lab{Panels} & Share of tutors and pupils re-observed is unknown; within-unit designs are conditional on it. \\[0.3em]
+\lab{Tenure limit} & Appointment histories since 2004 must be rebuilt from BOCM. \\[0.3em]
+\lab{Compliance at 65} & Extensions to 70 exist; count principals above 65. \\[0.3em]
+\lab{Timing} & $t=0$ as the first year under the successor, never the competition year. \\
+\end{tabular}
+\end{frame}
+
+%% 15. This week
+\begin{frame}{This week}
 \vspace{0.3cm}
-\begin{itemize}\setlength{\itemsep}{1em}
-\item \textbf{Power.} Number of mandatory exits among primary schools, 2016--2018; minimum detectable effects by outcome at the school level.
-\item \textbf{Panels.} Share of tutors and pupils re-observed; whether within-unit designs are feasible.
-\item \textbf{Links.} Successor's name and corps to the prior-year teacher questionnaire; committee members across schools.
+\begin{itemize}\setlength{\itemsep}{0.9em}
+\item Count exits by age and by tenure limit among primary schools, by year.
+\item Share of tutors re-observed across years.
+\item Whether the 2015, 2016, and 2018 resolutions name committee members, as 2017 does.
+\item Re-run the failed-succession regression with mandatory exits as treatment and the incumbent's prior satisfaction as outcome: no pre-period decline is the pre-trend test, and Figure 1.
 \end{itemize}
 \end{frame}
 
