@@ -55,7 +55,32 @@
 \end{center}
 \end{frame}
 
-%% 2. Literature
+%% 2. Two stories
+\begin{frame}{Two stories, one design}
+\vspace{0.15cm}
+\small
+\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
+\lab{Selection} & Spain does not attract or select its best managers: no pay or career incentives, posts left vacant and filled by the administration, single candidates, committees that pass over the top-merit candidate. \\[0.5em]
+\lab{Causal effect} & What a change of manager does to a school, identified from mandatory exits, in a system where the selection channel is shut and the incoming manager is not selected on quality. \\[0.5em]
+\lab{Link} & The selection story describes who arrives and how; the causal story measures what the arrival does. The first is the interpretation of the second. \\
+\end{tabular}
+\end{frame}
+
+%% 3. Motivating facts
+\begin{frame}{Motivating facts, Madrid 2015--2018 (correlational)}
+\vspace{0.15cm}
+\small
+\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
+\lab{Selection} & In 39\% of contested competitions (51 of 132) the winner is not the top-merit candidate. Many competitions draw a single candidate or none. \\[0.4em]
+\lab{Failed succession} & Schools where no candidate is selected: achievement falls about 0.20 SD after the failure and stays down; climate does not move; the incoming principal reports lower satisfaction ($-0.26$ SD) and more regret ($+0.20$ SD). \\[0.4em]
+\lab{Who fails} & Not poorer or lower-achieving schools. Before the failure, their principals are already less satisfied and more regretful. \\
+\end{tabular}
+\vspace{0.4cm}
+
+\muted{\footnotesize The last row is the selection problem of the turnover literature \cit{Miller, 2013}, observed directly. Mandatory exits remove it.}
+\end{frame}
+
+%% 4. Literature
 \begin{frame}[label=know]{Literature}
 \vspace{0.15cm}
 \small
@@ -69,7 +94,7 @@
 \hfill\hyperlink{recent}{\beamerbutton{Recent work}}
 \end{frame}
 
-%% 3. Causal map
+%% 5. Causal map
 \begin{frame}{Causal map}
 \vspace{0.2cm}
 \begin{center}
@@ -100,19 +125,19 @@
 \muted{\small Exogenous variation enters at the leadership node. Every other node is observed.}
 \end{frame}
 
-%% 4. Setting
+%% 6. Setting
 \begin{frame}{Setting}
 \vspace{0.15cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Managers} & Principals are teachers elected for four-year terms, without authority over hiring, dismissal, pay, or curriculum. \\[0.35em]
+\lab{Managers} & Principals are teachers selected for four-year terms, without authority over hiring, dismissal, pay, or curriculum. \\[0.35em]
+\lab{Selection} & A per-school committee (three administration, two school) scores objective merits (0--15) and a project. Outcomes: contested, single candidate, or failed and filled by the administration. \\[0.35em]
 \lab{Labor input} & Fixed across a change of principal. The selection channel is shut; what remains is the managerial input. \\[0.35em]
-\lab{Mandatory exits} & Retirement at 65 and a two-renewal limit (twelve years), both pre-determined. \\[0.35em]
-\lab{Data} & Universe of Madrid public primary schools, 2015--2018: principals, teachers, timetables, all pupils and parents by classroom, test scores. \\
+\lab{Mandatory exits} & Retirement at 65 and a two-renewal limit (twelve years), both pre-determined. \\
 \end{tabular}
 \end{frame}
 
-%% 5. Identification
+%% 7. Identification
 \begin{frame}{Identification}
 \vspace{0.05cm}
 \begin{center}
@@ -128,14 +153,14 @@
 \vspace{-0.15cm}
 \small
 \begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
-\lab{Instrument} & A mandatory exit in 2016, 2017, or 2018, determined by age or tenure. \\[0.35em]
-\lab{Exclusion} & The exit date affects outcomes only through the change of principal. \\[0.35em]
-\lab{Test} & No pre-trends in any outcome before the exit. \\[0.35em]
-\lab{Benchmark} & Voluntary exits, estimated separately: the selection on unobservables the literature cannot rule out. \\
+\lab{Instrument} & A mandatory exit in 2016, 2017, or 2018, determined by age or tenure. \\[0.3em]
+\lab{Exclusion} & The exit date affects outcomes only through the change of principal. \\[0.3em]
+\lab{Tests} & No pre-trends in any outcome. Retiring principals' schools balanced on pre-period characteristics: exits occur across the distribution, not in the worst schools. \\[0.3em]
+\lab{Benchmark} & Voluntary and failed successions, estimated separately: the selection on unobservables shown on the facts slide. \\
 \end{tabular}
 \end{frame}
 
-%% 6. Reduced form
+%% 8. Reduced form
 \begin{frame}{Reduced form}
 \vspace{0.15cm}
 \small
@@ -147,11 +172,11 @@ Y_{ist}=\alpha_s+\lambda_t+\sum_{k\neq -1}\beta_k\,\mathbf{1}[\,t-\tau_s=k\,]+\v
 \begin{tabular}{@{}L{2.6cm}L{10.4cm}@{}}
 \lab{$\beta_{k\ge0}$} & Dynamic treatment effect $k$ years after the exit. \\[0.35em]
 \lab{$\beta_{k<0}$} & Pre-trends. \\[0.35em]
-\lab{Estimator} & Staggered adoption; not-yet-treated controls; clustered by school. \\
+\lab{Unit} & The school is the unit of treatment; $i$ are repeated cross-sections within it. Not-yet-treated controls; staggered-robust estimator; clustered by school. \\
 \end{tabular}
 \end{frame}
 
-%% 7. IV
+%% 9. LATE
 \begin{frame}{Local average treatment effect}
 \vspace{0.15cm}
 \small
@@ -162,13 +187,13 @@ Y_{ist}&=\beta\,\widehat{D}_{st}+\alpha_s+\lambda_t+\varepsilon_{ist}
 \end{align*}
 \vspace{0.1cm}
 \begin{tabular}{@{}L{2.6cm}L{10.4cm}@{}}
-\lab{Compliers} & All schools at 65; schools where the tenure limit was binding. \\[0.35em]
-\lab{Within unit} & $\alpha_j$ for the same teacher under two principals; lagged score for the same pupil, grades 3 to 6. \\[0.35em]
-\lab{Mediation} & $\beta$ on achievement, with and without the teacher, classroom, and family outcomes as controls. \\
+\lab{Compliers} & At 65: a long-tenured incumbent replaced. At twelve years: a younger incumbent replaced. Two complier groups, one parameter to compare. \\[0.35em]
+\lab{Decomposition} & $\beta=\theta_{\text{new}}-\theta_{\text{old}}$. The incumbent's pre-exit staff rating and merits separate losing a good manager from receiving a worse one. \\[0.35em]
+\lab{Panels} & Same teacher (tutors re-observed) and same pupil (grade 3 to 6) where the data allow; to be verified. \\
 \end{tabular}
 \end{frame}
 
-%% 8. Variance and heterogeneity
+%% 10. Variance and heterogeneity
 \begin{frame}{Variance of manager effects; heterogeneity}
 \vspace{0.1cm}
 \small
@@ -178,15 +203,27 @@ $Y_{st}=\mu_s+\theta_{p(s,t)}+e_{st}$. Around a mandatory exit, $\theta_{\text{o
 \qquad\qquad
 Y_{ist}=\ldots+\beta D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{ist}
 \end{equation*}
-\vspace{0.1cm}
+\vspace{0.05cm}
 \begin{tabular}{@{}L{2.6cm}L{10.4cm}@{}}
-\lab{$\sigma^2_\theta$} & Dispersion of manager effects without ranking managers \cit{Jones and Olken, 2005}. \\[0.35em]
-\lab{$W_s$} & Pre-determined: successor's practices and wellbeing as a teacher in $\tau_s-1$; project score; staff rating of the incumbent. \\[0.35em]
-\lab{$\delta$} & Treatment effect heterogeneity by manager type. \\
+\lab{$\sigma^2_\theta$} & Dispersion of manager effects without ranking managers \cit{Jones and Olken, 2005}. \\[0.3em]
+\lab{$W_s$} & How the vacancy was filled (contested, single, failed); successor's merits and age relative to the incumbent; change in the principal's reported practices (LOMCE questionnaire); change in the school's educational project (text). \\[0.3em]
+\lab{$\delta$} & Treatment effect heterogeneity by the dimensions of the change. \\
 \end{tabular}
 \end{frame}
 
-%% 9. Outcomes and timing
+%% 11. Extension
+\begin{frame}{Extension: rules versus discretion in selecting managers}
+\vspace{0.15cm}
+\small
+\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
+\lab{Rule} & The merit score, observed for every admitted candidate. \\[0.4em]
+\lab{Discretion} & The committee's choice; in 39\% of contested cases it overrides the merit ranking. \\[0.4em]
+\lab{Instrument} & Administration members are named per committee (BOCM). If they sit on several committees and are not assigned on school characteristics, their propensity to override or to fail a competition instruments who is selected \cit{Hoffman, Kahn, and Li, 2018}. \\[0.4em]
+\lab{Question} & Does discretion select better managers than the rule? \\
+\end{tabular}
+\end{frame}
+
+%% 12. Outcomes and timing
 \begin{frame}{Outcomes and expected timing}
 \vspace{-0.05cm}
 \footnotesize\begin{tabular}{@{}L{2.0cm}L{5.9cm}L{3.3cm}L{1.5cm}@{}}
@@ -197,7 +234,7 @@ Y_{ist}=\ldots+\beta D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{ist}
 \lab{Classrooms} & Discipline, climate & Pupil and teacher reports & Years 1--2 \\
 \lab{Families} & Involvement, trust, satisfaction & Parent survey & Years 1--2 \\
 \lab{Teachers} & Self-efficacy, wellbeing, collaboration, training & Teacher survey & Years 1--2 \\
-\lab{Teachers} & Classroom practice, within teacher & Teacher survey & Years 2--3 \\
+\lab{Teachers} & Classroom practice & Teacher survey & Years 2--3 \\
 \lab{Output} & Engagement; achievement by subject & Pupil survey, tests & Last \\
 \bottomrule
 \end{tabular}
@@ -206,13 +243,24 @@ Y_{ist}=\ldots+\beta D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{ist}
 \muted{\footnotesize Pre-registered indices by input.}
 \end{frame}
 
-%% 10. Open questions
+%% 13. Data
+\begin{frame}{Data}
+\vspace{0.1cm}
+\small
+\begin{tabular}{@{}L{3.1cm}L{9.9cm}@{}}
+\lab{Schools} & Universe of Madrid public primary schools, 2015--2018: principal questionnaire (age, sex, practices, satisfaction); teacher questionnaire; timetables; all pupils and parents by classroom; test scores by subject. \\[0.35em]
+\lab{Selection} & Official records of the 2015--2018 competitions (Consejer\'ia): schools called, admitted candidates with merit scores in four components, winner with name and corps; 581 schools; 2018 project scores for winners; 2017 exclusions with cause. \\[0.35em]
+\lab{To add} & Appointment and renewal history from BOCM (tenure clock); committee members; school documents from archived websites; public school results from 2022. \\
+\end{tabular}
+\end{frame}
+
+%% 14. Open questions
 \begin{frame}{Open questions}
 \vspace{0.3cm}
 \begin{itemize}\setlength{\itemsep}{1em}
-\item \textbf{Inputs.} Which should respond within the first year of a new principal.
-\item \textbf{Data.} Stable teacher identifier; principal's age and tenure; survey items rating the principal.
-\item \textbf{Sample.} Number of mandatory exits, 2015--2018; appointment records and later years.
+\item \textbf{Power.} Number of mandatory exits among primary schools, 2016--2018; minimum detectable effects by outcome at the school level.
+\item \textbf{Panels.} Share of tutors and pupils re-observed; whether within-unit designs are feasible.
+\item \textbf{Links.} Successor's name and corps to the prior-year teacher questionnaire; committee members across schools.
 \end{itemize}
 \end{frame}
 
@@ -227,6 +275,7 @@ Branch, G.~F., E.~A. Hanushek, and S.~G. Rivkin. 2012. ``Estimating the Effect o
 Fenizia, A. 2022. ``Managers and Productivity in the Public Sector.'' \textit{Econometrica} 90(3): 1063--1084.\\[0.35em]
 Grissom, J.~A., and B.~Bartanen. 2019. ``Strategic Retention: Principal Effectiveness and Teacher Turnover in Multiple-Measure Teacher Evaluation Systems.'' \textit{American Educational Research Journal} 56(2): 514--555.\\[0.35em]
 Hanushek, E.~A., A.~Morgan, S.~G. Rivkin, J.~C. Schiman, A.~Shakeel, and L.~Sartain. 2024. ``The Lasting Impacts of Middle School Principals.'' NBER Working Paper 32642.\\[0.35em]
+Hoffman, M., L.~B. Kahn, and D.~Li. 2018. ``Discretion in Hiring.'' \textit{Quarterly Journal of Economics} 133(2): 765--800.\\[0.35em]
 Jones, B.~F., and B.~A. Olken. 2005. ``Do Leaders Matter? National Leadership and Growth Since World War II.'' \textit{Quarterly Journal of Economics} 120(3): 835--864.\\[0.35em]
 Lavy, V., A.~Boiko, and G.~Rachkovski. 2023. ``Effects and Mechanisms of CEOs Quality in Public Education.'' \textit{Economic Journal}.\\[0.35em]
 Lemos, R., K.~Muralidharan, and D.~Scur. 2024. ``Personnel Management and School Productivity: Evidence from India.'' \textit{Economic Journal} 134.\\[0.35em]
