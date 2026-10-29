@@ -123,17 +123,17 @@ Contested competitions not won by the top-merit candidate & 39\% \\
 \end{frame}
 
 %% 5b. Variation
-\begin{frame}{Principal exits by age, Madrid public schools}
+\begin{frame}{Principal exits by age}
 \vspace{0.1cm}
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
-  width=0.8\textwidth, height=0.6\textheight,
-  ybar, bar width=22pt, bar shift=0pt,
+  width=0.78\textwidth, height=0.46\textheight,
+  ybar, bar width=20pt, bar shift=0pt,
   ymin=0, ymax=50,
   symbolic x coords={$<$40,40--44,45--49,50--54,55--59,60--64,65+},
   xtick={$<$40,40--44,45--49,50--54,55--59,60--64,65+}, xtick style={draw=none},
-  ytick={0,10,20,30,40,50}, yticklabel={\pgfmathprintnumber{\tick}\%},
+  ytick={0,20,40}, yticklabel={\pgfmathprintnumber{\tick}\%},
   ylabel={\small Exit rate}, xlabel={\small Age of principal},
   ylabel style={yshift=-4pt},
   axis x line*=bottom, axis y line*=left,
@@ -147,38 +147,36 @@ Contested competitions not won by the top-merit candidate & 39\% \\
 \end{tikzpicture}
 \end{center}
 \vspace{-0.1cm}
-{\footnotesize Share of principals replaced by the next wave, by age. 1,884 principal-wave observations in 1,041 public schools, 2016--17 to 2018--19; 203 changes, half with an outgoing principal aged 60 or older. Sixty is the early-retirement age for civil-servant teachers.}
+{\scriptsize \textit{Note:} Share of principals observed in one wave who are replaced by the next wave, by age in the last wave observed. A change is recorded when the respondent's sex or year of birth differs between consecutive waves (2016--17, 2017--18, 2018--19); a one-year difference in year of birth is treated as the same person. 1,884 principal-wave observations in 1,041 public schools. Dark bars: ages at or above 60, the early-retirement age for civil-servant teachers. \textit{Source:} LOMCE principal questionnaires, Comunidad de Madrid.}
 \end{frame}
 
-%% 5c. Changes by wave
-\begin{frame}{Principal changes by year, Madrid public schools}
+%% 5c. Changes by ownership
+\begin{frame}{Principal changes by school ownership}
 \vspace{0.1cm}
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
-  width=0.62\textwidth, height=0.6\textheight,
-  ybar stacked, bar width=46pt,
-  ymin=0, ymax=12,
-  symbolic x coords={2017--18,2018--19},
+  width=0.6\textwidth, height=0.48\textheight,
+  ybar, bar width=13pt,
+  ymin=0, ymax=60,
+  symbolic x coords={Public,Semi-public,Private,All},
   xtick=data, xtick style={draw=none},
-  ytick={0,2,4,6,8,10,12}, yticklabel={\pgfmathprintnumber{\tick}\%},
-  ylabel={\small Share of schools}, ylabel style={yshift=-4pt},
+  ytick={0,20,40,60}, yticklabel={\pgfmathprintnumber{\tick}\%},
   axis x line*=bottom, axis y line*=left,
   ticklabel style={font=\small},
-  enlarge x limits=0.45, clip=false,
-  legend style={draw=none, font=\footnotesize, at={(1.03,0.5)}, anchor=west, legend cell align=left},
-  reverse legend,
+  nodes near coords={\pgfmathprintnumber[fixed,precision=0]{\pgfplotspointmeta}\%}, nodes near coords style={font=\scriptsize},
+  enlarge x limits=0.15, clip=false,
+  legend style={draw=none, font=\scriptsize, at={(1.04,0.5)}, anchor=west, legend cell align=left},
+  area legend,
 ]
-\addplot[fill=muted!60, draw=none] coordinates {(2017--18,5.3) (2018--19,4.8)};
-\addplot[fill=ink, draw=none] coordinates {(2017--18,5.0) (2018--19,5.4)};
-\legend{Outgoing principal under 60, Outgoing principal 60 or older}
-\node[font=\footnotesize, above] at (axis cs:2017--18,10.3) {10.3\%};
-\node[font=\footnotesize, above] at (axis cs:2018--19,10.2) {10.2\%};
+\addplot[fill=muted!60, draw=none] coordinates {(Public,18.8) (Semi-public,38.2) (Private,34.5) (All,24.6)};
+\addplot[fill=ink, draw=none] coordinates {(Public,49.3) (Semi-public,28.7) (Private,38.7) (All,39.9)};
+\legend{Schools with a new principal,Outgoing principal aged 60+}
 \end{axis}
 \end{tikzpicture}
 \end{center}
 \vspace{-0.1cm}
-{\footnotesize Share of public schools observed in both waves whose principal changed: 873 schools in 2017--18, 918 in 2018--19. Treated cohorts: 83 schools change in 2018 and 87 in 2019.}
+{\scriptsize \textit{Note:} 1,510 schools observed in two or more waves (1,041 public, 385 semi-public, 84 private); 401 principal changes (203, 167, 31). A change is recorded when the respondent's sex or year of birth differs between consecutive waves, 2016--17 to 2018--19, allowing a one-year difference in year of birth; 32 schools whose 2017 and 2019 respondents coincide but whose 2018 respondent differs are excluded. Ownership from the administrative school register. \textit{Source:} LOMCE principal questionnaires, Comunidad de Madrid.}
 \end{frame}
 
 %% 6. Identification
