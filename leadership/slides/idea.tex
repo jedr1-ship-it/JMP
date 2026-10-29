@@ -150,6 +150,37 @@ Contested competitions not won by the top-merit candidate & 39\% \\
 {\footnotesize Share of principals replaced by the next wave, by age. 1,884 principal-wave observations in 1,041 public schools, 2016--17 to 2018--19; 203 changes, half with an outgoing principal aged 60 or older. Sixty is the early-retirement age for civil-servant teachers.}
 \end{frame}
 
+%% 5c. Changes by wave
+\begin{frame}{Principal changes by year, Madrid public schools}
+\vspace{0.1cm}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.62\textwidth, height=0.6\textheight,
+  ybar stacked, bar width=46pt,
+  ymin=0, ymax=12,
+  symbolic x coords={2017--18,2018--19},
+  xtick=data, xtick style={draw=none},
+  ytick={0,2,4,6,8,10,12}, yticklabel={\pgfmathprintnumber{\tick}\%},
+  ylabel={\small Share of schools}, ylabel style={yshift=-4pt},
+  axis x line*=bottom, axis y line*=left,
+  ticklabel style={font=\small},
+  enlarge x limits=0.45, clip=false,
+  legend style={draw=none, font=\footnotesize, at={(1.03,0.5)}, anchor=west, legend cell align=left},
+  reverse legend,
+]
+\addplot[fill=muted!60, draw=none] coordinates {(2017--18,5.3) (2018--19,4.8)};
+\addplot[fill=ink, draw=none] coordinates {(2017--18,5.0) (2018--19,5.4)};
+\legend{Outgoing principal under 60, Outgoing principal 60 or older}
+\node[font=\footnotesize, above] at (axis cs:2017--18,10.3) {10.3\%};
+\node[font=\footnotesize, above] at (axis cs:2018--19,10.2) {10.2\%};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\vspace{-0.1cm}
+{\footnotesize Share of public schools observed in both waves whose principal changed: 873 schools in 2017--18, 918 in 2018--19. Treated cohorts: 83 schools change in 2018 and 87 in 2019.}
+\end{frame}
+
 %% 6. Identification
 \begin{frame}{Identification strategy}
 \vspace{0.3cm}
