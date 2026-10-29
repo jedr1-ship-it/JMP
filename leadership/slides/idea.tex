@@ -7,7 +7,7 @@
 \usetikzlibrary{arrows.meta,positioning,calc}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}{\hfill{\scriptsize\color{muted}\insertframenumber\,/\,\inserttotalframenumber}\hspace{0.45cm}\vspace{0.25cm}}
-\setbeamertemplate{itemize items}{\color{amber}$\blacktriangleright$}
+\setbeamertemplate{itemize items}[triangle]\setbeamercolor{itemize item}{fg=teal}
 \setbeamertemplate{frametitle}{\vspace{0.55cm}\textbf{\large\insertframetitle}\par}
 \usefonttheme{serif}
 \definecolor{ink}{HTML}{1F1F1F}
@@ -26,9 +26,8 @@
 \setlength{\leftmargini}{1.2em}
 
 \title{\textbf{The Effects of School Principals on Teachers,\\Classrooms, and Families}}
-\subtitle{Evidence from mandatory turnover in Madrid public schools}
 \author{}
-\date{\muted{Paper idea. October 2026}}
+\date{October 2026}
 
 \begin{document}
 
@@ -45,7 +44,7 @@
 \end{frame}
 
 %% 2. Known / unknown
-\begin{frame}{What is known}
+\begin{frame}{Related literature}
 \vspace{0.4cm}
 \begin{itemize}\setlength{\itemsep}{1.1em}
 \item One SD of principal quality moves achievement by 0.03 to 0.10 SD \cit{Branch, Hanushek, and Rivkin, 2012; Bartanen, Husain, and Liebowitz, 2024}.
@@ -53,7 +52,7 @@
 \item The identified channel is personnel: who is hired, retained, and dismissed \cit{Grissom and Bartanen, 2019; Mu\~noz and Prem, 2024}.
 \end{itemize}
 \vspace{0.9cm}
-\textbf{Not identified:} effects on the practice and effort of a fixed staff, on classroom organization, and on parental inputs.
+What is not identified is the effect on the practice and effort of a fixed staff, on the organization of classrooms, and on parental inputs.
 \end{frame}
 
 %% 3. Causal map
@@ -84,11 +83,11 @@
 \end{tikzpicture}
 \end{center}
 \vspace{0.05cm}
-\muted{\small Exogenous variation enters at the leadership node. Every other node is observed.}
+{\small Exogenous variation enters at the leadership node. Every other node is observed in the data.}
 \end{frame}
 
 %% 4. Setting
-\begin{frame}{Setting}
+\begin{frame}{Institutional setting}
 \vspace{0.4cm}
 \begin{itemize}\setlength{\itemsep}{1.1em}
 \item Spanish principals are teachers elected for four years. They do not hire, dismiss, set pay, or set the curriculum.
@@ -96,7 +95,7 @@
 \item Terms end by rule: retirement at 65, and at most two renewals, twelve years.
 \end{itemize}
 \vspace{0.9cm}
-\muted{Universe of Madrid public primary schools, 2015--2018: principals, teachers, timetables, every pupil and parent by classroom, test scores by subject.}
+Data: the universe of Madrid public primary schools, 2015--2018, with principals, teachers, timetables, every pupil and parent by classroom, and test scores by subject.
 \end{frame}
 
 %% 5. Selection
@@ -116,14 +115,14 @@ Contested competitions not won by the top-merit candidate & 0.39 \\
 \end{tabular}
 \end{center}
 \vspace{0.3cm}
-\muted{\small Official records of about 1,000 competitions: candidates, merit scores, winners, committees \cit{Montalb\'an, 2026}.}
+{\small Source: official records of about 1,000 competitions, with candidates, merit scores, winners, and committees \cit{Montalb\'an, 2026}.}
 \vspace{0.4cm}
 
 The incoming principal is not selected on quality. The parameter is the effect of the manager the system produces, and the records describe who that is.
 \end{frame}
 
 %% 6. Identification
-\begin{frame}{Identification}
+\begin{frame}{Identification strategy}
 \vspace{0.3cm}
 \begin{center}
 \begin{tikzpicture}[x=0.9cm,y=1cm]
@@ -144,7 +143,7 @@ The incoming principal is not selected on quality. The parameter is the effect o
 \end{frame}
 
 %% 7. Equation
-\begin{frame}{Estimation}
+\begin{frame}{Empirical specification}
 \vspace{0.5cm}
 \begin{equation*}
 Y_{ist}=\alpha_s+\lambda_t+\sum_{k\neq -1}\beta_k\,\mathbf{1}[\,t-\tau_s=k\,]+\varepsilon_{ist}
@@ -158,23 +157,23 @@ Y_{ist}=\alpha_s+\lambda_t+\sum_{k\neq -1}\beta_k\,\mathbf{1}[\,t-\tau_s=k\,]+\v
 \end{frame}
 
 %% 8. Beyond the mean
-\begin{frame}{Beyond the mean}
+\begin{frame}{Dispersion and heterogeneity of principal effects}
 \vspace{0.2cm}
-\noindent\textbf{Do principals differ?} \quad Excess dispersion around rule-based exits \cit{Jones and Olken, 2005}:
+\noindent Dispersion of principal effects, from excess variance around rule-based exits \cit{Jones and Olken, 2005}:
 \begin{equation*}
 \mathrm{Var}(\Delta Y_{st}\mid \text{exit})-\mathrm{Var}(\Delta Y_{st}\mid \text{no exit})=2\sigma^2_{\theta}
 \end{equation*}
 \vspace{-0.1cm}
-\par\noindent\textbf{Who is a good one?} \quad Pre-determined characteristics of the change:
+\par\noindent Heterogeneity by characteristics determined before the change:
 \begin{equation*}
 Y_{ist}=\alpha_s+\lambda_t+\beta D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{ist}
 \end{equation*}
 \vspace{0.1cm}
-\muted{\small $W_s$: how the vacancy was filled; the successor's merits and age relative to the incumbent; the successor's own practices as a teacher the year before; the incumbent's rating by the staff.}
+{\small $W_s$ includes how the vacancy was filled, the successor's merits and age relative to the incumbent, the successor's practices as a teacher in the previous year, and the staff's rating of the incumbent.}
 \end{frame}
 
 %% 9. Risks
-\begin{frame}{Risks}
+\begin{frame}{Challenges}
 \vspace{0.4cm}
 \begin{itemize}\setlength{\itemsep}{1.1em}
 \item Power: 100 to 200 mandatory exits in primary over three transitions; effects of 0.03--0.05 SD on scores, larger on survey indices.
@@ -184,7 +183,7 @@ Y_{ist}=\alpha_s+\lambda_t+\beta D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{is
 \end{frame}
 
 %% 10. Next
-\begin{frame}{This week}
+\begin{frame}{Next steps}
 \vspace{0.4cm}
 \begin{itemize}\setlength{\itemsep}{1.1em}
 \item Count exits by age and by tenure among primary schools, by year.
