@@ -26,7 +26,7 @@
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \setlength{\leftmargini}{1.2em}
 
-\title{\textbf{Does It Matter Who Leads?}\\[0.5em]{\large Mandatory Principal Turnover and School Performance}}
+\title{\textbf{Does It Matter Who Leads?}\\[0.5em]{\large Principal Retirements and School Performance}}
 \author{}
 \date{October 2026}
 
@@ -96,10 +96,10 @@ What is not identified is the effect on the practice and effort of a fixed staff
 \begin{itemize}\setlength{\itemsep}{1.1em}
 \item Spanish principals are teachers elected for four years. They do not hire, dismiss, set pay, or set the curriculum.
 \item A change of principal therefore changes leadership on a fixed staff.
-\item Terms end by rule: retirement at 65, and at most two renewals, twelve years.
+\item Civil-servant teachers may retire at 60 and must retire at 65, with extensions possible.
 \end{itemize}
 \vspace{0.9cm}
-Data: LOMCE standardized tests in mathematics, Spanish, and English for the universe of Madrid public primary schools, 2015--2018, with supplementary questionnaires to parents, teachers, and principals.
+Data: LOMCE standardized tests in mathematics, Spanish, and English, with questionnaires to parents, teachers, and principals, for the universe of Madrid public primary schools, 2015--16 to 2018--19.
 \end{frame}
 
 %% 5. Selection
@@ -183,43 +183,36 @@ Contested competitions not won by the top-merit candidate & 39\% \\
 
 %% 6. Identification
 \begin{frame}{Identification strategy}
-\vspace{0.3cm}
-\begin{center}
-\begin{tikzpicture}[x=0.9cm,y=1cm]
-\draw[muted,line width=0.8pt] (0,0) -- (12.4,0);
-\foreach \x/\lbl/\sub/\col in {0/Appointment/{year 0}/amber, 4.1/Renewal/{year 4}/teal, 8.2/Renewal/{year 8}/teal, 12.3/Mandatory exit/{year 12, or age 65}/amber}{
-  \fill[\col] (\x,0) circle (0.17);
-  \node[above=0.3cm,font=\small\bfseries] at (\x,0) {\lbl};
-  \node[below=0.3cm,font=\footnotesize,text=muted] at (\x,0) {\sub};
-}
-\end{tikzpicture}
-\end{center}
-\vspace{0.5cm}
-\begin{itemize}\setlength{\itemsep}{0.9em}
-\item Treatment: an exit forced by age or tenure. Control: schools whose principal has not reached either limit.
-\item Assumption: the exit date is unrelated to school shocks. Test: no pre-trends.
-\item Voluntary and deserted successions estimated separately, as the selection benchmark.
+\vspace{0.4cm}
+\begin{itemize}\setlength{\itemsep}{1.1em}
+\item Instrument: the incumbent principal is aged 60 or older. The exit rate rises from about 6\% to 34\%.
+\item Treated cohorts: schools whose principal changes in 2018 or in 2019. Controls: schools not yet treated.
+\item Threat: retirement after 60 is voluntary, and may respond to how the school is doing.
+\item Test: among principals aged 60 or older, schools whose principal leaves and schools whose principal stays show the same levels and trends before the exit.
 \end{itemize}
 \end{frame}
 
 %% 7. Equation
 \begin{frame}{Empirical specification}
-\vspace{0.5cm}
+\vspace{0.3cm}
+Event study around the change of principal:
 \begin{equation*}
 Y_{ist}=\alpha_s+\lambda_t+\sum_{k\neq -1}\beta_k\,\mathbf{1}[\,t-\tau_s=k\,]+\varepsilon_{ist}
 \end{equation*}
-\vspace{0.4cm}
-\begin{itemize}\setlength{\itemsep}{0.9em}
-\item $\tau_s$: first school year under the new principal. $i$: a teacher, classroom, pupil, or parent.
-\item The school is the unit of treatment; outcomes are repeated cross-sections within it.
-\item Staggered-robust estimator, not-yet-treated controls, clustered by school. 2SLS on the realized change where the tenure rule does not bind.
-\end{itemize}
+\vspace{0.1cm}
+Instrumental variables, with the age of the incumbent as instrument:
+\begin{equation*}
+D_{st}=\pi\,\mathbf{1}[\text{age}_{s,t-1}\ge 60]+\alpha_s+\lambda_t+u_{st},\qquad
+Y_{ist}=\beta\,\widehat{D}_{st}+\alpha_s+\lambda_t+\varepsilon_{ist}
+\end{equation*}
+\vspace{0.2cm}
+{\small $\tau_s$: first school year under the new principal. $i$: a teacher, classroom, pupil, or parent. The school is the unit of treatment; standard errors clustered by school; staggered-robust estimator.}
 \end{frame}
 
 %% 8. Beyond the mean
 \begin{frame}{Dispersion and heterogeneity of principal effects}
 \vspace{0.2cm}
-\noindent Dispersion of principal effects, from excess variance around rule-based exits \cit{Jones and Olken, 2005}:
+\noindent Dispersion of principal effects, from excess variance around retirement-driven exits \cit{Jones and Olken, 2005}:
 \begin{equation*}
 \mathrm{Var}(\Delta Y_{st}\mid \text{exit})-\mathrm{Var}(\Delta Y_{st}\mid \text{no exit})=2\sigma^2_{\theta}
 \end{equation*}
@@ -236,9 +229,10 @@ Y_{ist}=\alpha_s+\lambda_t+\beta D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{is
 \begin{frame}{Challenges}
 \vspace{0.4cm}
 \begin{itemize}\setlength{\itemsep}{1.1em}
-\item Power: 100 to 200 mandatory exits in primary over three transitions; effects of 0.03--0.05 SD on scores, larger on survey indices.
-\item Panels: the share of tutors and pupils re-observed is unknown.
-\item The tenure rule needs appointment histories since 2004; the age rule needs the count of principals above 65.
+\item Selection into retirement: the age instrument is valid only if leavers and stayers over 60 are balanced before the exit.
+\item Power: about 100 retirement-driven changes over two cohorts. Enough for survey indices, tight for school-level test scores.
+\item Short windows: one or two years before and after each change.
+\item Measurement: changes are detected from the respondent's sex and year of birth; to be validated against appointment records.
 \end{itemize}
 \end{frame}
 
@@ -246,10 +240,12 @@ Y_{ist}=\alpha_s+\lambda_t+\beta D_{st}+\delta\,D_{st}\times W_s+\varepsilon_{is
 \begin{frame}{Next steps}
 \vspace{0.4cm}
 \begin{itemize}\setlength{\itemsep}{1.1em}
-\item Count exits by age and by tenure among primary schools, by year.
-\item Share of tutors re-observed across years.
-\item Re-run the deserted-competition regression with mandatory exits as treatment and the incumbent's prior satisfaction as outcome: a flat pre-period is the pre-trend test.
+\item Balance and pre-trends: leavers versus stayers among principals aged 60 or older.
+\item Power: within-school variance of each outcome and minimum detectable effects with 100 treated schools.
+\item Validation: changes in the questionnaires against named appointments in the competition records.
 \end{itemize}
+\vspace{0.6cm}
+If the first test holds, the causal design stands. If not, the selection records support a descriptive paper on how principals are chosen.
 \end{frame}
 
 %% Appendix
