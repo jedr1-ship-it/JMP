@@ -5,6 +5,7 @@
 \usepackage{lmodern}
 \usepackage{booktabs,array,xcolor,tikz,amsmath}
 \usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{pgfplots}\pgfplotsset{compat=1.18}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}{\hfill{\scriptsize\color{muted}\insertframenumber\,/\,\inserttotalframenumber}\hspace{0.45cm}\vspace{0.25cm}}
 \setbeamertemplate{itemize items}[triangle]\setbeamercolor{itemize item}{fg=teal}
@@ -119,6 +120,34 @@ Contested competitions not won by the top-merit candidate & 39\% \\
 \end{center}
 \vspace{0.3cm}
 {\small Source: official records of about 1,000 competitions, with candidates, merit scores, winners, and committees \cit{Montalb\'an, 2026}.}
+\end{frame}
+
+%% 5b. Variation
+\begin{frame}{Principal exits by age, Madrid public schools}
+\vspace{0.1cm}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.8\textwidth, height=0.6\textheight,
+  ybar, bar width=22pt, bar shift=0pt,
+  ymin=0, ymax=50,
+  symbolic x coords={$<$40,40--44,45--49,50--54,55--59,60--64,65+},
+  xtick={$<$40,40--44,45--49,50--54,55--59,60--64,65+}, xtick style={draw=none},
+  ytick={0,10,20,30,40,50}, yticklabel={\pgfmathprintnumber{\tick}\%},
+  ylabel={\small Exit rate}, xlabel={\small Age of principal},
+  ylabel style={yshift=-4pt},
+  axis x line*=bottom, axis y line*=left,
+  ticklabel style={font=\small},
+  nodes near coords={\pgfmathprintnumber{\pgfplotspointmeta}\%}, nodes near coords style={font=\footnotesize},
+  enlarge x limits=0.08, clip=false,
+]
+\addplot[fill=muted!60, draw=none] coordinates {($<$40,16) (40--44,4) (45--49,8) (50--54,5) (55--59,6)};
+\addplot[fill=ink, draw=none] coordinates {(60--64,34) (65+,42)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\vspace{-0.1cm}
+{\footnotesize Share of principals replaced by the next wave, by age. 1,884 principal-wave observations in 1,041 public schools, 2016--17 to 2018--19; 203 changes, half with an outgoing principal aged 60 or older. Sixty is the early-retirement age for civil-servant teachers.}
 \end{frame}
 
 %% 6. Identification
